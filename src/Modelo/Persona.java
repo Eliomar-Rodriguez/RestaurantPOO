@@ -2,11 +2,11 @@ package Modelo;
 
 public abstract class Persona {
 
-    private String nombreCompleto;
+    protected String nombreCompleto;
 
-    private String cedula;
+    protected String cedula;
 
-    private String telefono;
+    protected String telefono;
 
     public Persona() {
     }

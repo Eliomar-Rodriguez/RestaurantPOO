@@ -1,16 +1,11 @@
 package Modelo;
 
-public class Factory {
+public interface Factory {
 
-    public Mesero crearMesero() {
-        return new Mesero();
-    }
-
-    public Cocinero crearCocinero(String especialidad) {
-        return new Cocinero(0, 0, especialidad);
-    }
-
-    public Cliente crearCliente() {
-        return new Cliente(0);
-    }
+    
+    
+    public Cliente crearCliente(int visitasRealizadas, String nombreCompleto, String cedula, String telefono);
+    
+    public Empleado crearEmpleado(String direccion, String correo,String nombreCompleto, String cedula, String telefono);
+       
 }
