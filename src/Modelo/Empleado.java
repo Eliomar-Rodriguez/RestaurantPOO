@@ -34,5 +34,10 @@ public class Empleado extends Persona {
     public String toString() {
         return "Empleado{" + "direccion=" + direccion + ", correo=" + correo + '}';
     }
+
+    @Override
+    public String mostrar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

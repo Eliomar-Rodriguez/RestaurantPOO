@@ -1,6 +1,6 @@
 package Modelo;
 
-public class Persona {
+public abstract class Persona {
 
     private String nombreCompleto;
 
@@ -45,4 +45,6 @@ public class Persona {
     public String toString() {
         return "Persona{" + "nombreCompleto=" + nombreCompleto + ", cedula=" + cedula + ", telefono=" + telefono + '}';
     }
+    
+    public abstract String mostrar();
 }
