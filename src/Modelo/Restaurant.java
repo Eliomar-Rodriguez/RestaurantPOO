@@ -125,4 +125,10 @@ public class Restaurant {
 
     public void agregarOrdenesPreparar(Orden orden) {
     }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" + "nombre=" + nombre + ", dirLogo=" + dirLogo + ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + '}';
+    }
+    
 }
