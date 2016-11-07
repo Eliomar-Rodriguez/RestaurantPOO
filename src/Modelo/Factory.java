@@ -3,14 +3,14 @@ package Modelo;
 public class Factory {
 
     public Mesero crearMesero() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Mesero();
     }
 
-    public Cocinero crearCocinero() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Cocinero crearCocinero(String especialidad) {
+        return new Cocinero(0, 0, especialidad);
     }
 
     public Cliente crearCliente() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return new Cliente(0);
     }
 }

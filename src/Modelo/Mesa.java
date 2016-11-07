@@ -11,27 +11,43 @@ public class Mesa {
     public Mesa() {
     }
 
+    public Mesa(int numMesa, int cantPersonas, boolean estado) {
+        this.numMesa = numMesa;
+        this.cantPersonas = cantPersonas;
+        this.estado = estado;
+    }
+
     public int getNumMesa() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return numMesa;
+    }
+
+    public void setNumMesa(int numMesa) {
+        this.numMesa = numMesa;
     }
 
     public int getCantPersonas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cantPersonas;
     }
 
-    public void setcantPersonas(int cP) {
+    public void setCantPersonas(int cantPersonas) {
+        this.cantPersonas = cantPersonas;
     }
 
-    public void setNumMesa(int nM) {
+    public boolean isEstado() {
+        return estado;
     }
 
-    public boolean getEstado() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setEstado(boolean estado) {
+        this.estado = estado;
     }
-
-    public void setEstado(boolean est) {
-    }
-
+    
     public void limpiarMesa() {
     }
+
+    @Override
+    public String toString() {
+        return "Mesa{" + "numMesa=" + numMesa + ", cantPersonas=" + cantPersonas + ", estado=" + estado + '}';
+    }
+    
+    
 }

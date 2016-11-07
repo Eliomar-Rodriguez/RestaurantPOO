@@ -19,45 +19,66 @@ public class Factura {
     public Factura() {
     }
 
-    public Cliente getCliente() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Factura(Cliente cliente, Date fecha, String hora, Detalle detalle, int impuestoVenta, int cobroServicio) {
+        this.cliente = cliente;
+        this.fecha = fecha;
+        this.hora = hora;
+        this.detalle = detalle;
+        this.impuestoVenta = impuestoVenta;
+        this.cobroServicio = cobroServicio;
     }
 
-    public void setCliente(Cliente c) {
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Date getFecha() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return fecha;
     }
 
-    public void setFecha(Date f) {
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
     public String getHora() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return hora;
     }
 
-    public void setHora(String h) {
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
     public Detalle getDetalle() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return detalle;
     }
 
-    public void setDetalle(Detalle de) {
-    }
-
-    public int getCobroServicio() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setCobroServicio(int cS) {
+    public void setDetalle(Detalle detalle) {
+        this.detalle = detalle;
     }
 
     public int getImpuestoVenta() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return impuestoVenta;
     }
 
-    public void setImpuestoVenta(int iV) {
+    public void setImpuestoVenta(int impuestoVenta) {
+        this.impuestoVenta = impuestoVenta;
     }
+
+    public int getCobroServicio() {
+        return cobroServicio;
+    }
+
+    public void setCobroServicio(int cobroServicio) {
+        this.cobroServicio = cobroServicio;
+    }
+
+    @Override
+    public String toString() {
+        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", detalle=" + detalle + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + '}';
+    }
+    
 }

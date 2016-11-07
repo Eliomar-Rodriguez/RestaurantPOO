@@ -13,31 +13,50 @@ public class Direccion {
     public Direccion() {
     }
 
+    public Direccion(String provincia, String canton, String distrito, String dirExacta) {
+        this.provincia = provincia;
+        this.canton = canton;
+        this.distrito = distrito;
+        this.dirExacta = dirExacta;
+    }
+
     public String getProvincia() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return provincia;
+    }
+
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
     }
 
     public String getCanton() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return canton;
+    }
+
+    public void setCanton(String canton) {
+        this.canton = canton;
     }
 
     public String getDistrito() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return distrito;
+    }
+
+    public void setDistrito(String distrito) {
+        this.distrito = distrito;
     }
 
     public String getDirExacta() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return dirExacta;
     }
 
-    public void setProvincia(String p) {
+    public void setDirExacta(String dirExacta) {
+        this.dirExacta = dirExacta;
     }
 
-    public void setCanton(String c) {
+    @Override
+    public String toString() {
+        return "Direccion{" + "provincia=" + provincia + ", canton=" + canton + ", distrito=" + distrito + ", dirExacta=" + dirExacta + '}';
     }
-
-    public void setDistrito(String d) {
-    }
-
-    public void setDirExacta(String dirEx) {
-    }
+    
+    
+    
 }

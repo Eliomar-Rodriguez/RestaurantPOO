@@ -3,7 +3,7 @@ package Controlador;
 
 import java.awt.event.ActionEvent;
 
-public class Controlador {
+public class Controlador { // controlador solamente se relaciona con factura
 
     //private Vistas vistas;
 

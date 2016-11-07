@@ -19,65 +19,87 @@ public class Orden {
     public Orden() {
     }
 
+    public Orden(Mesero mesero, Mesa mesa, int costoFinal, String formaPago, String hora, int cantPlatos, int cantBebidas) {
+        this.mesero = mesero;
+        this.mesa = mesa;
+        this.costoFinal = costoFinal;
+        this.formaPago = formaPago;
+        this.hora = hora;
+        this.cantPlatos = cantPlatos;
+        this.cantBebidas = cantBebidas;
+    }
+
     public void cerrarOrden() {
-    }
-
-    public void setCostoFinal(int costoFinal) {
-    }
-
-    public int getCostoFinal() {
-        throw new UnsupportedOperationException("Not supported yet.");
     }
 
     public Factura facturar() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public Mesa getMesa() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setMesa(Mesa mesa) {
+    public Mesero getMesero() {
+        return mesero;
     }
 
     public void setMesero(Mesero mesero) {
+        this.mesero = mesero;
     }
 
-    public Mesero getMesero() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Mesa getMesa() {
+        return mesa;
     }
 
-    public int getEstadoPreparacion() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setMesa(Mesa mesa) {
+        this.mesa = mesa;
     }
 
-    public void setEstadoPreparacion(int est) {
+    public int getCostoFinal() {
+        return costoFinal;
+    }
+
+    public void setCostoFinal(int costoFinal) {
+        this.costoFinal = costoFinal;
+    }
+
+    public String getFormaPago() {
+        return formaPago;
+    }
+
+    public void setFormaPago(String formaPago) {
+        this.formaPago = formaPago;
     }
 
     public String getHora() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return hora;
     }
 
-    public void setHora(String h) {
-    }
-
-    public int getCantBebidas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setHora(String hora) {
+        this.hora = hora;
     }
 
     public int getCantPlatos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cantPlatos;
     }
 
-    public void setCantPlatos(int cP) {
+    public void setCantPlatos(int cantPlatos) {
+        this.cantPlatos = cantPlatos;
     }
 
-    public void setCantidadBebidas(int cB) {
+    public int getCantBebidas() {
+        return cantBebidas;
+    }
+
+    public void setCantBebidas(int cantBebidas) {
+        this.cantBebidas = cantBebidas;
     }
 
     public void agregarBebida(Bebida bebida) {
     }
 
     public void agregarPlato(Plato plato) {
+    }
+
+    @Override
+    public String toString() {
+        return "Orden{" + "mesero=" + mesero + ", mesa=" + mesa + ", costoFinal=" + costoFinal + ", formaPago=" + formaPago + ", hora=" + hora + ", cantPlatos=" + cantPlatos + ", cantBebidas=" + cantBebidas + '}';
     }
 }

@@ -11,24 +11,38 @@ public class Persona {
     public Persona() {
     }
 
-    public String getNomCompleto() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Persona(String nombreCompleto, String cedula, String telefono) {
+        this.nombreCompleto = nombreCompleto;
+        this.cedula = cedula;
+        this.telefono = telefono;
     }
 
-    public void setNomCompleto(String nC) {
+    public String getNombreCompleto() {
+        return nombreCompleto;
+    }
+
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
     }
 
     public String getCedula() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cedula;
     }
 
-    public void setCedula(String c) {
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getTelefono() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return telefono;
     }
 
-    public void setTelefono(String tel) {
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    @Override
+    public String toString() {
+        return "Persona{" + "nombreCompleto=" + nombreCompleto + ", cedula=" + cedula + ", telefono=" + telefono + '}';
     }
 }

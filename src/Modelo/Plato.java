@@ -22,52 +22,75 @@ public class Plato {
     public Plato() {
     }
 
-    public String getNomPlato() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public Plato(String nomPlato, int idPlato, int cantCalorias, int precioSinImpuestos, String ingredientes, Cocinero creadorPlato, int estadoPreparacion) {
+        this.nomPlato = nomPlato;
+        this.idPlato = idPlato;
+        this.cantCalorias = cantCalorias;
+        this.precioSinImpuestos = precioSinImpuestos;
+        this.ingredientes = ingredientes;
+        this.creadorPlato = creadorPlato;
+        this.estadoPreparacion = estadoPreparacion;
     }
 
-    public String getIngredientes() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public String getNomPlato() {
+        return nomPlato;
+    }
+
+    public void setNomPlato(String nomPlato) {
+        this.nomPlato = nomPlato;
     }
 
     public int getIdPlato() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return idPlato;
+    }
+
+    public void setIdPlato(int idPlato) {
+        this.idPlato = idPlato;
     }
 
     public int getCantCalorias() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cantCalorias;
+    }
+
+    public void setCantCalorias(int cantCalorias) {
+        this.cantCalorias = cantCalorias;
     }
 
     public int getPrecioSinImpuestos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return precioSinImpuestos;
     }
 
-    public void setIdPlato(int idP) {
+    public void setPrecioSinImpuestos(int precioSinImpuestos) {
+        this.precioSinImpuestos = precioSinImpuestos;
     }
 
-    public void setNomPlato(String nP) {
+    public String getIngredientes() {
+        return ingredientes;
     }
 
-    public void setCantCalorias(int cC) {
-    }
-
-    public void setPrecioSinImpuestos(int pSImp) {
-    }
-
-    public void setIngredientes(String ing) {
+    public void setIngredientes(String ingredientes) {
+        this.ingredientes = ingredientes;
     }
 
     public Cocinero getCreadorPlato() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return creadorPlato;
     }
 
-    public void setCreadorPlato(Cocinero c) {
+    public void setCreadorPlato(Cocinero creadorPlato) {
+        this.creadorPlato = creadorPlato;
     }
 
     public int getEstadoPreparacion() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return estadoPreparacion;
     }
 
-    public void setEstadoPreparacion(int eP) {
+    public void setEstadoPreparacion(int estadoPreparacion) {
+        this.estadoPreparacion = estadoPreparacion;
     }
+
+    @Override
+    public String toString() {
+        return "Plato{" + "nomPlato=" + nomPlato + ", idPlato=" + idPlato + ", cantCalorias=" + cantCalorias + ", precioSinImpuestos=" + precioSinImpuestos + ", ingredientes=" + ingredientes + ", creadorPlato=" + creadorPlato + ", estadoPreparacion=" + estadoPreparacion + '}';
+    }
+    
 }

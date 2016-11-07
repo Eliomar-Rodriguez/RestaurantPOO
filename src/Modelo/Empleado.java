@@ -9,17 +9,30 @@ public class Empleado extends Persona {
     public Empleado() {
     }
 
+    public Empleado(String direccion, String correo) {
+        this.direccion = direccion;
+        this.correo = correo;
+    }
+
     public String getDireccion() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getCorreo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return correo;
     }
 
-    public void setDireccion(String d) {
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public void setCorreo(String corr) {
+    @Override
+    public String toString() {
+        return "Empleado{" + "direccion=" + direccion + ", correo=" + correo + '}';
     }
+    
 }

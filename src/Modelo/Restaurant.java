@@ -22,40 +22,53 @@ public class Restaurant {
     public Restaurant() {
     }
 
+    public Restaurant(String nombre, String dirLogo, String telefono, String direccion, String correo) {
+        this.nombre = nombre;
+        this.dirLogo = dirLogo;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.correo = correo;
+    }
+
     public String getNombre() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDirLogo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return dirLogo;
+    }
+
+    public void setDirLogo(String dirLogo) {
+        this.dirLogo = dirLogo;
     }
 
     public String getTelefono() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public String getDireccion() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
 
     public String getCorreo() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return correo;
     }
 
-    public void setNombre(String n) {
-    }
-
-    public void setDirLogo(String l) {
-    }
-
-    public void setTelefono(String t) {
-    }
-
-    public void setDireccion(String d) {
-    }
-
-    public void setCorreo(String c) {
-    }
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }    
 
     public Empleado getEmpleadoMes() {
         throw new UnsupportedOperationException("Not supported yet.");

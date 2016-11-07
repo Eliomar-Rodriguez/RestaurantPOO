@@ -11,14 +11,13 @@ public class Cocinero extends Empleado {
     public Cocinero() {
     }
 
+    public Cocinero(int cantPlatosCocinados, int cantidadBebidasHechas, String especialidad) {
+        this.cantPlatosCocinados = cantPlatosCocinados;
+        this.cantidadBebidasHechas = cantidadBebidasHechas;
+        this.especialidad = especialidad;
+    }
+    
     public void crearPlato() {
-    }
-
-    public int getCantPlatosCocinados() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setCantidadPlatosCocinados(int pC) {
     }
 
     public void verOrdenesPendientes() {
@@ -27,17 +26,33 @@ public class Cocinero extends Empleado {
     public void cocinarPlatillo(Plato plato) {
     }
 
-    public int getCantBebidasHechas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public int getCantPlatosCocinados() {
+        return cantPlatosCocinados;
     }
 
-    public void setCantBebidasHechas(int cBH) {
+    public void setCantPlatosCocinados(int cantPlatosCocinados) {
+        this.cantPlatosCocinados = cantPlatosCocinados;
+    }
+
+    public int getCantidadBebidasHechas() {
+        return cantidadBebidasHechas;
+    }
+
+    public void setCantidadBebidasHechas(int cantidadBebidasHechas) {
+        this.cantidadBebidasHechas = cantidadBebidasHechas;
     }
 
     public String getEspecialidad() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return especialidad;
     }
 
-    public void setEspecialidad(String e) {
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
+
+    @Override
+    public String toString() {
+        return "Cocinero{" + "cantPlatosCocinados=" + cantPlatosCocinados + ", cantidadBebidasHechas=" + cantidadBebidasHechas + ", especialidad=" + especialidad + '}';
+    }
+    
 }

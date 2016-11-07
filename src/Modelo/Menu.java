@@ -9,17 +9,15 @@ public class Menu {
     public Menu() {
     }
 
-    public int getIdMenu() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void setIdMenu(int id) {
+    public Menu(int cantBebidas, int cantPlatos) {
+        this.cantBebidas = cantBebidas;
+        this.cantPlatos = cantPlatos;
     }
 
     public void agregarBebida(Bebida b) {
     }
 
-    public void agregarPlaro(Plato plato) {
+    public void agregarPlato(Plato plato) {
     }
 
     public void borrarBebida(Bebida b) {
@@ -34,17 +32,25 @@ public class Menu {
     public void buscarPlato(String nomPlato) {
     }
 
-    public void setCantPlatos(int cP) {
-    }
-
-    public void setCantBebidas(int cB) {
-    }
-
     public int getCantBebidas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cantBebidas;
+    }
+
+    public void setCantBebidas(int cantBebidas) {
+        this.cantBebidas = cantBebidas;
     }
 
     public int getCantPlatos() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return cantPlatos;
     }
+
+    public void setCantPlatos(int cantPlatos) {
+        this.cantPlatos = cantPlatos;
+    }
+
+    @Override
+    public String toString() {
+        return "Menu{" + "cantBebidas=" + cantBebidas + ", cantPlatos=" + cantPlatos + '}';
+    }
+    
 }

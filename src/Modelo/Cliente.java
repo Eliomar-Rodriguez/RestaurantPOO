@@ -2,15 +2,26 @@ package Modelo;
 
 public class Cliente extends Persona {
 
-    private int visitasRealizadas;
+    private int visitasRealizadas; // cantidad de visitas para luego buscar el cliente con mayor visitas
 
-    public Cliente() {
+    public Cliente(int visitasRealizadas) {
+        this.visitasRealizadas = visitasRealizadas;
     }
 
+    public Cliente() {
+    }    
+
     public int getVisitasRealizadas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return visitasRealizadas;
     }
 
     public void setVisitasRealizadas(int vR) {
+        this.visitasRealizadas=vR;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "visitasRealizadas=" + visitasRealizadas + '}';
+    }
+    
 }
