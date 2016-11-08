@@ -1,5 +1,6 @@
 package Modelo;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Factura {
@@ -10,24 +11,42 @@ public class Factura {
 
     private String hora;
 
-    private Detalle detalle;
-
     private int impuestoVenta;
 
     private int cobroServicio;
+    
+    private int precioTotal;
+    private ArrayList<Detalle> listaDetalles;
 
     public Factura() {
     }
 
-    public Factura(Cliente cliente, Date fecha, String hora, Detalle detalle, int impuestoVenta, int cobroServicio) {
+    public Factura(Cliente cliente, Date fecha, String hora, Detalle detalle, int impuestoVenta, int cobroServicio,int precioTotal) {
         this.cliente = cliente;
         this.fecha = fecha;
         this.hora = hora;
-        this.detalle = detalle;
         this.impuestoVenta = impuestoVenta;
         this.cobroServicio = cobroServicio;
+        this.precioTotal = precioTotal;
+        this.listaDetalles = new ArrayList();
     }
 
+    public Detalle getListaDetalle(int i) {
+        return listaDetalles.get(i);
+    }
+
+    public void setDetalle(Detalle detalle) {
+        this.listaDetalles.add(detalle);
+    }
+    
+    public int getPrecioTotal() {
+        return precioTotal;
+    }
+
+    public void setPrecioTotal(int precioTotal) {
+        this.precioTotal = precioTotal;
+    }
+ 
     public Cliente getCliente() {
         return cliente;
     }
@@ -52,14 +71,6 @@ public class Factura {
         this.hora = hora;
     }
 
-    public Detalle getDetalle() {
-        return detalle;
-    }
-
-    public void setDetalle(Detalle detalle) {
-        this.detalle = detalle;
-    }
-
     public int getImpuestoVenta() {
         return impuestoVenta;
     }
@@ -78,7 +89,7 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", detalle=" + detalle + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + '}';
+        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + '}';
     }
     
 }

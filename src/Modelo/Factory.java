@@ -1,8 +1,6 @@
 package Modelo;
 
 public interface Factory {
-
-    
     
     public Cliente crearCliente(int visitasRealizadas, String nombreCompleto, String cedula, String telefono);
     
