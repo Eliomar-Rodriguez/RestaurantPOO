@@ -10,23 +10,23 @@ import java.util.ArrayList;
 
 public class Restaurant {
 
-    private String nombre;
+    protected String nombre;
 
-    private String dirLogo;
+    protected String dirLogo;
 
-    private String telefono;
+    protected String telefono;
 
-    private String correo;
+    protected String correo;
     
-    private Menu menu;
+    protected Menu menu;
     
-    private Direccion direccion;
+    protected Direccion direccion;
     
     //private ArrayList<Direccion> direccion;      
-    private ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restuarant
-    private ArrayList<Mesa> listaMesas;
-    private ArrayList<Factura> facturas;
-    private ArrayList<Cliente> listaClientes;
+    protected ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
+    protected ArrayList<Mesa> listaMesas;
+    protected ArrayList<Factura> facturas;
+    protected ArrayList<Cliente> listaClientes;
     
 
     public Restaurant() {
@@ -89,7 +89,6 @@ public class Restaurant {
     public String getCorreo() {
         return correo;
     }
-
     public void setCorreo(String correo) {
         this.correo = correo;
     }    
@@ -160,7 +159,8 @@ public class Restaurant {
             }
         }
     }
-
+    
+    
     public void ponerMesaDisponible(Mesa m) {
         for (int i = 0; i < listaMesas.size(); i++) {
             if (listaMesas.get(i).equals(m)){
