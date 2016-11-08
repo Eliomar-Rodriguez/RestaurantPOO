@@ -7,6 +7,9 @@ package Interfaz;
 
 import Modelo.Cliente;
 import Modelo.CrearFabrica;
+import Modelo.Restaurant;
+import java.util.ArrayList;
+import Modelo.Restaurant;
 
 /**
  *
@@ -30,17 +33,28 @@ public class RegistrarCliente extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setText("Registro de Clientes");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(242, 242, 242)
+                .addComponent(jLabel1)
+                .addContainerGap(223, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(jLabel1)
+                .addContainerGap(357, Short.MAX_VALUE))
         );
 
         pack();
@@ -50,13 +64,19 @@ public class RegistrarCliente extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+       
         
         CrearFabrica f = new CrearFabrica();
-    
+        
+        Restaurant r = new Restaurant("Restaurante la Casona","Logo1","2474-45-64","lacasona@gmail.com");
+        
         Cliente c1 = f.crearCliente(3, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
         Cliente c2 = f.crearCliente(5, "Eliomar Rodriguez ", "2-0734-0342", "8458-3234");
         
+        
         System.out.println(c1.mostrar());
+        System.out.println(r.toString());
+       
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -66,5 +86,6 @@ public class RegistrarCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
