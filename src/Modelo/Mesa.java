@@ -33,7 +33,7 @@ public class Mesa {
         this.cantPersonas = cantPersonas;
     }
 
-    public boolean isEstado() {
+    public boolean getEstado() {
         return estado;
     }
 
