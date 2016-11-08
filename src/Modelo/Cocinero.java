@@ -1,5 +1,5 @@
 package Modelo;
-
+import Modelo.Restaurant;
 public class Cocinero extends Empleado {
 
     private int cantPlatosCocinados;
@@ -20,10 +20,19 @@ public class Cocinero extends Empleado {
 
     
     
-    public void crearPlato() {
+    public void crearPlato() {// como lo hago? lleno datos aqui o recibo por parametros un plato?
     }
 
     public void verOrdenesPendientes() {
+        System.out.println("Bebidas");
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            System.out.println(Restaurant.listaOrdenes.get(i).getBebida(i));
+        }
+        System.out.println("Platos");
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            System.out.println(Restaurant.listaOrdenes.get(i).getPlato(i));
+        }
+        
     }
 
     public void cocinarPlatillo(Plato plato) {
