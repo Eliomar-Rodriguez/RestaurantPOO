@@ -11,11 +11,14 @@ public class Cocinero extends Empleado {
     public Cocinero() {
     }
 
-    public Cocinero(int cantPlatosCocinados, int cantidadBebidasHechas, String especialidad) {
+    public Cocinero(int cantPlatosCocinados, int cantidadBebidasHechas, String especialidad, String direccion, String correo, String nombreCompleto, String cedula, String telefono) {
+        super(direccion, correo, nombreCompleto, cedula, telefono);
         this.cantPlatosCocinados = cantPlatosCocinados;
         this.cantidadBebidasHechas = cantidadBebidasHechas;
         this.especialidad = especialidad;
     }
+
+    
     
     public void crearPlato() {
     }
