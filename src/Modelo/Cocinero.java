@@ -17,7 +17,6 @@ public class Cocinero extends Empleado {
         this.cantidadBebidasHechas = cantidadBebidasHechas;
         this.especialidad = especialidad;
     }
-
     
     
     public void crearPlato() {// como lo hago? lleno datos aqui o recibo por parametros un plato?

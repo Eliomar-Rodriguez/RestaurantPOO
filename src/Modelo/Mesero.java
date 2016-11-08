@@ -12,8 +12,6 @@ public class Mesero extends Empleado {
         this.idiomasDomina = idiomasDomina;
     }
 
-    
-    
     public void ubicarCliente() {
     }
 
