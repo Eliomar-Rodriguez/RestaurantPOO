@@ -2,19 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group name="Proyectos"/>
-=======
-        <group name="Proyectos">
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Controlador/Controlador.java</file>
-        </group>
         <group>
-            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Modelo/Cliente.java</file>
-            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Modelo/CrearFabrica.java</file>
             <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Interfaz/RegistrarCliente.java</file>
             <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Interfaz/Main.java</file>
+            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Consultas/Consulta.java</file>
             <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Modelo/Restaurant.java</file>
+            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Reportes/Reporte.java</file>
         </group>
->>>>>>> a720a4ad45110cd8150a27b0d6e119ca4806a960
     </open-files>
 </project-private>
