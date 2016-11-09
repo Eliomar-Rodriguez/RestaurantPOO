@@ -7,10 +7,12 @@ public class Mesero extends Empleado {
     public Mesero() {
     } 
 
-    public Mesero(String direccion, String correo,String idiomasDomida) {
-        super(direccion, correo);
-        this.idiomasDomina=idiomasDomida;
+    public Mesero(String idiomasDomina, String direccion, String correo, String nombreCompleto, String cedula, String telefono) {
+        super(direccion, correo, nombreCompleto, cedula, telefono);
+        this.idiomasDomina = idiomasDomina;
     }
+
+    
     
     public void ubicarCliente() {
     }

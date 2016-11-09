@@ -1,5 +1,5 @@
 package Modelo;
-
+import Modelo.Restaurant;
 public class Cocinero extends Empleado {
 
     private int cantPlatosCocinados;
@@ -11,16 +11,28 @@ public class Cocinero extends Empleado {
     public Cocinero() {
     }
 
-    public Cocinero(int cantPlatosCocinados, int cantidadBebidasHechas, String especialidad) {
+    public Cocinero(int cantPlatosCocinados, int cantidadBebidasHechas, String especialidad, String direccion, String correo, String nombreCompleto, String cedula, String telefono) {
+        super(direccion, correo, nombreCompleto, cedula, telefono);
         this.cantPlatosCocinados = cantPlatosCocinados;
         this.cantidadBebidasHechas = cantidadBebidasHechas;
         this.especialidad = especialidad;
     }
+
     
-    public void crearPlato() {
+    
+    public void crearPlato() {// como lo hago? lleno datos aqui o recibo por parametros un plato?
     }
 
     public void verOrdenesPendientes() {
+        System.out.println("Bebidas");
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            System.out.println(Restaurant.listaOrdenes.get(i).getBebida(i));
+        }
+        System.out.println("Platos");
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            System.out.println(Restaurant.listaOrdenes.get(i).getPlato(i));
+        }
+        
     }
 
     public void cocinarPlatillo(Plato plato) {

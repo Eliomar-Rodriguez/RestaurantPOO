@@ -1,5 +1,7 @@
 package Modelo;
 
+import java.util.ArrayList;
+
 public class Orden {
 
     private Mesero mesero;
@@ -15,6 +17,8 @@ public class Orden {
     private int cantPlatos;
 
     private int cantBebidas;
+    private ArrayList<Bebida> listaBebidas;
+    private ArrayList<Plato> listaPlatos;
 
     public Orden() {
     }
@@ -27,8 +31,19 @@ public class Orden {
         this.hora = hora;
         this.cantPlatos = cantPlatos;
         this.cantBebidas = cantBebidas;
+        this.listaBebidas = new ArrayList();
+        this.listaPlatos = new ArrayList();
     }
 
+    public Bebida getBebida(int i) {
+        return listaBebidas.get(i);
+    }
+
+    public Plato getPlato(int i) {
+        return listaPlatos.get(i);
+    }
+
+    
     public void cerrarOrden() {
     }
 
@@ -93,9 +108,11 @@ public class Orden {
     }
 
     public void agregarBebida(Bebida bebida) {
+        listaBebidas.add(bebida);
     }
 
     public void agregarPlato(Plato plato) {
+        listaPlatos.add(plato);
     }
 
     @Override
