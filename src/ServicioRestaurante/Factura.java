@@ -1,4 +1,4 @@
-package Modelo;
+package ServicioRestaurante;
 
 import java.util.ArrayList;
 import java.util.Date;

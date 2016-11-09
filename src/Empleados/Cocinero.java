@@ -1,5 +1,7 @@
-package Modelo;
-import Modelo.Restaurant;
+package Empleados;
+import ServicioRestaurante.Plato;
+import ServicioRestaurante.Restaurant;
+import ServicioRestaurante.Restaurant;
 public class Cocinero extends Empleado {
 
     private int cantPlatosCocinados;

@@ -1,4 +1,6 @@
-package Modelo;
+package Empleados;
+
+import ServicioRestaurante.Orden;
 
 public class Mesero extends Empleado {
 

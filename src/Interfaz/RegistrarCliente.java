@@ -5,11 +5,11 @@
  */
 package Interfaz;
 
-import Modelo.Cliente;
-import Modelo.CrearFabrica;
-import Modelo.Restaurant;
+import ServicioRestaurante.Cliente;
+import Empleados.CrearFabrica;
+import ServicioRestaurante.Restaurant;
 import java.util.ArrayList;
-import Modelo.Restaurant;
+import ServicioRestaurante.Restaurant;
 
 /**
  *

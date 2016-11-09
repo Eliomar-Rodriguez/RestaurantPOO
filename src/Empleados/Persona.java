@@ -1,4 +1,4 @@
-package Modelo;
+package Empleados;
 
 public abstract class Persona {
 

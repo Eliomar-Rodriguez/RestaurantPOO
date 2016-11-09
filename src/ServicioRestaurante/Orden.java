@@ -1,5 +1,6 @@
-package Modelo;
+package ServicioRestaurante;
 
+import Empleados.Mesero;
 import java.util.ArrayList;
 
 public class Orden {

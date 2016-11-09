@@ -5,11 +5,11 @@
  */
 package Interfaz;
 
-import Modelo.Cliente;
-import Modelo.Cocinero;
-import Modelo.CrearFabrica;
-import Modelo.Mesero;
-import Modelo.Restaurant;
+import ServicioRestaurante.Cliente;
+import Empleados.Cocinero;
+import Empleados.CrearFabrica;
+import Empleados.Mesero;
+import ServicioRestaurante.Restaurant;
 
 /**
  *

@@ -1,4 +1,6 @@
-package Modelo;
+package Empleados;
+
+import ServicioRestaurante.Cliente;
 
 public interface Factory {
     

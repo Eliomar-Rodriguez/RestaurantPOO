@@ -1,7 +1,7 @@
-package Modelo;
+package ServicioRestaurante;
 
 
-import Modelo.Cocinero;
+import Empleados.Cocinero;
 
 public class Plato {
 

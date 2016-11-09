@@ -1,11 +1,11 @@
-package Modelo;
+package ServicioRestaurante;
 
 
-import Modelo.Factura;
-import Modelo.Cliente;
-import Modelo.Orden;
-import Modelo.Empleado;
-import Modelo.Mesa;
+import ServicioRestaurante.Factura;
+import ServicioRestaurante.Cliente;
+import ServicioRestaurante.Orden;
+import Empleados.Empleado;
+import ServicioRestaurante.Mesa;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

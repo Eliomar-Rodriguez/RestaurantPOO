@@ -1,4 +1,4 @@
-package Modelo;
+package Empleados;
 
 public class Empleado extends Persona {
 
