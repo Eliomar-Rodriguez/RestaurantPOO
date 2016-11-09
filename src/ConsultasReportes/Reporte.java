@@ -53,7 +53,7 @@ public class Reporte {
     
     public int totalVendidoXAno() {// vendido por ano pensar bien como hacerlo
         int total = 0;
-        
+        //asd
         return total;        
     }
 
