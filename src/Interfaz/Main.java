@@ -5,6 +5,12 @@
  */
 package Interfaz;
 
+import Modelo.Cliente;
+import Modelo.Cocinero;
+import Modelo.CrearFabrica;
+import Modelo.Mesero;
+import Modelo.Restaurant;
+
 /**
  *
  * @author Peniche
@@ -79,6 +85,18 @@ public class Main extends javax.swing.JFrame {
      */
     public static void main(String args[]) {
         
+        CrearFabrica f = new CrearFabrica();
+        
+        Restaurant r = new Restaurant("Restaurante la Casona","Logo1","2474-45-64","lacasona@gmail.com");
+        
+        Cliente c1 = f.crearCliente(3, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
+        Cliente c2 = f.crearCliente(5, "Eliomar Rodriguez ", "2-0734-0342", "8458-3234");
+        
+        Mesero m1 = f.crearMesero("Ingles", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "2-0567-0945", "9876-4567");
+        
+        Cocinero co1 = f.creaCocinero(1, 2, "Postres", "Aguas Zarcas", "oaisdnaiosd@dsdasd", "Juan Perez", "2345-5678", "83638-3455");
+        
+        System.out.println(c1.mostrar());
         
         
         java.awt.EventQueue.invokeLater(new Runnable() {

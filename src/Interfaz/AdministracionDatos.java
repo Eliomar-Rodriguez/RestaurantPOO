@@ -38,6 +38,11 @@ public class AdministracionDatos extends javax.swing.JFrame {
         jLabel1.setText("Administracion de Datos");
 
         botonRegistroEmpleado.setText("Registrar Empleado");
+        botonRegistroEmpleado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonRegistroEmpleadoActionPerformed(evt);
+            }
+        });
 
         botonBorrarEmpleado.setText("Borrar Empleado");
 
@@ -55,20 +60,19 @@ public class AdministracionDatos extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(165, 165, 165)
-                        .addComponent(botonVolver))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(botonRegistroEmpleado)
-                                .addGap(18, 18, 18)
-                                .addComponent(botonBorrarEmpleado)))
+                        .addComponent(botonRegistroEmpleado)
                         .addGap(18, 18, 18)
-                        .addComponent(botonModificar)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(botonBorrarEmpleado)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(botonVolver)))))
+                .addGap(18, 18, 18)
+                .addComponent(botonModificar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -92,6 +96,12 @@ public class AdministracionDatos extends javax.swing.JFrame {
     private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_botonModificarActionPerformed
+
+    private void botonRegistroEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroEmpleadoActionPerformed
+        RegistroEmpleado r = new RegistroEmpleado();
+        r.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_botonRegistroEmpleadoActionPerformed
 
     /**
      * @param args the command line arguments

@@ -16,7 +16,6 @@ public class CrearFabrica implements Factory{
         return new Cliente(visitasRealizadas,nombreCompleto,cedula,telefono);
     }
 
-
     @Override
     public Mesero crearMesero(String idiomasDomina, String direccion, String correo, String nombreCompleto, String cedula, String telefono) {
         return new Mesero(idiomasDomina,direccion,correo,nombreCompleto,cedula,telefono);
