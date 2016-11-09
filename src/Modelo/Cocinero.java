@@ -17,7 +17,6 @@ public class Cocinero extends Empleado {
         this.cantidadBebidasHechas = cantidadBebidasHechas;
         this.especialidad = especialidad;
     }
-
     
     
     public void crearPlato() {// como lo hago? lleno datos aqui o recibo por parametros un plato?
@@ -66,5 +65,12 @@ public class Cocinero extends Empleado {
     public String toString() {
         return "Cocinero{" + "cantPlatosCocinados=" + cantPlatosCocinados + ", cantidadBebidasHechas=" + cantidadBebidasHechas + ", especialidad=" + especialidad + '}';
     }
+    
+    @Override
+    public String mostrar() {
+        return "Cocinero{"+ "Platos cocinados=" + cantPlatosCocinados + "Bebidas hechas=" + cantidadBebidasHechas + "Especialidad="+ especialidad+ "Direccion=" + direccion + ",Correo=" + correo + ",Cedula=" + cedula + ",Telefono=" + telefono + '}';
+    }
+    
+    
     
 }
