@@ -28,22 +28,27 @@ public class AdministracionDatos extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        botonRegistroEmpleado = new javax.swing.JButton();
+        botonBorrarEmpleado = new javax.swing.JButton();
+        botonModificar = new javax.swing.JButton();
+        botonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Administracion de Datos");
 
-        jButton1.setText("Registrar Empleado");
+        botonRegistroEmpleado.setText("Registrar Empleado");
 
-        jButton2.setText("Borrar Empleado");
+        botonBorrarEmpleado.setText("Borrar Empleado");
 
-        jButton3.setText("Modificar Informacion");
+        botonModificar.setText("Modificar Informacion");
+        botonModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonModificarActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Volver Atras");
+        botonVolver.setText("Volver Atras");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -53,17 +58,17 @@ public class AdministracionDatos extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(165, 165, 165)
-                        .addComponent(jButton4))
+                        .addComponent(botonVolver))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(botonRegistroEmpleado)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)))
+                                .addComponent(botonBorrarEmpleado)))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3)))
+                        .addComponent(botonModificar)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -73,16 +78,20 @@ public class AdministracionDatos extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(botonRegistroEmpleado)
+                    .addComponent(botonBorrarEmpleado)
+                    .addComponent(botonModificar))
                 .addGap(18, 18, 18)
-                .addComponent(jButton4)
+                .addComponent(botonVolver)
                 .addContainerGap(13, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void botonModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonModificarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -99,10 +108,10 @@ public class AdministracionDatos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton botonBorrarEmpleado;
+    private javax.swing.JButton botonModificar;
+    private javax.swing.JButton botonRegistroEmpleado;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
