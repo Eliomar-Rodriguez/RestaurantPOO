@@ -3,6 +3,7 @@ package ServicioRestaurante;
 import java.util.ArrayList;
 import java.util.Date;
 
+//clase factura para cobrarle al cliente
 public class Factura {
 
     private Cliente cliente;
@@ -20,7 +21,7 @@ public class Factura {
 
     public Factura() {
     }
-
+        
     public Factura(Cliente cliente, Date fecha, String hora, Detalle detalle, int impuestoVenta, int cobroServicio,int precioTotal) {
         this.cliente = cliente;
         this.fecha = fecha;

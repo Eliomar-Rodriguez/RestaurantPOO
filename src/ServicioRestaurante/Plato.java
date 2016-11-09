@@ -3,6 +3,7 @@ package ServicioRestaurante;
 
 import Empleados.Cocinero;
 
+//CLASE PLATO QUE TIENE  ATRIBUTOS DEL PLATO
 public class Plato {
 
     private String nomPlato;

@@ -1,5 +1,7 @@
 package Empleados;
 
+//CLASE EMPLEADO
+
 public class Empleado extends Persona {
 
     protected String direccion;

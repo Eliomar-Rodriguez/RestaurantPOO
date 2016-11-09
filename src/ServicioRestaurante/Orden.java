@@ -3,6 +3,7 @@ package ServicioRestaurante;
 import Empleados.Mesero;
 import java.util.ArrayList;
 
+//CLASE ORDEN QUE CONTENDRA LO PEDIDO POR EL CLIENTE
 public class Orden {
 
     private Mesero mesero;

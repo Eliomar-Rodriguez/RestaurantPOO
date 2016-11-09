@@ -1,5 +1,6 @@
 package Empleados;
 
+//CLASE ABSTRACTA PERSONA PARA IMPLEMENTAR SUS METODOS Y UTILIZAR EL PATRON FACTORY
 public abstract class Persona {
 
     protected String nombreCompleto;
@@ -45,6 +46,6 @@ public abstract class Persona {
     public String toString() {
         return "Persona{" + "nombreCompleto=" + nombreCompleto + ", cedula=" + cedula + ", telefono=" + telefono + '}';
     }
-    
+    //METODO ABSTRACTO QUE VA A CONTENER LA INFORMACION CREADA POR EL FACTORY
     public abstract String mostrar();
 }

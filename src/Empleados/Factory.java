@@ -1,5 +1,7 @@
 package Empleados;
 
+
+//INTERFACE FACTORY PARA LOS METODOS ABSTRACTOS
 import ServicioRestaurante.Cliente;
 
 public interface Factory {

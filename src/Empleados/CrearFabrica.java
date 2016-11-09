@@ -11,6 +11,8 @@ import ServicioRestaurante.Cliente;
  *
  * @author Peniche
  */
+
+// fabrica que contendra los metodos del factory para crearlos.
 public class CrearFabrica implements Factory{
 
     @Override
