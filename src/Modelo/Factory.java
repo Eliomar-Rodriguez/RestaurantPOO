@@ -11,6 +11,6 @@ public class Factory {
     }
 
     public Cliente crearCliente() {
-        return new Cliente(0);
+        return new Cliente(0,"","","");
     }
 }
