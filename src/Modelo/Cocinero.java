@@ -66,4 +66,11 @@ public class Cocinero extends Empleado {
         return "Cocinero{" + "cantPlatosCocinados=" + cantPlatosCocinados + ", cantidadBebidasHechas=" + cantidadBebidasHechas + ", especialidad=" + especialidad + '}';
     }
     
+    @Override
+    public String mostrar() {
+        return "Cocinero{"+ "Platos cocinados=" + cantPlatosCocinados + "Bebidas hechas=" + cantidadBebidasHechas + "Especialidad="+ especialidad+ "Direccion=" + direccion + ",Correo=" + correo + ",Cedula=" + cedula + ",Telefono=" + telefono + '}';
+    }
+    
+    
+    
 }

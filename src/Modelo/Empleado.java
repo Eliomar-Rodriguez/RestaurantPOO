@@ -2,9 +2,9 @@ package Modelo;
 
 public class Empleado extends Persona {
 
-    private String direccion;
+    protected String direccion;
 
-    private String correo;
+    protected String correo;
 
     public Empleado() {
     }

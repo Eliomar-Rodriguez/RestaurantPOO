@@ -6,7 +6,7 @@ public class Mesero extends Empleado {
 
     public Mesero() {
     } 
-
+    
     public Mesero(String idiomasDomina, String direccion, String correo, String nombreCompleto, String cedula, String telefono) {
         super(direccion, correo, nombreCompleto, cedula, telefono);
         this.idiomasDomina = idiomasDomina;
@@ -32,6 +32,11 @@ public class Mesero extends Empleado {
     @Override
     public String toString() {
         return "Mesero{" + "idiomasDomina=" + idiomasDomina + '}';
+    }
+    
+    @Override
+    public String mostrar() {
+        return "Mesero{"+ "Idiomas que domina=" + idiomasDomina + "Direccion=" + direccion + ",Correo=" + correo + ",Cedula=" + cedula + ",Telefono=" + telefono + '}';
     }
     
 }
