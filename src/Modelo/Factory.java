@@ -1,6 +1,6 @@
 package Modelo;
 
-public interface Factory {
+public interface Factory { // DEBEN SER COCINERO Y EMPLEADO
     
     public Cliente crearCliente(int visitasRealizadas, String nombreCompleto, String cedula, String telefono);
     
