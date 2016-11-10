@@ -1,5 +1,6 @@
 package ServicioRestaurante;
 
+import Empleados.Cliente;
 import java.util.ArrayList;
 import java.util.Date;
 

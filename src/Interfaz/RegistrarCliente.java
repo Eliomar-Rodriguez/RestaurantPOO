@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import ServicioRestaurante.Cliente;
+import Empleados.Cliente;
 import Empleados.CrearFabrica;
 import ServicioRestaurante.Restaurant;
 import java.util.ArrayList;

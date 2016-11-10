@@ -1,6 +1,7 @@
-package ServicioRestaurante;
+package Empleados;
 
 import Empleados.Persona;
+import ServicioRestaurante.Factura;
 import java.util.ArrayList;
 
 public class Cliente extends Persona {

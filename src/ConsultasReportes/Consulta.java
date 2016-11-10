@@ -6,7 +6,7 @@
 package ConsultasReportes;
 
 import Empleados.Empleado;
-import ServicioRestaurante.Cliente;
+import Empleados.Cliente;
 import ServicioRestaurante.Factura;
 import java.util.ArrayList;
 

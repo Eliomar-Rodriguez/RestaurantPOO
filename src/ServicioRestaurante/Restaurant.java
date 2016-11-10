@@ -2,7 +2,7 @@ package ServicioRestaurante;
 
 
 import ServicioRestaurante.Factura;
-import ServicioRestaurante.Cliente;
+import Empleados.Cliente;
 import ServicioRestaurante.Orden;
 import Empleados.Empleado;
 import ServicioRestaurante.Mesa;
