@@ -1,7 +1,8 @@
-package Modelo;
+package ServicioRestaurante;
 
 import java.util.ArrayList;
 
+//CLASE QUE CONTIENE TODO LO RELACIONADO A COMIDAS Y BEBIDAS
 public class Menu {
 
     private int cantBebidas;

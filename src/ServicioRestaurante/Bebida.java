@@ -1,4 +1,6 @@
-package Modelo;
+package ServicioRestaurante;
+
+import Empleados.Cocinero;
 
 public class Bebida {
 

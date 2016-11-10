@@ -1,5 +1,6 @@
-package Modelo;
+package ServicioRestaurante;
 
+//clase mesa que contiene atributos de la misma
 public class Mesa {
 
     private int numMesa;

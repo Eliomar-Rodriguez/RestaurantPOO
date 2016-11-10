@@ -1,15 +1,16 @@
-package Modelo;
+package ServicioRestaurante;
 
 
-import Modelo.Factura;
-import Modelo.Cliente;
-import Modelo.Orden;
-import Modelo.Empleado;
-import Modelo.Mesa;
+import ServicioRestaurante.Factura;
+import ServicioRestaurante.Cliente;
+import ServicioRestaurante.Orden;
+import Empleados.Empleado;
+import ServicioRestaurante.Mesa;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Calendar;
+
 
 public class Restaurant {
 
@@ -97,95 +98,6 @@ public class Restaurant {
     public void setCorreo(String correo) {
         this.correo = correo;
     }    
-
-    public Empleado getEmpleadoMes() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
-    public void dosPlatosMasConsumidos() {
-    }
-
-    public void horaPicoRest() {
-        String horaPico,hora;
-        int veces=0,mayor=0;
-        
-        for (int i = 0; i < facturas.size(); i++) {
-            hora = facturas.get(i).getHora();
-            
-            for (int j = 0; j < facturas.size(); j++) {
-                if (facturas.get(i).getHora().equals(hora)){
-                    veces++;
-                } 
-            }
-            if (veces>mayor){
-                horaPico = facturas.get(i).getHora();
-            }
-            mayor = veces;
-            veces=0;
-        }
-    }
-
-    public Cliente clienteFrecuente() {
-        int vecesActual=0,vecesMayor=0, mayor=0;
-        
-        for (int i = 0; i < listaClientes.size(); i++) {
-            
-            for (int j = 0; j < facturas.size(); j++) {
-                if (listaClientes.get(i).getCedula().equals(facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
-                    vecesActual++;
-                }                                
-            }
-            if (vecesActual>vecesMayor){
-                mayor=i;
-            }
-            vecesMayor=vecesActual; 
-            vecesActual=0;
-        }
-    return listaClientes.get(mayor);
-    }
-
-    public int totalPrecioXPlatoMes(Plato plato,int mes) {
-        int precioTotal =0;
-        for (int i = 0; i < facturas.size(); i++) {
-                        
-        }
-        return precioTotal;
-    }
-
-    public int totalBebidasXDia(Date dia) { //  ocupa del tipo de bebida...
-        int total=0;
-        for (int i = 0; i < facturas.size(); i++) {
-            //facturas.get(i).getDetalle().getBebida(i);// esta mal, falta pensar bien
-        }
-        return 0;
-    }
-
-    public int totalVendidoXMes(int mes) {// vendido por mes pensar bien como hacerlo porque son con lapso de tiempo     
-        int total = 0;
-        for (int i = 0; i < facturas.size(); i++) {
-            
-            String formato="MM";
-            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
-            
-            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                total += facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
-            }
-        }
-        return total;
-    }
-    
-    public int totalVendidoXAno() {// vendido por ano pensar bien como hacerlo
-        int total = 0;
-        
-        return total;        
-    }
-
-    public int totalClientesXMes() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-    public int totalClientesXAno() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
 
     public boolean hayMesa(int cantPersonas) {
         for (int i = 0; i < listaMesas.size(); i++) {

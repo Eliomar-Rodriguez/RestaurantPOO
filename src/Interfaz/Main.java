@@ -5,6 +5,12 @@
  */
 package Interfaz;
 
+import ServicioRestaurante.Cliente;
+import Empleados.Cocinero;
+import Empleados.CrearFabrica;
+import Empleados.Mesero;
+import ServicioRestaurante.Restaurant;
+
 /**
  *
  * @author Peniche
@@ -27,15 +33,15 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonRegistroCliente = new javax.swing.JButton();
+        botonAdmin = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        botonRegistroCliente.setText("Registrar Cliente");
-        botonRegistroCliente.addActionListener(new java.awt.event.ActionListener() {
+        botonAdmin.setText("Administracion de datos");
+        botonAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonRegistroClienteActionPerformed(evt);
+                botonAdminActionPerformed(evt);
             }
         });
 
@@ -47,36 +53,50 @@ public class Main extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(123, 123, 123)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1)
-                    .addComponent(botonRegistroCliente))
-                .addContainerGap(149, Short.MAX_VALUE))
+                .addGap(142, 142, 142)
+                .addComponent(jLabel1)
+                .addContainerGap(130, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(botonAdmin)
+                .addGap(119, 119, 119))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addComponent(jLabel1)
-                .addGap(77, 77, 77)
-                .addComponent(botonRegistroCliente)
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addGap(65, 65, 65)
+                .addComponent(botonAdmin)
+                .addContainerGap(172, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonRegistroClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRegistroClienteActionPerformed
-        RegistrarCliente  r = new RegistrarCliente();
+    private void botonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdminActionPerformed
+        AdministracionDatos  r = new AdministracionDatos();
         r.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_botonRegistroClienteActionPerformed
+    }//GEN-LAST:event_botonAdminActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         
+        CrearFabrica f = new CrearFabrica();
+        
+        Restaurant r = new Restaurant("Restaurante la Casona","Logo1","2474-45-64","lacasona@gmail.com");
+        
+        Cliente c1 = f.crearCliente(3, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
+        Cliente c2 = f.crearCliente(5, "Eliomar Rodriguez ", "2-0734-0342", "8458-3234");
+        
+        Mesero m1 = f.crearMesero("Ingles", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "2-0567-0945", "9876-4567");
+        
+        Cocinero co1 = f.creaCocinero(1, 2, "Postres", "Aguas Zarcas", "oaisdnaiosd@dsdasd", "Juan Perez", "2345-5678", "83638-3455");
+        
+        System.out.println(c1.mostrar());
         
         
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -87,7 +107,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonRegistroCliente;
+    private javax.swing.JButton botonAdmin;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
