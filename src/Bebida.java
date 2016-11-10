@@ -1,5 +1,3 @@
-package ServicioRestaurante;
-
 public class Bebida extends Producto {
 
     private int tipo;

@@ -1,9 +1,3 @@
-package Empleados;
-
-import Empleados.Persona;
-import ServicioRestaurante.Factura;
-import java.util.ArrayList;
-
 public class Cliente extends Persona {
 
     private int visitasRealizadas;
@@ -28,9 +22,5 @@ public class Cliente extends Persona {
     public String toString() {
         return "Cliente{" + "visitasRealizadas=" + visitasRealizadas + '}';
     }
-
-    @Override
-    public String mostrar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }    
+    
 }
