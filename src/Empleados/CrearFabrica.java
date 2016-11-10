@@ -5,8 +5,6 @@
  */
 package Empleados;
 
-import ServicioRestaurante.Cliente;
-
 /**
  *
  * @author Peniche

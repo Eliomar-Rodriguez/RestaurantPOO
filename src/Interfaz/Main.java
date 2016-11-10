@@ -5,7 +5,7 @@
  */
 package Interfaz;
 
-import ServicioRestaurante.Cliente;
+import Empleados.Cliente;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
 import Empleados.Mesero;
