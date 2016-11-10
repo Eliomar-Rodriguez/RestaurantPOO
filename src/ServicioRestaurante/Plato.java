@@ -93,5 +93,7 @@ public class Plato {
     public String toString() {
         return "Plato{" + "nomPlato=" + nomPlato + ", idPlato=" + idPlato + ", cantCalorias=" + cantCalorias + ", precioSinImpuestos=" + precioSinImpuestos + ", ingredientes=" + ingredientes + ", creadorPlato=" + creadorPlato + ", estadoPreparacion=" + estadoPreparacion + '}';
     }
+
+    
     
 }

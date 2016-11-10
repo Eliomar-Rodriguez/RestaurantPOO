@@ -80,5 +80,7 @@ public class Bebida {
     public String toString() {
         return "Bebida{" + "tipo=" + tipo + ", precio=" + precio + ", tamano=" + tamano + ", creadorBebida=" + creadorBebida + ", estadoPreparacion=" + estadoPreparacion + ", idBebida=" + idBebida + '}';
     }
+
+    
     
 }

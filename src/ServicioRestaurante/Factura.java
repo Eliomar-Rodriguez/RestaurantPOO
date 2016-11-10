@@ -91,7 +91,9 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + '}';
+        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + ", precioTotal=" + precioTotal + ", listaDetalles=" + listaDetalles + '}';
     }
+
+    
     
 }

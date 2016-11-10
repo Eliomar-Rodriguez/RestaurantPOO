@@ -13,15 +13,12 @@ public class Orden {
     private int costoFinal;
 
     private String formaPago;
-
+    //private Detalle detalle; // en duda
     private String hora;
 
-    private int cantPlatos;
-
-    private int cantBebidas;
     private ArrayList<Bebida> listaBebidas;
     private ArrayList<Plato> listaPlatos;
-
+    //private ArrayList<Detalle> detalles; // tengo dudas si es una lista o simplemente una instancia
     public Orden() {
     }
 
@@ -31,8 +28,6 @@ public class Orden {
         this.costoFinal = costoFinal;
         this.formaPago = formaPago;
         this.hora = hora;
-        this.cantPlatos = cantPlatos;
-        this.cantBebidas = cantBebidas;
         this.listaBebidas = new ArrayList();
         this.listaPlatos = new ArrayList();
     }
@@ -93,22 +88,6 @@ public class Orden {
         this.hora = hora;
     }
 
-    public int getCantPlatos() {
-        return cantPlatos;
-    }
-
-    public void setCantPlatos(int cantPlatos) {
-        this.cantPlatos = cantPlatos;
-    }
-
-    public int getCantBebidas() {
-        return cantBebidas;
-    }
-
-    public void setCantBebidas(int cantBebidas) {
-        this.cantBebidas = cantBebidas;
-    }
-
     public void agregarBebida(Bebida bebida) {
         listaBebidas.add(bebida);
     }
@@ -119,6 +98,8 @@ public class Orden {
 
     @Override
     public String toString() {
-        return "Orden{" + "mesero=" + mesero + ", mesa=" + mesa + ", costoFinal=" + costoFinal + ", formaPago=" + formaPago + ", hora=" + hora + ", cantPlatos=" + cantPlatos + ", cantBebidas=" + cantBebidas + '}';
+        return "Orden{" + "mesero=" + mesero + ", mesa=" + mesa + ", costoFinal=" + costoFinal + ", formaPago=" + formaPago + ", hora=" + hora + ", listaBebidas=" + listaBebidas + ", listaPlatos=" + listaPlatos + '}';
     }
+
+   
 }

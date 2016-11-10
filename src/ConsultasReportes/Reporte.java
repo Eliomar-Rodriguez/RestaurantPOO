@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package ConsultasReportes;
 
 import ServicioRestaurante.Factura;
@@ -11,10 +7,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-/**
- *
- * @author Peniche
- */
 
 //CLASE QUE CONTENDRA TODOS LOS REPORTES DEL PROYECTO
 public class Reporte {
@@ -63,4 +55,10 @@ public class Reporte {
     public int totalClientesXAno() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
+
+    @Override
+    public String toString() {
+        return "Reporte{" + "facturas=" + facturas + '}';
+    }
+    
 }

@@ -161,10 +161,19 @@ public class Restaurant {
     public void agregarOrdenesPreparar(Orden orden) { // en veremos
         listaOrdenes.add(orden);
     }
+    
+    public void agregarBebida(Bebida b){
+        this.menu.agregarBebida(b);
+    }
+    
+    public void agregarPlato(Plato p){
+        this.menu.agregarPlato(p);
+    }
 
     @Override
     public String toString() {
-        return "Restaurant{" + "nombre=" + nombre + ", dirLogo=" + dirLogo + ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + '}';
+        return "Restaurant{" + "nombre=" + nombre + ", dirLogo=" + dirLogo + ", telefono=" + telefono + ", correo=" + correo + ", menu=" + menu + ", direccion=" + direccion + ", listaEmpleados=" + listaEmpleados + ", listaMesas=" + listaMesas + ", facturas=" + facturas + ", listaClientes=" + listaClientes + '}';
     }
-    
+
+        
 }

@@ -4,10 +4,6 @@ import java.util.ArrayList;
 
 //CLASE QUE CONTIENE TODO LO RELACIONADO A COMIDAS Y BEBIDAS
 public class Menu {
-
-    private int cantBebidas;
-
-    private int cantPlatos;
     
     private ArrayList<Plato> listaPlatos;
     private ArrayList<Bebida> listaBebidas;
@@ -16,8 +12,6 @@ public class Menu {
     }
 
     public Menu(int cantBebidas, int cantPlatos) {
-        this.cantBebidas = cantBebidas;
-        this.cantPlatos = cantPlatos;
         this.listaBebidas = new ArrayList();
         this.listaPlatos = new ArrayList();
     }
@@ -82,25 +76,11 @@ public class Menu {
         return listaPlatos.get(pos);
     }
 
-    public int getCantBebidas() {
-        return cantBebidas;
-    }
-
-    public void setCantBebidas(int cantBebidas) {
-        this.cantBebidas = cantBebidas;
-    }
-
-    public int getCantPlatos() {
-        return cantPlatos;
-    }
-
-    public void setCantPlatos(int cantPlatos) {
-        this.cantPlatos = cantPlatos;
-    }
-
     @Override
     public String toString() {
-        return "Menu{" + "cantBebidas=" + cantBebidas + ", cantPlatos=" + cantPlatos + '}';
+        return "Menu{" + "listaPlatos=" + listaPlatos + ", listaBebidas=" + listaBebidas + '}';
     }
+
     
+        
 }

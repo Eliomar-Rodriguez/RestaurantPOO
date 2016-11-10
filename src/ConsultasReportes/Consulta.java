@@ -17,10 +17,8 @@ public class Consulta {
     public Consulta() {
         this.facturas = new ArrayList();
         this.listaClientes = new ArrayList();
-    }
-    
-    
-    
+    }  
+        
     //Metodo que va a devolver el empleado del mes
     public Empleado getEmpleadoMes() {
         throw new UnsupportedOperationException("Not supported yet.");
@@ -29,7 +27,6 @@ public class Consulta {
      //Metodo que va a dar los dos platos mas consumidos
     public void dosPlatosMasConsumidos() {
     }
-    
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
     public void horaPicoRest() {
@@ -71,4 +68,10 @@ public class Consulta {
         }
     return listaClientes.get(mayor);
     }
+
+    @Override
+    public String toString() {
+        return "Consulta{" + "facturas=" + facturas + ", listaClientes=" + listaClientes + '}';
+    }
+    
 }

@@ -55,8 +55,5 @@ public class Direccion {
     @Override
     public String toString() {
         return "Direccion{" + "provincia=" + provincia + ", canton=" + canton + ", distrito=" + distrito + ", dirExacta=" + dirExacta + '}';
-    }
-    
-    
-    
+    }    
 }
