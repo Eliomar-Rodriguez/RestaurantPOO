@@ -1,3 +1,7 @@
+package ServicioRestaurante;
+
+import Empleados.Cocinero;
+
 public class ItemPedido {
 
     private Cocinero creador;

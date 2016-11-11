@@ -1,29 +1,28 @@
 package Controlador;
 
 
-import ServicioRestaurante.Factura;
 import java.awt.event.ActionEvent;
 
-public class Controlador { // controlador solamente se relaciona con factura
+public class Controlador {
 
-    private Factura factura;
+     private ServicioRestaurante.Factura factura;
 
     public ActionEvent ActionPerformed() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public Controlador(Factura factura) {
+    public Controlador(ServicioRestaurante.Factura factura) {
         this.factura = factura;
     }
 
     public Controlador() {
     }
 
-    public Factura getFactura() {
+    public ServicioRestaurante.Factura getFactura() {
         return factura;
     }
 
-    public void setFactura(Factura factura) {
+    public void setFactura(ServicioRestaurante.Factura factura) {
         this.factura = factura;
     }
 
@@ -31,5 +30,4 @@ public class Controlador { // controlador solamente se relaciona con factura
     public String toString() {
         return "Controlador{" + "factura=" + factura + '}';
     }
-    
 }

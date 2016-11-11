@@ -66,7 +66,6 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 60, 280, 40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 920, 490);
@@ -90,8 +89,6 @@ public class Main extends javax.swing.JFrame {
     public static void main(String args[]) {
         
         CrearFabrica f = new CrearFabrica();
-        
-        Restaurant r = new Restaurant("Restaurant Dos Cielos TEC","Logo1","2474-45-64","dosCielosTEC@gmail.com");
         
         Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
         Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "2-0734-0342", "8458-3234");

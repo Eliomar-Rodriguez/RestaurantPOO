@@ -37,7 +37,6 @@ public class Cocinero extends Empleado {
         }
         
     }
-    
     //metodo para ver el estado del plato
     public void cocinarPlatillo(Plato plato) {
     }
