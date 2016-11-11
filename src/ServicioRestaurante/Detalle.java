@@ -5,8 +5,6 @@ import java.util.ArrayList;
 public class Detalle {
 
     private int cantidad;
-
-    private String detalle;
     private ArrayList<Bebida> listaBebidas;
     private ArrayList<Plato> listaPlatos;
 
@@ -15,7 +13,6 @@ public class Detalle {
 
     public Detalle(int cantidad, String detalle) {
         this.cantidad = cantidad;
-        this.detalle = detalle;
     }
 
     public Bebida getBebida(int i) {
@@ -42,17 +39,10 @@ public class Detalle {
         return cantidad;
     }
 
-    public void setDetalle(String d) {
-        this.detalle=d;
-    }
-
-    public String getDetalle() {
-        return detalle;
-    }
-
     @Override
     public String toString() {
-        return "Detalle{" + "cantidad=" + cantidad + ", detalle=" + detalle + '}';
+        return "Detalle{" + "cantidad=" + cantidad + ", listaBebidas=" + listaBebidas + ", listaPlatos=" + listaPlatos + '}';
     }
+
     
 }

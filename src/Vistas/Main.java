@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaz;
+package Vistas;
 
-import ServicioRestaurante.Cliente;
+import Empleados.Cliente;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
 import Empleados.Mesero;
@@ -22,6 +22,8 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        setLocationRelativeTo(null);
+        setTitle("Restaurant Dos Cielos TEC");
     }
 
     /**
@@ -34,42 +36,39 @@ public class Main extends javax.swing.JFrame {
     private void initComponents() {
 
         botonAdmin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(922, 520));
+        setMinimumSize(new java.awt.Dimension(922, 520));
+        setPreferredSize(new java.awt.Dimension(922, 520));
+        setResizable(false);
+        getContentPane().setLayout(null);
 
-        botonAdmin.setText("Administracion de datos");
+        botonAdmin.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        botonAdmin.setText("Administración de datos");
         botonAdmin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonAdminActionPerformed(evt);
             }
         });
+        getContentPane().add(botonAdmin);
+        botonAdmin.setBounds(10, 10, 280, 40);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setText("Sistema Restaurante");
+        jButton1.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        jButton1.setText("Tomar orden");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(10, 60, 280, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(142, 142, 142)
-                .addComponent(jLabel1)
-                .addContainerGap(130, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonAdmin)
-                .addGap(119, 119, 119))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel1)
-                .addGap(65, 65, 65)
-                .addComponent(botonAdmin)
-                .addContainerGap(172, Short.MAX_VALUE))
-        );
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(0, 0, 920, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,6 +79,10 @@ public class Main extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_botonAdminActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -87,16 +90,14 @@ public class Main extends javax.swing.JFrame {
         
         CrearFabrica f = new CrearFabrica();
         
-        Restaurant r = new Restaurant("Restaurante la Casona","Logo1","2474-45-64","lacasona@gmail.com");
-        
-        Cliente c1 = f.crearCliente(3, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
-        Cliente c2 = f.crearCliente(5, "Eliomar Rodriguez ", "2-0734-0342", "8458-3234");
+        Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
+        Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "2-0734-0342", "8458-3234");
         
         Mesero m1 = f.crearMesero("Ingles", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "2-0567-0945", "9876-4567");
         
-        Cocinero co1 = f.creaCocinero(1, 2, "Postres", "Aguas Zarcas", "oaisdnaiosd@dsdasd", "Juan Perez", "2345-5678", "83638-3455");
+        Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "2345-5678", "83638-3455");
         
-        System.out.println(c1.mostrar());
+        System.out.println("Impresión de datos ingresados a \"pata\".\n"+c1.mostrar()+"\n"+c2.mostrar()+"\n"+co1.mostrar());
         
         
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -108,6 +109,7 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botonAdmin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

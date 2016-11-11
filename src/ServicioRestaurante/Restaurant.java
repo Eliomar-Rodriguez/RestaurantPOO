@@ -2,7 +2,7 @@ package ServicioRestaurante;
 
 
 import ServicioRestaurante.Factura;
-import ServicioRestaurante.Cliente;
+import Empleados.Cliente;
 import ServicioRestaurante.Orden;
 import Empleados.Empleado;
 import ServicioRestaurante.Mesa;
@@ -14,60 +14,43 @@ import java.util.Calendar;
 
 public class Restaurant {
 
-    protected String nombre;
+    private String nombre;
 
-    protected String dirLogo;
+    private String dirLogo;
 
-    protected String telefono;
+    private String telefono;
 
-    protected String correo;
+    private String direccion;
+
+    private String correo;
     
     protected Menu menu;
+
+    private VistaCocinero vistaCocinero;
     
-    protected Direccion direccion;
-    
-    //private ArrayList<Direccion> direccion;     
     public static ArrayList<Orden> listaOrdenes;
     protected ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
     protected ArrayList<Mesa> listaMesas;
     protected ArrayList<Factura> facturas;
     protected ArrayList<Cliente> listaClientes;
-    
 
     public Restaurant() {
     }
-
-    public Restaurant(String nombre, String dirLogo, String telefono, String correo) {
+    
+    public Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
         this.nombre = nombre;
         this.dirLogo = dirLogo;
         this.telefono = telefono;
         this.correo = correo;
+        this.menu = menu;
+        this.vistaCocinero = vistaCocinero;
         this.listaEmpleados = new ArrayList();
         this.listaClientes = new ArrayList();
         this.listaMesas = new ArrayList();
         this.facturas = new ArrayList();
         this.listaOrdenes = new ArrayList();
     }
-    
-    public int agregarEmpleado(Empleado e){ // agregar empleados a la lista de empleados que hay
-        for (int i = 0; i < listaEmpleados.size(); i++) {
-            if (listaEmpleados.get(i).getCedula().equals(e.getCedula())){
-                System.out.println("Ya existe este usuario!");
-                return 0;
-            }            
-        }
-        this.listaEmpleados.add(e); // ingresa el usuario en caso de que no exista otro igual ya que las cedulas son unicas para cada persona
-        return 0;
-    }
 
-    public Direccion getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(Direccion direccion) {
-        this.direccion = direccion;
-    }
-    
     public String getNombre() {
         return nombre;
     }
@@ -91,13 +74,41 @@ public class Restaurant {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-    
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
     public String getCorreo() {
         return correo;
     }
+
     public void setCorreo(String correo) {
         this.correo = correo;
-    }    
+    }
+
+    public Menu getMenu() {
+        return menu;
+    }
+
+    public void setMenu(Menu menu) {
+        this.menu = menu;
+    }
+
+    public int agregarEmpleado(Empleado e){ // agregar empleados a la lista de empleados que hay
+        for (int i = 0; i < listaEmpleados.size(); i++) {
+            if (listaEmpleados.get(i).getCedula().equals(e.getCedula())){
+                System.out.println("Ya existe este usuario!");
+                return 0;
+            }            
+        }
+        this.listaEmpleados.add(e); // ingresa el usuario en caso de que no exista otro igual ya que las cedulas son unicas para cada persona
+        return 0;
+    }
 
     public boolean hayMesa(int cantPersonas) {
         for (int i = 0; i < listaMesas.size(); i++) {
@@ -162,9 +173,15 @@ public class Restaurant {
         listaOrdenes.add(orden);
     }
 
-    @Override
-    public String toString() {
-        return "Restaurant{" + "nombre=" + nombre + ", dirLogo=" + dirLogo + ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + '}';
+    public void agregarProducto(Producto p) {
     }
-    
+
+    public VistaCocinero getVistaCocinero() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void setVistaCocinero(VistaCocinero vC) {
+    }
+
+        
 }

@@ -1,5 +1,6 @@
 package ServicioRestaurante;
 
+import Empleados.Cliente;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -90,7 +91,9 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + '}';
+        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + ", precioTotal=" + precioTotal + ", listaDetalles=" + listaDetalles + '}';
     }
+
+    
     
 }

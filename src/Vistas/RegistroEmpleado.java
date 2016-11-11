@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Interfaz;
+package Vistas;
 
 /**
  *
@@ -178,6 +178,19 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    
+    private void limpiar(){
+        txtNombre.setText("");
+        txtCedula.setText("");
+        txtTelefono.setText("");
+        txtDireccion.setText("");
+        txtCorreo.setText("");
+        txtIdiomas.setText("");
+        txtBebidas.setText("");
+        txtPlatos.setText("");
+        comboEmpleado.setSelectedIndex(-1);
+    }
     public static void main(String args[]) {
         
         java.awt.EventQueue.invokeLater(new Runnable() {
