@@ -5,8 +5,7 @@ import java.util.ArrayList;
 public class Detalle {
 
     private int cantidad;
-    private ArrayList<Bebida> listaBebidas;
-    private ArrayList<Plato> listaPlatos;
+    private ArrayList<Producto> listaProductos;
 
     public Detalle() {
     }
@@ -15,20 +14,15 @@ public class Detalle {
         this.cantidad = cantidad;
     }
 
-    public Bebida getBebida(int i) {
-        return listaBebidas.get(i);
+    public Producto getProducto(int id) {
+        //if (listaProductos.add(e) instanceof Plato){
+            
+        //}
+        return listaProductos.get(id);
     }
 
-    public void setBebidas(Bebida bebida) {
-        this.listaBebidas.add(bebida);
-    }
-
-    public Plato getPlato(int i) {
-        return listaPlatos.get(i);
-    }
-
-    public void setPlato(Plato plato) {
-        this.listaPlatos.add(plato);
+    public void setPlato(Producto p) {
+        this.listaProductos.add(p);
     }
     
     public void setCantidad(int c) {
@@ -41,8 +35,9 @@ public class Detalle {
 
     @Override
     public String toString() {
-        return "Detalle{" + "cantidad=" + cantidad + ", listaBebidas=" + listaBebidas + ", listaPlatos=" + listaPlatos + '}';
+        return "Detalle{" + "cantidad=" + cantidad + ", listaProductos=" + listaProductos + '}';
     }
 
+    
     
 }

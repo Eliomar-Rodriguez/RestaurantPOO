@@ -66,7 +66,7 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 60, 280, 40);
 
-        jLabel1.setText("jLabel1");
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 920, 490);
 

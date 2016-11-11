@@ -16,7 +16,6 @@ public class Empleado extends Persona {
         this.direccion = direccion;
         this.correo = correo;
     }
-
    
     public String getDireccion() {
         return direccion;

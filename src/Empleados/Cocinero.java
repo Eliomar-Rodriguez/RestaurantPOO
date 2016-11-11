@@ -29,13 +29,10 @@ public class Cocinero extends Empleado {
     public void verOrdenesPendientes() {
         System.out.println("Bebidas");
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
-            System.out.println(Restaurant.listaOrdenes.get(i).getBebida(i));
-        }
-        System.out.println("Platos");
-        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
-            System.out.println(Restaurant.listaOrdenes.get(i).getPlato(i));
-        }
-        
+            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+                System.out.println(Restaurant.listaOrdenes.get(i).getProducto(j).toString());
+            }            
+        }        
     }
     //metodo para ver el estado del plato
     public void cocinarPlatillo(Plato plato) {
