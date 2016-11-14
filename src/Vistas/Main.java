@@ -9,7 +9,9 @@ import Empleados.Cliente;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
 import Empleados.Mesero;
+import ServicioRestaurante.Producto;
 import ServicioRestaurante.Restaurant;
+import java.util.ArrayList;
 
 /**
  *
@@ -65,8 +67,6 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 60, 280, 40);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 920, 490);
 
@@ -87,6 +87,9 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        Producto produ1 = new Producto(2,12000, "Papas");
+       
         
         CrearFabrica f = new CrearFabrica();
         
