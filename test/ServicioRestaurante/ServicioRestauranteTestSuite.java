@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author Extreme pc
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({ServicioRestaurante.ProductoTest.class, ServicioRestaurante.ItemPedidoTest.class})
+@Suite.SuiteClasses({ServicioRestaurante.ClienteTest.class, ServicioRestaurante.ProductoTest.class, ServicioRestaurante.ItemPedidoTest.class})
 public class ServicioRestauranteTestSuite {
 
     @BeforeClass
