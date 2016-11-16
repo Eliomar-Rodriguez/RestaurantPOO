@@ -11,35 +11,31 @@ public class Orden {
     private Mesa mesa;
 
     private int costoFinal;
+    
+    private Detalle detalle;
 
     private String formaPago;
-    //private Detalle detalle; // en duda
+    
     private String hora;
 
-    private ArrayList<Bebida> listaBebidas;
-    private ArrayList<Plato> listaPlatos;
+    private ArrayList<Producto> listaProductos;
     //private ArrayList<Detalle> detalles; // tengo dudas si es una lista o simplemente una instancia
     public Orden() {
     }
 
-    public Orden(Mesero mesero, Mesa mesa, int costoFinal, String formaPago, String hora, int cantPlatos, int cantBebidas) {
+    public Orden(Mesero mesero, Mesa mesa, int costoFinal, String formaPago, String hora, int cantPlatos, int cantBebidas, Detalle detalle) {
         this.mesero = mesero;
         this.mesa = mesa;
         this.costoFinal = costoFinal;
         this.formaPago = formaPago;
         this.hora = hora;
-        this.listaBebidas = new ArrayList();
-        this.listaPlatos = new ArrayList();
+        this.listaProductos = new ArrayList();
+        this.detalle = detalle;
     }
 
-    public Bebida getBebida(int i) {
-        return listaBebidas.get(i);
+    public Producto getProducto(int i) {
+        return listaProductos.get(i);
     }
-
-    public Plato getPlato(int i) {
-        return listaPlatos.get(i);
-    }
-
     
     public void cerrarOrden() {
     }
@@ -88,18 +84,24 @@ public class Orden {
         this.hora = hora;
     }
 
-    public void agregarBebida(Bebida bebida) {
-        listaBebidas.add(bebida);
+    public void agregarProducto(Producto p) {
+        listaProductos.add(p);
     }
 
-    public void agregarPlato(Plato plato) {
-        listaPlatos.add(plato);
+    public Detalle getDetalle() {
+        return detalle;
+    }
+
+    public void setDetalle(Detalle detalle) {
+        this.detalle = detalle;
     }
 
     @Override
     public String toString() {
-        return "Orden{" + "mesero=" + mesero + ", mesa=" + mesa + ", costoFinal=" + costoFinal + ", formaPago=" + formaPago + ", hora=" + hora + ", listaBebidas=" + listaBebidas + ", listaPlatos=" + listaPlatos + '}';
+        return "Orden{" + "mesero=" + mesero + ", mesa=" + mesa + ", costoFinal=" + costoFinal + ", detalle=" + detalle + ", formaPago=" + formaPago + ", hora=" + hora + ", listaProductos=" + listaProductos + '}';
     }
 
-   
+    
+
+       
 }

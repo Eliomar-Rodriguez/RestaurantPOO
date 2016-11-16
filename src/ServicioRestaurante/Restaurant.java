@@ -149,7 +149,6 @@ public class Restaurant {
         }
     }
     
-    
     public void ponerMesaDisponible(Mesa m) {
         for (int i = 0; i < listaMesas.size(); i++) {
             if (listaMesas.get(i).getNumMesa()==m.getNumMesa()){
@@ -177,11 +176,10 @@ public class Restaurant {
     }
 
     public VistaCocinero getVistaCocinero() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return vistaCocinero;
     }
 
     public void setVistaCocinero(VistaCocinero vC) {
-    }
-
-        
+        this.vistaCocinero = vC;
+    }        
 }

@@ -1,28 +1,29 @@
 package Controlador;
 
 
+import ServicioRestaurante.Factura;
 import java.awt.event.ActionEvent;
 
 public class Controlador {
 
-     private ServicioRestaurante.Factura factura;
+     private Factura factura;
 
     public ActionEvent ActionPerformed() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public Controlador(ServicioRestaurante.Factura factura) {
+    public Controlador(Factura factura) {
         this.factura = factura;
     }
 
     public Controlador() {
     }
 
-    public ServicioRestaurante.Factura getFactura() {
+    public Factura getFactura() {
         return factura;
     }
 
-    public void setFactura(ServicioRestaurante.Factura factura) {
+    public void setFactura(Factura factura) {
         this.factura = factura;
     }
 
