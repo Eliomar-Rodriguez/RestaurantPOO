@@ -93,6 +93,10 @@ public class Main extends javax.swing.JFrame {
         
         CrearFabrica f = new CrearFabrica();
         
+        Restaurant r = new Restaurant();
+        
+        
+        
         Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
         Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "2-0734-0342", "8458-3234");
         
