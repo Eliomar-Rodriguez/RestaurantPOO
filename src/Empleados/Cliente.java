@@ -31,6 +31,6 @@ public class Cliente extends Persona {
 
     @Override
     public String mostrar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return "hola";
     }    
 }
