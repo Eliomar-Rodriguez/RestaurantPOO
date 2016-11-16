@@ -2,27 +2,10 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
-        <group name="Proyectos"/>
-=======
         <group name="Proyectos">
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ConsultasyReportes/ConsultayReporte.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/Main.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Restaurant.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/RegistroEmpleado.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Empleados/CrearFabrica.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Controlador/MainRestaurante.java</file>
             <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/BorrarEmpleado.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Controlador/Controlador.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/RegistrarOrden.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/AdministracionDatos.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/VistaMesas.java</file>
         </group>
-        <group>
-            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/test/Empleados/EmpleadosTestSuite.java</file>
-            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/test/ServicioRestaurante/ItemPedidoTest.java</file>
-            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/ItemPedido.java</file>
-            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/test/ServicioRestaurante/ServicioRestauranteTestSuite.java</file>
-            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Empleados/Cocinero.java</file>
-        </group>
->>>>>>> 40e1ba9151955c572f2d754ed2d44eaaa04c45bd
     </open-files>
 </project-private>

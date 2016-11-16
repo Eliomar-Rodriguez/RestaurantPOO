@@ -30,14 +30,16 @@ public class Restaurant {
     
     public static ArrayList<Orden> listaOrdenes;
     protected ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
+
     public static ArrayList<Mesa> listaMesas;
+
     protected ArrayList<Factura> facturas;
     protected ArrayList<Cliente> listaClientes;
     
-    public Restaurant() {
+    protected Restaurant() {
     }
     
-    public Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
+    protected Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
         this.nombre = nombre;
         this.dirLogo = dirLogo;
         this.telefono = telefono;
