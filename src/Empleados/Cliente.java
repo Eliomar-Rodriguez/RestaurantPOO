@@ -1,6 +1,5 @@
 package Empleados;
 
-import Empleados.Persona;
 import ServicioRestaurante.Factura;
 import java.util.ArrayList;
 
@@ -31,6 +30,11 @@ public class Cliente extends Persona {
 
     @Override
     public String mostrar() {
+<<<<<<< HEAD
         return "hola";
     }    
+=======
+        return null;
+    }
+>>>>>>> 1aef0b75577d3a7dd4deac23d56ab059fd33aa76
 }

@@ -17,6 +17,7 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     public BorrarEmpleado() {
         initComponents();
         lblAviso.setVisible(false);
+        setLocationRelativeTo(null);
     }
 
     /**
