@@ -1,7 +1,10 @@
 package ServicioRestaurante;
 
 //clase mesa que contiene atributos de la misma
-public class Mesa {
+
+import javax.swing.JButton;
+
+public class Mesa extends JButton{
 
     private int numMesa;
 
