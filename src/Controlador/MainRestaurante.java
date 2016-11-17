@@ -10,6 +10,7 @@ import Empleados.Cocinero;
 import Empleados.CrearFabrica;
 import Empleados.Mesero;
 import Empleados.CrearFabrica;
+import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Direccion;
 import ServicioRestaurante.Menu;
@@ -104,31 +105,19 @@ public class MainRestaurante {
         
         Plato plato1 = new Plato(11, 1500, "arroz con pollo", 1200, "Pollo, zanahoria, bainica, arroz, maiz");
         
-        Producto produ1 = new Producto(1,2500, "Orden de Papas");
-        Producto produ2 = new Producto(2,4000, "Entero de cantones");
-        Producto produ3 = new Producto(3,12000, "Papas");
-        Producto produ4 = new Producto(4,12000, "Papas");
-        Producto produ5 = new Producto(5,12000, "Papas");
-        Producto produ6 = new Producto(6,12000, "Papas");
-        Producto produ7 = new Producto(7,12000, "Papas");
-        Producto produ8 = new Producto(8,12000, "Papas");
-        Producto produ9 = new Producto(9,12000, "Papas");
-        Producto produ10 = new Producto(10,12000, "Papas");
-        Producto produ11 = new Producto(11,12000, "Papas");
-        
-        
-        
+        Bebida be1 = new Bebida(1, 1000, "Coca Cola 700 ml", 1, 700);
 
-        //o1.agregarProducto(produ1);
         Main main = new Main();
         main.setVisible(true);
                 
 
         o1.agregarProducto(plato1);
-        o2.agregarProducto(produ2);
+        o1.agregarProducto(plato1);
+        o1.agregarProducto(be1);
         System.out.println(Orden.listaProductos.toString());
         
         
+       
 
         
       }
