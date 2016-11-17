@@ -7,6 +7,7 @@ package ConsultasyReportes;
 
 import Empleados.Cliente;
 import Empleados.Empleado;
+import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Factura;
 import ServicioRestaurante.Plato;
 import java.text.SimpleDateFormat;
@@ -78,6 +79,7 @@ public class ConsultayReporte {
     return listaClientes.get(mayor);
     }
     
+    //metodo que va a dar el total de platos creados en el mes
     public int totalPlatosxMes(Plato plato,int mes) {
         int total = 0;
         for (int i = 0; i < facturas.size(); i++) {
@@ -86,18 +88,24 @@ public class ConsultayReporte {
             SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
             if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                total += facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+                total += plato.getIdProducto(); 
             }
         }
         return total;
     }
     
-      public int totalBebidasXDia(Date dia) { //  ocupa del tipo de bebida...
+    //metodo que va a dar el total de las bebidas por dia
+      public int totalBebidasXDia(Bebida bebida, int dia) { 
         int total=0;
         for (int i = 0; i < facturas.size(); i++) {
-            //facturas.get(i).getDetalle().getBebida(i);// esta mal, falta pensar bien
+           String formato="d";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
+                total += bebida.getIdProducto(); 
+            }
         }
-        return 0;
+        return total;
     }
 
     public int totalVendidoXMes(int mes) {// vendido por mes pensar bien como hacerlo porque son con lapso de tiempo     
