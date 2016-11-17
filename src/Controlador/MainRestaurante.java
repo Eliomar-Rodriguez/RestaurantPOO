@@ -81,15 +81,15 @@ public class MainRestaurante {
         Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "207240382", "85282245");
         Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "207340342", "84583234");
         
-        Mesero m1 = f.crearMesero("Ingles, Ruso, Mandarin", "Santa Clara", "asd@hotmail.com", "Pedro Perez", "88965412", "88965412");
+        Mesero m1 = f.crearMesero("Ingles, Ruso, Mandarin", "Santa Clara", "asd@hotmail.com", "Pedro Perez", "389654120", "88965412");
         
         Mesero m2 = f.crearMesero("Ingles, Frances, Español", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "205670945", "98764567");
         
-        Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "23455678", "836383455");
+        Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "203451678", "836383455");
         
         Detalle detalle = new Detalle();
         Detalle detalle2 = new Detalle();
-        
+        rest.agregarEmpleado(co1);
 
         //System.out.println("Impresión de datos ingresados a \"pata\".\n"+c1.mostrar()+"\n"+c2.mostrar()+"\n"+co1.mostrar());
         

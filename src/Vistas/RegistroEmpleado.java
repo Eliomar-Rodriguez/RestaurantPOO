@@ -324,18 +324,18 @@ public class RegistroEmpleado extends javax.swing.JFrame {
                 lblIdioma.setVisible(true);
             } 
         }
-        else if (!txtNombre.getText().isEmpty() & !txtCedula.getText().isEmpty() & !txtTelefono.getText().isEmpty() & !txtCorreo.getText().isEmpty() & !txtDireccion.getText().isEmpty() & comboEmpleado.getSelectedIndex()!=-1){ // so algo esta vacio       
+        if (!txtNombre.getText().isEmpty() & !txtCedula.getText().isEmpty() & !txtTelefono.getText().isEmpty() & !txtCorreo.getText().isEmpty() & !txtDireccion.getText().isEmpty() & comboEmpleado.getSelectedIndex()!=-1){ // so algo esta vacio       
             System.out.println("ELSE");
             CrearFabrica factory = new CrearFabrica();
             if (comboEmpleado.getSelectedIndex()==0){ // cocinero
                 System.out.println("COCINERO");
                 Cocinero cocinero = factory.creaCocinero(0, 0, txtEspecialidad.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                rest.agregarEmpleado((Empleado)cocinero);
+                rest.agregarEmpleado(cocinero);
             }
             else if (comboEmpleado.getSelectedIndex()==1){ // mesero
                 System.out.println("MESERO");
                 Mesero mesero = factory.crearMesero(txtIdiomas.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                MainRestaurante.rest.agregarEmpleado((Empleado)mesero);
+                MainRestaurante.rest.agregarEmpleado(mesero);
             }
         }
         System.out.println(rest.getCantidadEmpleados());

@@ -32,7 +32,7 @@ public class Restaurant {
            
     public static ArrayList<Orden> listaOrdenes;
     
-    protected ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
+    public static ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
 
     public static ArrayList<Mesa> listaMesas;
 
