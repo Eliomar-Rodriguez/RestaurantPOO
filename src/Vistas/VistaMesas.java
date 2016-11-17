@@ -7,7 +7,10 @@ package Vistas;
 
 import Empleados.Cliente;
 import Empleados.CrearFabrica;
+import Empleados.Mesero;
+import Empleados.Persona;
 import ServicioRestaurante.Mesa;
+import ServicioRestaurante.Orden;
 import ServicioRestaurante.Restaurant;
 import java.util.ArrayList;
 import ServicioRestaurante.Restaurant;
@@ -26,6 +29,7 @@ public class VistaMesas extends javax.swing.JFrame {
      * Creates new form RegistrarCliente
      */
     private static Mesa mesaSeleccionada = null;
+    
     public VistaMesas() {
         initComponents();
         
@@ -54,7 +58,7 @@ public class VistaMesas extends javax.swing.JFrame {
         btnReservar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        txtCocinero = new javax.swing.JTextField();
+        txtMesero = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -82,7 +86,7 @@ public class VistaMesas extends javax.swing.JFrame {
         panelMesas.setBounds(440, 30, 500, 500);
 
         numPersonas.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
-        numPersonas.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        numPersonas.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
         numPersonas.setAlignmentX(1.0F);
         numPersonas.setAlignmentY(1.0F);
         numPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -95,12 +99,17 @@ public class VistaMesas extends javax.swing.JFrame {
         numPersonas.setBounds(290, 150, 70, 40);
 
         jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 0, 30)); // NOI18N
-        jLabel1.setText("Cocinero");
+        jLabel1.setText("Mesero");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(50, 90, 100, 35);
 
         btnReservar.setFont(new java.awt.Font("Monotype Corsiva", 0, 30)); // NOI18N
         btnReservar.setText("Reservar mesa");
+        btnReservar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReservarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnReservar);
         btnReservar.setBounds(110, 230, 190, 40);
 
@@ -119,9 +128,9 @@ public class VistaMesas extends javax.swing.JFrame {
         getContentPane().add(jLabel3);
         jLabel3.setBounds(50, 150, 240, 35);
 
-        txtCocinero.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
-        getContentPane().add(txtCocinero);
-        txtCocinero.setBounds(180, 90, 240, 40);
+        txtMesero.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        getContentPane().add(txtMesero);
+        txtMesero.setBounds(180, 90, 240, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo.jpg")); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(1000, 670));
@@ -132,7 +141,7 @@ public class VistaMesas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void numPersonasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numPersonasStateChanged
-        if ((Integer)numPersonas.getValue()==0){
+        if ((Integer)numPersonas.getValue()==0 | mesaSeleccionada!=null){
             btnReservar.setEnabled(false);
         }
         else{
@@ -153,9 +162,25 @@ public class VistaMesas extends javax.swing.JFrame {
         panelMesas.setLayout(new GridLayout(3, 4,0,0));
     }//GEN-LAST:event_formWindowOpened
 
+    private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarActionPerformed
+        String idEmpleado = txtMesero.getText();
+        Mesero mesero = null;
+        if (Restaurant.getInstance().getEmpleado(idEmpleado)!=null)
+            mesero = (Mesero) Restaurant.getInstance().getEmpleado(idEmpleado);
+        
+        for (int i = 0; i < Restaurant.getInstance().getMesas().size(); i++) {
+            if (Restaurant.getInstance().getMesas().get(i).getNumMesa() == mesaSeleccionada.getNumMesa()){ // si la mesa seleccionada para reservar es igual a la mesa que esta en la lista de mesas pongo ocupada la que esta e la lista del restaurant
+                Restaurant.getInstance().getMesas().get(i).setEstado(false);
+                break;
+            }
+        }
+        Menu m = new Menu();
+        m.setVisible(true);
+    }//GEN-LAST:event_btnReservarActionPerformed
+
     public void mesasDisponibles(){
         //System.out.println("Entre al mesasDisponibles"); 
-        Font fuente = new Font("Monotype Corsiva", 3, 30);
+        Font fuente = new Font("Monotype Corsiva", 3, 24);
         
         ArrayList<Mesa> listaMesas = Restaurant.getInstance().getMesas();;
         for (int i = 0; i < listaMesas.size(); i++) {
@@ -172,7 +197,7 @@ public class VistaMesas extends javax.swing.JFrame {
                     mesaSeleccionada.setBackground(Color.getHSBColor(210, 210, 210));
                 }
             });
-            mesa.setText(String.valueOf(mesa.getNumMesa()));
+            mesa.setText("Mesa: "+String.valueOf(mesa.getNumMesa()));
             mesa.setFont(fuente);
             if (mesa.getCantPersonas()>=(Integer)numPersonas.getValue()){
                 mesa.setEnabled(true);
@@ -206,6 +231,6 @@ public class VistaMesas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JSpinner numPersonas;
     private javax.swing.JPanel panelMesas;
-    private javax.swing.JTextField txtCocinero;
+    private javax.swing.JTextField txtMesero;
     // End of variables declaration//GEN-END:variables
 }

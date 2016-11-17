@@ -5,6 +5,7 @@ import ServicioRestaurante.Factura;
 import Empleados.Cliente;
 import ServicioRestaurante.Orden;
 import Empleados.Empleado;
+import Empleados.Persona;
 import ServicioRestaurante.Mesa;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -36,10 +37,10 @@ public class Restaurant {
     protected ArrayList<Factura> facturas;
     protected ArrayList<Cliente> listaClientes;
     
-    protected Restaurant() {
+    public Restaurant() {
     }
     
-    protected Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
+    public Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
         this.nombre = nombre;
         this.dirLogo = dirLogo;
         this.telefono = telefono;
@@ -216,6 +217,16 @@ public class Restaurant {
 
     public VistaCocinero getVistaCocinero() {
         return vistaCocinero;
+    }
+    
+    public Persona getEmpleado(String cedula){
+        for (int i = 0; i < listaEmpleados.size(); i++) {
+            if (listaEmpleados.get(i).getCedula().equals(cedula)){
+                return listaEmpleados.get(i);
+            }
+            
+        }
+        return null;
     }
 
     public void setVistaCocinero(VistaCocinero vC) {

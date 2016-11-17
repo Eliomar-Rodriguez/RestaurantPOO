@@ -26,21 +26,21 @@ public class MainRestaurante {
     
     public static void main(String[] args) {
           
-        Main ventana = new Main();
-        ventana.setVisible(true);
+        
         
         //CREAR MESAS
         VistaCocinero co = new VistaCocinero();
         
-        //Cocinero cooker = new Cocinero(0, 0, "Frescos", "Aguas Zarcas", "algo@gmail.com", "Carlos Jose Mora", "207540123", "88664422");
         Menu menu = new Menu(0, 0); 
+        Restaurant rest = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, co);
+    
         
-        Restaurant.getInstance().setNombre("Dos Cielos TEC");
-        Restaurant.getInstance().setTelefono("24741386");
-        Restaurant.getInstance().setDirLogo("logo");
-        Restaurant.getInstance().setVistaCocinero(co);
-        Restaurant.getInstance().setMenu(menu);
-        Restaurant.getInstance().setCorreo("algo@gmail.com");
+        /*rest.setNombre("Dos Cielos TEC");
+        rest.setTelefono("24741386");
+        rest.setDirLogo("logo");
+        rest.setVistaCocinero(co);
+        rest.setMenu(menu);
+        rest.setCorreo("algo@gmail.com");*/
         
         Mesa mesa1 = new Mesa(1,3,true);
         Mesa mesa2 = new Mesa(2,5,true);
@@ -53,20 +53,21 @@ public class MainRestaurante {
         Mesa mesa9 = new Mesa(9,10,true);
         Mesa mesa10 = new Mesa(10,8,true);
         Mesa mesa11 = new Mesa(11,7,true);
-        Mesa mesa12 = new Mesa(12,11,true);
-        Restaurant.getInstance().setMesas(mesa1);
-        Restaurant.getInstance().setMesas(mesa2);
-        Restaurant.getInstance().setMesas(mesa3);
-        Restaurant.getInstance().setMesas(mesa4);
-        Restaurant.getInstance().setMesas(mesa5);
-        Restaurant.getInstance().setMesas(mesa6);
-        Restaurant.getInstance().setMesas(mesa7);
-        Restaurant.getInstance().setMesas(mesa8);
-        Restaurant.getInstance().setMesas(mesa9);
-        Restaurant.getInstance().setMesas(mesa10);
-        Restaurant.getInstance().setMesas(mesa11);
-        Restaurant.getInstance().setMesas(mesa12);
-        //System.out.println(rest.getMesas().size());
+        Mesa mesa12 = new Mesa(12,11,true);       
+        
+        rest.setMesas(mesa1);
+        rest.setMesas(mesa2);
+        rest.setMesas(mesa3);
+        rest.setMesas(mesa4);
+        rest.setMesas(mesa5);
+        rest.setMesas(mesa6);
+        rest.setMesas(mesa7);
+        rest.setMesas(mesa8);
+        rest.setMesas(mesa9);
+        rest.setMesas(mesa10);
+        rest.setMesas(mesa11);
+        rest.setMesas(mesa12);
+        System.out.println(Restaurant.getInstance().getMesas().size());
         
         Producto produ1 = new Producto(2,12000, "Papas");
        
@@ -79,7 +80,8 @@ public class MainRestaurante {
         Mesero m1 = f.crearMesero("Ingles", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "2-0567-0945", "9876-4567");
         
         Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "2345-5678", "83638-3455");
-        
+        Main m = new Main();
+        m.setVisible(true);
         //System.out.println("Impresión de datos ingresados a \"pata\".\n"+c1.mostrar()+"\n"+c2.mostrar()+"\n"+co1.mostrar());
       
       }
