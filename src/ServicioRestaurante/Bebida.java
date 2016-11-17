@@ -14,7 +14,7 @@ public class Bebida extends Producto {
 
     public Bebida() {
     }
-
+    
     public int getTipo() {
         return tipo;
     }

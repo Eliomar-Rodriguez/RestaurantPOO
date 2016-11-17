@@ -78,12 +78,18 @@ public class ConsultayReporte {
     return listaClientes.get(mayor);
     }
     
-    public int totalPrecioXPlatoMes(Plato plato,int mes) {
-        int precioTotal =0;
+    public int totalPlatosxMes(Plato plato,int mes) {
+        int total = 0;
         for (int i = 0; i < facturas.size(); i++) {
-                        
+            
+            String formato="MM";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                total += facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+            }
         }
-        return precioTotal;
+        return total;
     }
     
       public int totalBebidasXDia(Date dia) { //  ocupa del tipo de bebida...
