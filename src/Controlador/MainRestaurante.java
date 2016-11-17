@@ -38,10 +38,7 @@ public class MainRestaurante {
         //Cocinero cooker = new Cocinero(0, 0, "Frescos", "Aguas Zarcas", "algo@gmail.com", "Carlos Jose Mora", "207540123", "88664422");
         Menu menu = new Menu(0, 0); 
         
-<<<<<<< HEAD
-        
-        Mesa mesa1 = new Mesa(1,1,true);
-=======
+
         Restaurant.getInstance().setNombre("Dos Cielos TEC");
         Restaurant.getInstance().setTelefono("24741386");
         Restaurant.getInstance().setDirLogo("logo");
@@ -50,7 +47,6 @@ public class MainRestaurante {
         Restaurant.getInstance().setCorreo("algo@gmail.com");
         
         Mesa mesa1 = new Mesa(1,3,true);
->>>>>>> f4e36f1b3f3f8b7f0ac2d9e3b6f9eb1cdf63e7b0
         Mesa mesa2 = new Mesa(2,5,true);
         Mesa mesa3 = new Mesa(3,2,true);
         Mesa mesa4 = new Mesa(4,6,true);
