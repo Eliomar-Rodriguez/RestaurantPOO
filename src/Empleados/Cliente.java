@@ -30,6 +30,6 @@ public class Cliente extends Persona {
 
     @Override
     public String mostrar() {
-        return null;
+        return "Cliente{" + "Visitas al restaurante=" + visitasRealizadas + ",Cedula=" + cedula + ",Telefono=" + telefono + '}';
     }
 }
