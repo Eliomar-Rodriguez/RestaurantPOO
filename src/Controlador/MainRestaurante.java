@@ -15,6 +15,7 @@ import ServicioRestaurante.Direccion;
 import ServicioRestaurante.Menu;
 import ServicioRestaurante.Mesa;
 import ServicioRestaurante.Orden;
+import ServicioRestaurante.Plato;
 import ServicioRestaurante.Producto;
 import ServicioRestaurante.Restaurant;
 import ServicioRestaurante.VistaCocinero;
@@ -40,6 +41,7 @@ public class MainRestaurante {
         Direccion dir = new Direccion("Alajuela", "San Carlos", "Florencia", "TEC Santa Clara");
         
         Menu menu = new Menu(0, 0); 
+
         rest = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, co,dir);
         
         Mesa mesa1 = new Mesa(1,1,true);
@@ -68,25 +70,22 @@ public class MainRestaurante {
         rest.setMesas(mesa11);
         rest.setMesas(mesa12);
         System.out.println(Restaurant.getInstance().getMesas().size());
-        
-         
-         
-        
+ 
         /*Producto produ1 = new Producto(2,12000, "Papas");
         Orden.listaProductos.add(produ1);
         
         */
-        
+       
         CrearFabrica f = new CrearFabrica();
         
-        Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
-        Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "2-0734-0342", "8458-3234");
+        Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "207240382", "85282245");
+        Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "207340342", "84583234");
         
-        Mesero m1 = f.crearMesero("Ingles", "Santa Clara", "asd@hotmail.com", "Pedro Perez", "323232323", "121212121");
+        Mesero m1 = f.crearMesero("Ingles, Ruso, Mandarin", "Santa Clara", "asd@hotmail.com", "Pedro Perez", "88965412", "88965412");
         
-        Mesero m2 = f.crearMesero("Ingles", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "2-0567-0945", "9876-4567");
+        Mesero m2 = f.crearMesero("Ingles, Frances, Español", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "205670945", "98764567");
         
-        Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "2345-5678", "83638-3455");
+        Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "23455678", "836383455");
         
         Detalle detalle = new Detalle();
         Detalle detalle2 = new Detalle();
@@ -96,16 +95,41 @@ public class MainRestaurante {
         
         //ORDENES
         
-        Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12:05 pm", 6, 5,detalle);
-        Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "12:40 pm", 6, 5,detalle2);
+        Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle);
+        Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle2);
         
         Restaurant.listaOrdenes.add(o1);
         Restaurant.listaOrdenes.add(o2);
+        System.out.println(Restaurant.listaOrdenes.toString());
         
+        Plato plato1 = new Plato(11, 1500, "arroz con pollo", 1200, "Pollo, zanahoria, bainica, arroz, maiz");
+        
+        Producto produ1 = new Producto(1,2500, "Orden de Papas");
+        Producto produ2 = new Producto(2,4000, "Entero de cantones");
+        Producto produ3 = new Producto(3,12000, "Papas");
+        Producto produ4 = new Producto(4,12000, "Papas");
+        Producto produ5 = new Producto(5,12000, "Papas");
+        Producto produ6 = new Producto(6,12000, "Papas");
+        Producto produ7 = new Producto(7,12000, "Papas");
+        Producto produ8 = new Producto(8,12000, "Papas");
+        Producto produ9 = new Producto(9,12000, "Papas");
+        Producto produ10 = new Producto(10,12000, "Papas");
+        Producto produ11 = new Producto(11,12000, "Papas");
+        
+        
+        
+
         //o1.agregarProducto(produ1);
         Main main = new Main();
         main.setVisible(true);
                 
+
+        o1.agregarProducto(plato1);
+        o2.agregarProducto(produ2);
+        System.out.println(Orden.listaProductos.toString());
+        
+        
+
         
       }
     
