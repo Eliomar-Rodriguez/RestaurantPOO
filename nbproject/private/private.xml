@@ -2,21 +2,17 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Proyectos">
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ConsultasyReportes/ConsultayReporte.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/Main.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Restaurant.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/RegistroEmpleado.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Empleados/CrearFabrica.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/BorrarEmpleado.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Controlador/Controlador.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/RegistrarOrden.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/AdministracionDatos.java</file>
+        <group>
+            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Vistas/VistaCocinero.java</file>
+            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Controlador/MainRestaurante.java</file>
         </group>
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Restaurant.java</file>
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Mesa.java</file>
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Controlador/MainRestaurante.java</file>
         </group>
+=======
+>>>>>>> f4e36f1b3f3f8b7f0ac2d9e3b6f9eb1cdf63e7b0
     </open-files>
 </project-private>

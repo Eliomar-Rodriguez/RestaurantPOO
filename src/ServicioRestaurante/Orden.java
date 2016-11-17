@@ -18,7 +18,7 @@ public class Orden {
     
     private String hora;
 
-    private ArrayList<Producto> listaProductos;
+    public static ArrayList<Producto> listaProductos;
     //private ArrayList<Detalle> detalles; // tengo dudas si es una lista o simplemente una instancia
     public Orden() {
     }

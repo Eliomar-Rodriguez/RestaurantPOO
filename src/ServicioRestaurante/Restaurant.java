@@ -30,14 +30,16 @@ public class Restaurant {
     
     public static ArrayList<Orden> listaOrdenes;
     protected ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
-    public  static ArrayList<Mesa> listaMesas;
+
+    public static ArrayList<Mesa> listaMesas;
+
     protected ArrayList<Factura> facturas;
     protected ArrayList<Cliente> listaClientes;
-
-    public Restaurant() {
+    
+    protected Restaurant() {
     }
     
-    public Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
+    protected Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
         this.nombre = nombre;
         this.dirLogo = dirLogo;
         this.telefono = telefono;
@@ -51,6 +53,14 @@ public class Restaurant {
         this.listaOrdenes = new ArrayList();
     }
 
+    public ArrayList<Mesa> getMesas() {
+        return listaMesas;
+    }
+    
+    public void setMesas(Mesa m) {
+        listaMesas.add(m);
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -136,7 +146,9 @@ public class Restaurant {
             }            
         }
     }
-
+    public static Restaurant getInstance(){
+        return new Restaurant();
+    }
     public void registrarCliente(Cliente cliente) {
         listaClientes.add(cliente);
     }
@@ -149,9 +161,9 @@ public class Restaurant {
         }
     }
     
-    public void ponerMesaDisponible(Mesa m) {
+    public void ponerMesaDisponible(int numMesa) {
         for (int i = 0; i < listaMesas.size(); i++) {
-            if (listaMesas.get(i).getNumMesa()==m.getNumMesa()){
+            if (listaMesas.get(i).getNumMesa()==numMesa){
                 listaMesas.get(i).setEstado(true);
             }            
         }
@@ -173,6 +185,33 @@ public class Restaurant {
     }
 
     public void agregarProducto(Producto p) {
+    }
+    
+    public void crearMesas(){
+        Mesa mesa1 = new Mesa(0, 4, true);
+        Mesa mesa2 = new Mesa(1, 6, true);
+        Mesa mesa3 = new Mesa(2, 5, true);
+        Mesa mesa4 = new Mesa(3, 8, true);
+        Mesa mesa5 = new Mesa(4, 10, true);
+        Mesa mesa6 = new Mesa(5, 2, true);
+        Mesa mesa7 = new Mesa(6, 3, true);
+        Mesa mesa8 = new Mesa(7, 10, true);
+        Mesa mesa9 = new Mesa(8, 6, true);
+        Mesa mesa10 = new Mesa(9, 4, true);
+        Mesa mesa11 = new Mesa(10, 5, true);
+        Mesa mesa12 = new Mesa(11, 7, true);
+        this.setMesas(mesa1);
+        this.setMesas(mesa2);
+        this.setMesas(mesa3);
+        this.setMesas(mesa4);
+        this.setMesas(mesa5);
+        this.setMesas(mesa6);
+        this.setMesas(mesa7);
+        this.setMesas(mesa8); 
+        this.setMesas(mesa9);
+        this.setMesas(mesa10);
+        this.setMesas(mesa11);
+        this.setMesas(mesa12);       
     }
 
     public VistaCocinero getVistaCocinero() {

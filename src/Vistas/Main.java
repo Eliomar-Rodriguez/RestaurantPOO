@@ -9,6 +9,7 @@ import Empleados.Cliente;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
 import Empleados.Mesero;
+import ServicioRestaurante.Mesa;
 import ServicioRestaurante.Producto;
 import ServicioRestaurante.Restaurant;
 import java.util.ArrayList;
@@ -26,6 +27,8 @@ public class Main extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Restaurant Dos Cielos TEC");
+        //Restaurant.getInstance().crearMesas();
+        
     }
 
     /**
@@ -67,6 +70,8 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1);
         jButton1.setBounds(10, 60, 280, 40);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 920, 490);
 
@@ -80,23 +85,21 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_botonAdminActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        VistaMesas  r = new VistaMesas();
+        r.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         
-        Producto produ1 = new Producto(2,12000, "Papas");
-       
+        Producto produ1 = new Producto(2,12000, "Papas");      
         
         CrearFabrica f = new CrearFabrica();
-        
-        Restaurant r = new Restaurant();
-        
-        
-        
+                      
         Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
         Cliente c2 = f.crearCliente(0, "Eliomar Rodriguez Arguedas", "2-0734-0342", "8458-3234");
         
@@ -110,6 +113,7 @@ public class Main extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Main().setVisible(true);
+                
             }
         });
     }
