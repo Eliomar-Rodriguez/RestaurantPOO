@@ -36,8 +36,6 @@ public class MainRestaurante {
         
         Menu menu = new Menu(0, 0); 
 
-        
-
         Restaurant.getInstance().setNombre("Dos Cielos TEC");
         Restaurant.getInstance().setTelefono("24741386");
         Restaurant.getInstance().setDirLogo("logo");
@@ -117,7 +115,7 @@ public class MainRestaurante {
         
         
         o1.agregarProducto(produ1);
-        o2.agregarProducto(produ1);
+        o2.agregarProducto(produ2);
         System.out.println(Orden.listaProductos.toString());
         
         

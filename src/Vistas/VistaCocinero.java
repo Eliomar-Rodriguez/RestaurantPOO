@@ -5,9 +5,9 @@
  */
 package Vistas;
 
-import ServicioRestaurante.Orden;
+
 import ServicioRestaurante.Restaurant;
-import static ServicioRestaurante.Restaurant.listaOrdenes;
+
 
 
 /**
@@ -23,13 +23,13 @@ public class VistaCocinero extends javax.swing.JFrame {
         initComponents();
         
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
-                
-                for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                    
-                    tablaOrden.setValueAt(Restaurant.listaOrdenes.get(0).listaProductos.get(0), 0, 0);;
-                }
-                
+
+            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+
+                tablaOrden.setValueAt(Restaurant.listaOrdenes.get(i).listaProductos.get(0), 0, 0);;
             }
+
+        }
         
     }
 
