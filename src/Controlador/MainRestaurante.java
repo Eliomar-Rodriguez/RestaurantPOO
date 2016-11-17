@@ -29,6 +29,7 @@ public class MainRestaurante {
         
         //CREAR MESAS
         
+        
         Mesa mesa1 = new Mesa(1,1,true);
         Mesa mesa2 = new Mesa(2,5,true);
         Mesa mesa3 = new Mesa(3,2,true);

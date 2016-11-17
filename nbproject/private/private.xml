@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
-<<<<<<< HEAD
-=======
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Proyectos">
             <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ConsultasyReportes/ConsultayReporte.java</file>
@@ -15,7 +13,10 @@
             <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/RegistrarOrden.java</file>
             <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/AdministracionDatos.java</file>
         </group>
-        <group/>
+        <group>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Restaurant.java</file>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Mesa.java</file>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Controlador/MainRestaurante.java</file>
+        </group>
     </open-files>
->>>>>>> 40e1ba9151955c572f2d754ed2d44eaaa04c45bd
 </project-private>
