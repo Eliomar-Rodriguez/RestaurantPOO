@@ -35,7 +35,7 @@ public class MainRestaurante {
         VistaCocinero co = new VistaCocinero();
         
         Menu menu = new Menu(0, 0); 
-<<<<<<< HEAD
+
         
 
         Restaurant.getInstance().setNombre("Dos Cielos TEC");
@@ -46,11 +46,9 @@ public class MainRestaurante {
         Restaurant.getInstance().setCorreo("algo@gmail.com");
         
         Mesa mesa1 = new Mesa(1,3,true);
-=======
+
         Restaurant rest = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, co);
-        
-        Mesa mesa1 = new Mesa(1,1,true);
->>>>>>> 34f8cd94930831ddd13c9e25a661ddd8ebb9e507
+
         Mesa mesa2 = new Mesa(2,5,true);
         Mesa mesa3 = new Mesa(3,2,true);
         Mesa mesa4 = new Mesa(4,6,true);
@@ -77,14 +75,6 @@ public class MainRestaurante {
         rest.setMesas(mesa12);
         System.out.println(Restaurant.getInstance().getMesas().size());
         
-         
-         
-        
-        Producto produ1 = new Producto(2,12000, "Papas");
-        Orden.listaProductos.add(produ1);
-        
-        
-        
         CrearFabrica f = new CrearFabrica();
         
         Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");
@@ -109,8 +99,27 @@ public class MainRestaurante {
         
         Restaurant.listaOrdenes.add(o1);
         Restaurant.listaOrdenes.add(o2);
+        System.out.println(Restaurant.listaOrdenes.toString());
+        
+        
+        Producto produ1 = new Producto(1,2500, "Orden de Papas");
+        Producto produ2 = new Producto(2,4000, "Entero de cantones");
+        Producto produ3 = new Producto(3,12000, "Papas");
+        Producto produ4 = new Producto(4,12000, "Papas");
+        Producto produ5 = new Producto(5,12000, "Papas");
+        Producto produ6 = new Producto(6,12000, "Papas");
+        Producto produ7 = new Producto(7,12000, "Papas");
+        Producto produ8 = new Producto(8,12000, "Papas");
+        Producto produ9 = new Producto(9,12000, "Papas");
+        Producto produ10 = new Producto(10,12000, "Papas");
+        Producto produ11 = new Producto(11,12000, "Papas");
+        
+        
         
         o1.agregarProducto(produ1);
+        o2.agregarProducto(produ1);
+        System.out.println(Orden.listaProductos.toString());
+        
         
         
       }

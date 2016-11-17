@@ -7,7 +7,8 @@ package Vistas;
 
 import ServicioRestaurante.Orden;
 import ServicioRestaurante.Restaurant;
-import java.util.Iterator;
+import static ServicioRestaurante.Restaurant.listaOrdenes;
+
 
 /**
  *
@@ -20,6 +21,15 @@ public class VistaCocinero extends javax.swing.JFrame {
      */
     public VistaCocinero() {
         initComponents();
+        
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+                
+                for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+                    
+                    tablaOrden.setValueAt(Restaurant.listaOrdenes.get(0).listaProductos.get(0), 0, 0);;
+                }
+                
+            }
         
     }
 
@@ -58,7 +68,7 @@ public class VistaCocinero extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "Orden", "Platos", "Estado"
+                "Orden", "Platos", "Listo"
             }
         ) {
             Class[] types = new Class [] {
@@ -78,7 +88,7 @@ public class VistaCocinero extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 169, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
             .addGroup(layout.createSequentialGroup()
