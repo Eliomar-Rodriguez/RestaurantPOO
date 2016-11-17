@@ -2,7 +2,22 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
+        <group name="Proyectos">
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Controlador/MainRestaurante.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Restaurant.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/VistaMesas.java</file>
+=======
         <group>
+<<<<<<< HEAD
+=======
+            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Vistas/VistaCocinero.java</file>
+            <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/Controlador/MainRestaurante.java</file>
+>>>>>>> 48e3b5414c3845e3ac8899d7cfc33b6819121870
+        </group>
+<<<<<<< HEAD
+        <group>
+>>>>>>> 34f8cd94930831ddd13c9e25a661ddd8ebb9e507
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Restaurant.java</file>
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Vistas/VistaCocinero.java</file>
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Mesa.java</file>
