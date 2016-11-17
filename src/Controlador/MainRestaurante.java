@@ -11,6 +11,7 @@ import Empleados.CrearFabrica;
 import Empleados.Mesero;
 import Empleados.CrearFabrica;
 import ServicioRestaurante.Detalle;
+import ServicioRestaurante.Direccion;
 import ServicioRestaurante.Menu;
 import ServicioRestaurante.Mesa;
 import ServicioRestaurante.Orden;
@@ -25,6 +26,8 @@ import java.util.ArrayList;
  * @author Extreme pc
  */
 public class MainRestaurante {
+    
+    public static Restaurant rest = null;
       
     
     public static void main(String[] args) {
@@ -34,8 +37,10 @@ public class MainRestaurante {
         //CREAR MESAS
         VistaCocinero co = new VistaCocinero();
         
+        Direccion dir = new Direccion("Alajuela", "San Carlos", "Florencia", "TEC Santa Clara");
+        
         Menu menu = new Menu(0, 0); 
-        Restaurant rest = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, co);
+        rest = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, co,dir);
         
         Mesa mesa1 = new Mesa(1,1,true);
         Mesa mesa2 = new Mesa(2,5,true);
@@ -67,10 +72,10 @@ public class MainRestaurante {
          
          
         
-        Producto produ1 = new Producto(2,12000, "Papas");
+        /*Producto produ1 = new Producto(2,12000, "Papas");
         Orden.listaProductos.add(produ1);
         
-        
+        */
         
         CrearFabrica f = new CrearFabrica();
         
@@ -97,8 +102,10 @@ public class MainRestaurante {
         Restaurant.listaOrdenes.add(o1);
         Restaurant.listaOrdenes.add(o2);
         
-        o1.agregarProducto(produ1);
-        
+        //o1.agregarProducto(produ1);
+        Main main = new Main();
+        main.setVisible(true);
+                
         
       }
     

@@ -1,6 +1,7 @@
 package ServicioRestaurante;
 
 
+import Controlador.MainRestaurante;
 import ServicioRestaurante.Factura;
 import Empleados.Cliente;
 import ServicioRestaurante.Orden;
@@ -21,15 +22,16 @@ public class Restaurant {
 
     private String telefono;
 
-    private String direccion;
+    private Direccion direccion;
 
     private String correo;
     
     protected Menu menu;
-
-    private VistaCocinero vistaCocinero;
     
+    private VistaCocinero vistaCocinero;
+           
     public static ArrayList<Orden> listaOrdenes;
+    
     protected ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
 
     public static ArrayList<Mesa> listaMesas;
@@ -40,11 +42,12 @@ public class Restaurant {
     public Restaurant() {
     }
     
-    public Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero) {
+    public Restaurant(String nombre, String dirLogo, String telefono, String correo, Menu menu, VistaCocinero vistaCocinero, Direccion direccion) {
         this.nombre = nombre;
         this.dirLogo = dirLogo;
         this.telefono = telefono;
         this.correo = correo;
+        this.direccion = direccion;
         this.menu = menu;
         this.vistaCocinero = vistaCocinero;
         this.listaEmpleados = new ArrayList();
@@ -86,11 +89,11 @@ public class Restaurant {
         this.telefono = telefono;
     }
 
-    public String getDireccion() {
+    public Direccion getDireccion() {
         return direccion;
     }
 
-    public void setDireccion(String direccion) {
+    public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
 
@@ -129,7 +132,9 @@ public class Restaurant {
         }
         return false; // no hay mesa disponible para esa cantidad de personas o si habia alguna pero estaba ocupada
     }
-    
+    public int getCantidadEmpleados(){
+        return listaEmpleados.size();
+    }
     public boolean hayMesaDisponible() {
         for (int i = 0; i < listaMesas.size(); i++) {
             if (listaMesas.get(i).getEstado()==true){
@@ -148,7 +153,10 @@ public class Restaurant {
         }
     }
     public static Restaurant getInstance(){
-        return new Restaurant();
+        //Menu menu = menu;
+        //Restaurant instanciaRestaurant = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, vistaCocinero,direccion);
+        
+        return MainRestaurante.rest;
     }
     public void registrarCliente(Cliente cliente) {
         listaClientes.add(cliente);
@@ -187,38 +195,20 @@ public class Restaurant {
 
     public void agregarProducto(Producto p) {
     }
-    
-    public void crearMesas(){
-        Mesa mesa1 = new Mesa(0, 4, true);
-        Mesa mesa2 = new Mesa(1, 6, true);
-        Mesa mesa3 = new Mesa(2, 5, true);
-        Mesa mesa4 = new Mesa(3, 8, true);
-        Mesa mesa5 = new Mesa(4, 10, true);
-        Mesa mesa6 = new Mesa(5, 2, true);
-        Mesa mesa7 = new Mesa(6, 3, true);
-        Mesa mesa8 = new Mesa(7, 10, true);
-        Mesa mesa9 = new Mesa(8, 6, true);
-        Mesa mesa10 = new Mesa(9, 4, true);
-        Mesa mesa11 = new Mesa(10, 5, true);
-        Mesa mesa12 = new Mesa(11, 7, true);
-        this.setMesas(mesa1);
-        this.setMesas(mesa2);
-        this.setMesas(mesa3);
-        this.setMesas(mesa4);
-        this.setMesas(mesa5);
-        this.setMesas(mesa6);
-        this.setMesas(mesa7);
-        this.setMesas(mesa8); 
-        this.setMesas(mesa9);
-        this.setMesas(mesa10);
-        this.setMesas(mesa11);
-        this.setMesas(mesa12);       
-    }
 
     public VistaCocinero getVistaCocinero() {
         return vistaCocinero;
     }
     
+    public int eliminarEmpleado(String cedula){
+        for (int i = 0; i < listaEmpleados.size(); i++) {
+            if (listaEmpleados.get(i).getCedula().equals(cedula)){
+                listaEmpleados.remove(i);
+                return 1; // 1 significa encontrado y eliminado
+            }
+        }
+        return 0; // no encontro al empleado
+    }
     public Persona getEmpleado(String cedula){
         for (int i = 0; i < listaEmpleados.size(); i++) {
             if (listaEmpleados.get(i).getCedula().equals(cedula)){

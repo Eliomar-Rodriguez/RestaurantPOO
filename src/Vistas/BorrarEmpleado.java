@@ -5,6 +5,11 @@
  */
 package Vistas;
 
+import Empleados.Cocinero;
+import Empleados.Empleado;
+import Empleados.Mesero;
+import ServicioRestaurante.Restaurant;
+
 /**
  *
  * @author Antonio Rodriguez
@@ -14,10 +19,17 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     /**
      * Creates new form BorrarEmpleado
      */
+    String cedula;
     public BorrarEmpleado() {
         initComponents();
         lblAviso.setVisible(false);
         setLocationRelativeTo(null);
+        lblListo.setVisible(false);
+        lblNoEnc.setVisible(false);
+        btnEliminar.setEnabled(false);
+        lblOpcion.setVisible(false);
+        txtOpcion.setVisible(false);
+        setTitle("Eliminar empleados");
     }
 
     /**
@@ -30,9 +42,23 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        txtId = new java.awt.TextField();
-        jButton1 = new javax.swing.JButton();
+        txtDireccion = new java.awt.TextField();
+        btnBuscar = new javax.swing.JButton();
         lblAviso = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        txtId = new java.awt.TextField();
+        txtName = new java.awt.TextField();
+        txtTelefono = new java.awt.TextField();
+        txtCorreo = new java.awt.TextField();
+        lblNoEnc = new javax.swing.JLabel();
+        lblListo = new javax.swing.JLabel();
+        btnEliminar = new javax.swing.JButton();
+        txtOpcion = new java.awt.TextField();
+        lblOpcion = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,37 +72,195 @@ public class BorrarEmpleado extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(180, 50, 90, 35);
 
-        txtId.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
-        getContentPane().add(txtId);
-        txtId.setBounds(280, 40, 160, 40);
+        txtDireccion.setEditable(false);
+        txtDireccion.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        getContentPane().add(txtDireccion);
+        txtDireccion.setBounds(400, 250, 160, 35);
 
-        jButton1.setText("Buscar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBuscar.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnBuscar.setText("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnBuscarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(480, 40, 90, 40);
+        getContentPane().add(btnBuscar);
+        btnBuscar.setBounds(490, 50, 110, 40);
 
-        lblAviso.setFont(new java.awt.Font("Arial", 0, 36)); // NOI18N
+        lblAviso.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
         lblAviso.setForeground(new java.awt.Color(255, 51, 0));
         lblAviso.setText("*");
         getContentPane().add(lblAviso);
-        lblAviso.setBounds(450, 50, 20, 30);
+        lblAviso.setBounds(450, 60, 20, 30);
 
+        jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        jLabel3.setText("Direccion");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(260, 250, 110, 28);
+
+        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        jLabel4.setText("Correo");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(260, 210, 120, 28);
+
+        jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        jLabel5.setText("Telefono");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(260, 170, 120, 28);
+
+        jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        jLabel6.setText("Nombre");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(260, 130, 120, 28);
+
+        txtId.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        getContentPane().add(txtId);
+        txtId.setBounds(280, 50, 160, 35);
+
+        txtName.setEditable(false);
+        txtName.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        getContentPane().add(txtName);
+        txtName.setBounds(400, 130, 160, 35);
+
+        txtTelefono.setEditable(false);
+        txtTelefono.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        getContentPane().add(txtTelefono);
+        txtTelefono.setBounds(400, 170, 160, 35);
+
+        txtCorreo.setEditable(false);
+        txtCorreo.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtCorreo);
+        txtCorreo.setBounds(400, 210, 160, 35);
+
+        lblNoEnc.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        lblNoEnc.setForeground(new java.awt.Color(204, 0, 0));
+        lblNoEnc.setText("No se encontro el empleado");
+        getContentPane().add(lblNoEnc);
+        lblNoEnc.setBounds(330, 340, 270, 28);
+
+        lblListo.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        lblListo.setForeground(new java.awt.Color(0, 153, 51));
+        lblListo.setText("Eliminado de manera correcta");
+        getContentPane().add(lblListo);
+        lblListo.setBounds(320, 340, 300, 30);
+
+        btnEliminar.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
+        btnEliminar.setText("Eliminar");
+        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnEliminar);
+        btnEliminar.setBounds(380, 390, 150, 40);
+
+        txtOpcion.setEditable(false);
+        txtOpcion.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        getContentPane().add(txtOpcion);
+        txtOpcion.setBounds(400, 290, 160, 35);
+
+        lblOpcion.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        lblOpcion.setText("nombre");
+        getContentPane().add(lblOpcion);
+        lblOpcion.setBounds(260, 290, 110, 28);
+
+        btnAtras.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAtras);
+        btnAtras.setBounds(2, 2, 100, 40);
+
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 0, 22)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, 0, 920, 498);
+        jLabel2.setBounds(0, 0, 930, 498);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        if (txtId.getText().isEmpty()){ // si el campo de la cedula esta vacio pone alerta
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        Cocinero cocinero = null;
+        Mesero mesero = null;
+        if(txtId.getText().isEmpty()){
             lblAviso.setVisible(true);
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+        else{
+            lblAviso.setVisible(false);
+            cedula = txtId.getText();
+            if (mesero == null & cocinero == null){
+                lblNoEnc.setVisible(true); 
+                txtCorreo.setText("");
+                txtDireccion.setText("");
+                txtName.setText("");
+                txtTelefono.setText("");
+
+                txtOpcion.setVisible(false);
+                lblOpcion.setVisible(false);
+                btnEliminar.setEnabled(true);
+
+            }
+            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){
+                mesero = (Mesero) Restaurant.getInstance().getEmpleado(cedula);
+                txtCorreo.setText(mesero.getCorreo());
+                txtDireccion.setText(mesero.getDireccion());
+                txtName.setText(mesero.getNombreCompleto());
+                txtTelefono.setText(mesero.getTelefono());
+
+                txtOpcion.setText(mesero.getIdiomasDomina());
+                txtOpcion.setVisible(true);
+                lblOpcion.setText("Idiomas");
+                lblOpcion.setVisible(true);
+
+                btnEliminar.setEnabled(true);
+            }
+            else if (Restaurant.getInstance().getEmpleado(cedula)instanceof Cocinero){
+                cocinero = (Cocinero) Restaurant.getInstance().getEmpleado(cedula);
+                txtCorreo.setText(cocinero.getCorreo());
+                txtDireccion.setText(cocinero.getDireccion());
+                txtName.setText(cocinero.getNombreCompleto());
+                txtTelefono.setText(cocinero.getTelefono());    
+                txtOpcion.setText(cocinero.getEspecialidad());
+                lblOpcion.setText("Especialidad");
+                btnEliminar.setEnabled(true);
+                lblOpcion.setVisible(true);
+                txtOpcion.setVisible(true);
+            }
+        }
+            
+        
+    }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        Restaurant.getInstance().eliminarEmpleado(cedula);
+        lblNoEnc.setVisible(true); 
+        txtCorreo.setText("");
+        txtDireccion.setText("");
+        txtName.setText("");
+        txtTelefono.setText("");
+
+        txtOpcion.setVisible(false);
+        lblOpcion.setVisible(false);
+        btnEliminar.setEnabled(true);
+    }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        AdministracionDatos atras = new AdministracionDatos();
+        atras.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,10 +298,24 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel lblAviso;
+    private javax.swing.JLabel lblListo;
+    private javax.swing.JLabel lblNoEnc;
+    private javax.swing.JLabel lblOpcion;
+    private java.awt.TextField txtCorreo;
+    private java.awt.TextField txtDireccion;
     private java.awt.TextField txtId;
+    private java.awt.TextField txtName;
+    private java.awt.TextField txtOpcion;
+    private java.awt.TextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

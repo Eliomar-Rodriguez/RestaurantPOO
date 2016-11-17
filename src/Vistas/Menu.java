@@ -49,7 +49,7 @@ public class Menu extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jList1);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(200, 230, 120, 178);
+        jScrollPane1.setBounds(240, 220, 120, 178);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\menu.jpg")); // NOI18N
         getContentPane().add(jLabel1);
