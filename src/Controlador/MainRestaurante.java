@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import ConsultasyReportes.ConsultayReporte;
 import Empleados.Cliente;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
@@ -117,8 +118,7 @@ public class MainRestaurante {
         System.out.println(Orden.listaProductos.toString());
         
         
-       
-
+        
         
       }
     

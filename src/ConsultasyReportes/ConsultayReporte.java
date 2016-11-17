@@ -6,10 +6,14 @@
 package ConsultasyReportes;
 
 import Empleados.Cliente;
+import Empleados.Cocinero;
 import Empleados.Empleado;
+import Empleados.Mesero;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Factura;
+import ServicioRestaurante.Orden;
 import ServicioRestaurante.Plato;
+import ServicioRestaurante.Restaurant;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -28,14 +32,55 @@ public class ConsultayReporte {
 
     }
     
-    //Metodo que va a devolver el empleado del mes
-    public Empleado getEmpleadoMes() {
-        throw new UnsupportedOperationException("Not supported yet.");
+   public Orden meseroDelmes(){
+       
+        int vecesActual=0,vecesMayor=0, mayor=0;
+        
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            
+            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
+                    vecesActual++;
+                }                                
+            }
+            if (vecesActual>vecesMayor){
+                mayor=i;
+            }
+            vecesMayor=vecesActual; 
+            vecesActual=0;
+        }
+    return Restaurant.listaOrdenes.get(mayor);
+        
+    }
+    
+    public void cocineroDelmes(){
+        String resultado,cocinero;
+        int veces=0,mayor=0;
+        
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            cocinero = Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto();
+            
+            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(cocinero)){
+                    veces++;
+                } 
+            }
+            if (veces>mayor){
+                resultado = Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto();
+            }
+            mayor = veces;
+            veces=0;
+        }
+       
     }
     
      //Metodo que va a dar los dos platos mas consumidos
     public void dosPlatosMasConsumidos() {
-        
+        for(int i= 0; i < Orden.listaProductos.size(); i++){
+            Orden.listaProductos.get(i).getIdProducto();
+            System.out.println("ayyy" + i);
+        }
+          
     }
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
@@ -92,6 +137,7 @@ public class ConsultayReporte {
             }
         }
         return total;
+        
     }
     
     //metodo que va a dar el total de las bebidas por dia
