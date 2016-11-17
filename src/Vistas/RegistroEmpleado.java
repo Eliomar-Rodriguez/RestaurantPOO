@@ -56,7 +56,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        lblTitulo = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -81,15 +81,16 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblACed = new javax.swing.JLabel();
         lblACor = new javax.swing.JLabel();
         lblTipoEmp = new javax.swing.JLabel();
+        btnAtras = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
-        jLabel1.setText("Registro de Empleados");
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(280, 30, 350, 50);
+        lblTitulo.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
+        lblTitulo.setText("Registro de Empleados");
+        getContentPane().add(lblTitulo);
+        lblTitulo.setBounds(280, 30, 350, 50);
 
         jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel2.setText("Nombre completo");
@@ -268,6 +269,16 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         getContentPane().add(lblTipoEmp);
         lblTipoEmp.setBounds(660, 300, 20, 20);
 
+        btnAtras.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnAtras.setText("Atrás");
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAtras);
+        btnAtras.setBounds(10, 10, 100, 30);
+
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
         getContentPane().add(jLabel8);
         jLabel8.setBounds(0, 0, 900, 498);
@@ -386,6 +397,12 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblOpcion.setVisible(false);
     }//GEN-LAST:event_txtEspecialidadKeyPressed
 
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        AdministracionDatos atras = new AdministracionDatos();
+        atras.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnAtrasActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -410,9 +427,9 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAtras;
     private javax.swing.JButton btnRegistrar;
     private javax.swing.JComboBox<String> comboEmpleado;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -429,6 +446,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel lblIdioma;
     private javax.swing.JLabel lblOpcion;
     private javax.swing.JLabel lblTipoEmp;
+    private javax.swing.JLabel lblTitulo;
     private javax.swing.JTextField txtCedula;
     private javax.swing.JTextField txtCorreo;
     private javax.swing.JTextField txtDireccion;

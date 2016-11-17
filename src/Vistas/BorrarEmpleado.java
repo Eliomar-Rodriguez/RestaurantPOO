@@ -177,7 +177,7 @@ public class BorrarEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnAtras);
-        btnAtras.setBounds(2, 2, 100, 40);
+        btnAtras.setBounds(10, 10, 100, 40);
 
         jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 0, 22)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
