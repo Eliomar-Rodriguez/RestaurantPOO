@@ -77,8 +77,8 @@ public class ConsultayReporte {
     
      //Metodo que va a dar los dos platos mas consumidos
     public void dosPlatosMasConsumidos() {
-        for(int i= 0; i < Orden.listaProductos.size(); i++){
-            Orden.listaProductos.get(i).getIdProducto();
+        for(int i= 0; i < Orden.listaDetalles.size(); i++){
+            Orden.listaDetalles.get(i).getProducto().toString();
             System.out.println("ayyy" + i); //falta este metodo
         }
           

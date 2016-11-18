@@ -121,23 +121,23 @@ public class MainRestaurante {
         ================================================================
         
         */
-        Detalle detalle1 = new Detalle(4, "No poner mucha cebolla por alergia");
+        Detalle detalle1 = new Detalle(4, plato6);
         
-        Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle1);
+        //Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle1);
         
-        Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
+        //Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
 
         Main main = new Main();
         main.setVisible(true);
                 
 
-        o1.agregarProducto(plato1);
+        //o1.agregarProducto(plato1);
 
         //o2.agregarProducto(produ2);
-        System.out.println(Orden.listaProductos.toString());
+        //System.out.println(Orden.listaProductos.toString());
                 
-        Restaurant.listaOrdenes.add(o1);
-        Restaurant.listaOrdenes.add(o2);
+        //Restaurant.listaOrdenes.add(o1);
+        //Restaurant.listaOrdenes.add(o2);
         System.out.println(Restaurant.listaOrdenes.toString());       
 
       }

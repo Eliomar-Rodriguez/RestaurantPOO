@@ -30,7 +30,7 @@ public class Cocinero extends Empleado {
         System.out.println("Bebidas");
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
             for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                System.out.println(Restaurant.listaOrdenes.get(i).getProducto(j).toString());
+                System.out.println(Restaurant.listaOrdenes.get(i).getListaDetalle().get(i).toString());
             }            
         }        
     }

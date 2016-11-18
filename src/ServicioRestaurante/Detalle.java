@@ -5,24 +5,22 @@ import java.util.ArrayList;
 public class Detalle {
 
     private int cantidad;
-    private ArrayList<Producto> listaProductos;
+    private Producto producto;
 
     public Detalle() {
     }
 
-    public Detalle(int cantidad, String detalle) {
+    public Detalle(int cantidad, Producto producto) {
         this.cantidad = cantidad;
+        this.producto = producto;
     }
 
-    public Producto getProducto(int id) {
-        //if (listaProductos.add(e) instanceof Plato){
-            
-        //}
-        return listaProductos.get(id);
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setPlato(Producto p) {
-        this.listaProductos.add(p);
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     }
     
     public void setCantidad(int c) {
@@ -35,9 +33,7 @@ public class Detalle {
 
     @Override
     public String toString() {
-        return "Detalle{" + "cantidad=" + cantidad + ", listaProductos=" + listaProductos + '}';
+        return "Detalle{" + "cantidad=" + cantidad + ", producto=" + producto + '}';
     }
-
-    
     
 }

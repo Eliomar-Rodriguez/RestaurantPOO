@@ -155,8 +155,6 @@ public class Restaurant {
         }
     }
     public static Restaurant getInstance(){
-        //Menu menu = menu;
-        //Restaurant instanciaRestaurant = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, vistaCocinero,direccion);
         
         return MainRestaurante.rest;
     }
