@@ -39,6 +39,7 @@ public class Restaurant {
     protected ArrayList<Factura> facturas;
     protected ArrayList<Cliente> listaClientes;
     
+    
     public Restaurant() {
     }
     
@@ -55,6 +56,7 @@ public class Restaurant {
         this.listaMesas = new ArrayList();
         this.facturas = new ArrayList();
         this.listaOrdenes = new ArrayList();
+        
     }
 
     public ArrayList<Mesa> getMesas() {

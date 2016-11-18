@@ -6,9 +6,14 @@
 package ConsultasyReportes;
 
 import Empleados.Cliente;
+import Empleados.Cocinero;
 import Empleados.Empleado;
+import Empleados.Mesero;
+import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Factura;
+import ServicioRestaurante.Orden;
 import ServicioRestaurante.Plato;
+import ServicioRestaurante.Restaurant;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -27,13 +32,56 @@ public class ConsultayReporte {
 
     }
     
-    //Metodo que va a devolver el empleado del mes
-    public Empleado getEmpleadoMes() {
-        throw new UnsupportedOperationException("Not supported yet.");
+   public Orden meseroDelmes(){
+       
+        int vecesActual=0,vecesMayor=0, mayor=0;
+        
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            
+            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
+                    vecesActual++;
+                }                                
+            }
+            if (vecesActual>vecesMayor){
+                mayor=i;
+            }
+            vecesMayor=vecesActual; 
+            vecesActual=0;
+        }
+    return Restaurant.listaOrdenes.get(mayor);
+    
+        
+    }
+    
+    public Orden cocineroDelmes(){
+        
+        int vecesActual=0,vecesMayor=0, mayor=0;
+        
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            
+            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
+                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
+                    vecesActual++;
+                }                                
+            }
+            if (vecesActual>vecesMayor){
+                mayor=i;
+            }
+            vecesMayor=vecesActual; 
+            vecesActual=0;
+        }
+    return Restaurant.listaOrdenes.get(mayor);
+       
     }
     
      //Metodo que va a dar los dos platos mas consumidos
     public void dosPlatosMasConsumidos() {
+        for(int i= 0; i < Orden.listaProductos.size(); i++){
+            Orden.listaProductos.get(i).getIdProducto();
+            System.out.println("ayyy" + i); //falta este metodo
+        }
+          
     }
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
@@ -77,20 +125,34 @@ public class ConsultayReporte {
     return listaClientes.get(mayor);
     }
     
-    public int totalPrecioXPlatoMes(Plato plato,int mes) {
-        int precioTotal =0;
+    //metodo que va a dar el total de platos creados en el mes
+    public int totalPlatosxMes(Plato plato,int mes) {
+        int total = 0;
         for (int i = 0; i < facturas.size(); i++) {
-                        
+            
+            String formato="MM";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                total += plato.getIdProducto(); 
+            }
         }
-        return precioTotal;
+        return total;
+        
     }
     
-      public int totalBebidasXDia(Date dia) { //  ocupa del tipo de bebida...
+    //metodo que va a dar el total de las bebidas por dia
+      public int totalBebidasXDia(Bebida bebida, int dia) { 
         int total=0;
         for (int i = 0; i < facturas.size(); i++) {
-            //facturas.get(i).getDetalle().getBebida(i);// esta mal, falta pensar bien
+           String formato="d";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
+                total += bebida.getIdProducto(); 
+            }
         }
-        return 0;
+        return total;
     }
 
     public int totalVendidoXMes(int mes) {// vendido por mes pensar bien como hacerlo porque son con lapso de tiempo     
@@ -107,17 +169,45 @@ public class ConsultayReporte {
         return total;
     }
     
-    public int totalVendidoXAno() {// vendido por ano pensar bien como hacerlo
+    public int totalVendidoXAno(int ano) {// vendido por ano pensar bien como hacerlo
         int total = 0;
-        //asd
-        return total;        
+        for (int i = 0; i < facturas.size(); i++) {
+            
+            String formato="yyyy";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==ano){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                total += facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+            }
+        }
+        return total;   
     }
 
-    public int totalClientesXMes() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public int totalClientesXMes(int mes) {
+        int total = 0;
+        for (int i = 0; i < facturas.size(); i++) {
+            
+            String formato="MM";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                total += facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el mes
+            }
+        }
+        return total;
     }
-    public int totalClientesXAno() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public int totalClientesXAno(int ano) {
+        int total = 0;
+        for (int i = 0; i < facturas.size(); i++) {
+            
+            String formato="yyyy";
+            SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+            if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==ano){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                total += facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+            }
+        }
+        return total;
     }
 
     @Override

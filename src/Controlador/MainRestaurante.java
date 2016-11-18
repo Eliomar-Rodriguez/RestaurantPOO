@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import ConsultasyReportes.ConsultayReporte;
 import Empleados.Cliente;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
@@ -13,6 +14,7 @@ import Empleados.CrearFabrica;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Direccion;
+import ServicioRestaurante.ItemPedido;
 import ServicioRestaurante.Menu;
 import ServicioRestaurante.Mesa;
 import ServicioRestaurante.Orden;
@@ -36,7 +38,7 @@ public class MainRestaurante {
           
         
         
-        //CREAR MESAS
+        
         VistaCocinero co = new VistaCocinero();
         
         CrearFabrica f = new CrearFabrica();
@@ -91,12 +93,13 @@ public class MainRestaurante {
         Mesero m2 = f.crearMesero("Ingles, Frances, Español", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "205670945", "98764567");
         
         Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Ciudad Quesada", "rodriguez.elio.97@gmail.com", "Jose Mauricio Rojas", "205500965", "86551217");
-        
+        rest.agregarEmpleado(m1);
+        rest.agregarEmpleado(co1);
+        rest.agregarEmpleado(m2);        
         /*
         ================================================================
         =========       Creación de platos y bebidas        ============
         ================================================================
-        
         */
         Plato plato1 = new Plato(001, 1450, "arroz con pollo", 299, "pollo, zanahoria, bainica, arroz, maiz");
         Plato plato2 = new Plato(002, 1700, "arroz con carne", 600, "arroz, carne de cerdo, olores");
@@ -117,42 +120,26 @@ public class MainRestaurante {
         =========           Creación de detalle             ============
         ================================================================
         
-        */        
-        Detalle detalle = new Detalle();        
-        detalle.setCantidad(2);
-        detalle.setPlato(plato1);
+        */
+        Detalle detalle1 = new Detalle(4, "No poner mucha cebolla por alergia");
         
-        Detalle detalle2 = new Detalle();
-        detalle2.setCantidad(3);
-        detalle2.setPlato(plato2);
+        Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle1);
         
-        rest.agregarEmpleado(m1);
-        rest.agregarEmpleado(co1);
-        rest.agregarEmpleado(m2);
-        /*
-        ================================================================
-        =========    Creación de Ordenes y su agregacion    ============
-        ================================================================
-        
-        */        
-        Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle);
-        Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle2);             
-        
-        o1.setDetalle(detalle);
-        
+        Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
 
-        //o1.agregarProducto(produ1);
         Main main = new Main();
         main.setVisible(true);
                 
 
         o1.agregarProducto(plato1);
+
         //o2.agregarProducto(produ2);
         System.out.println(Orden.listaProductos.toString());
                 
         Restaurant.listaOrdenes.add(o1);
         Restaurant.listaOrdenes.add(o2);
         System.out.println(Restaurant.listaOrdenes.toString());       
+
       }
     
         

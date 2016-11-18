@@ -10,7 +10,7 @@ public class Factura {
     private Cliente cliente;
 
     private Date fecha;
-
+    
     private String hora;
 
     private int impuestoVenta;
