@@ -2,11 +2,11 @@ package ServicioRestaurante;
 
 public class Bebida extends Producto {
 
-    private int tipo;
+    private String tipo;
 
     private int tamano;
     
-    public Bebida(int idProducto, int precio, String nombre, int tipo, int tamano) {
+    public Bebida(int idProducto, int precio, String nombre, String tipo, int tamano) {
         super(idProducto, precio, nombre);
         this.tipo = tipo;
         this.tamano = tamano;
@@ -15,11 +15,11 @@ public class Bebida extends Producto {
     public Bebida() {
     }
 
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
 
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
 

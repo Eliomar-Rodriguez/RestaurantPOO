@@ -40,8 +40,12 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        botonAdmin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnAdministrarDatos = new javax.swing.JButton();
+        btnVistaCocinero = new javax.swing.JButton();
+        btnTomarOrden = new javax.swing.JButton();
+        btnVistaMesero = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,44 +55,84 @@ public class Main extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(null);
 
-        botonAdmin.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
-        botonAdmin.setText("Administración de datos");
-        botonAdmin.addActionListener(new java.awt.event.ActionListener() {
+        btnAdministrarDatos.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnAdministrarDatos.setText("Administración de datos");
+        btnAdministrarDatos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                botonAdminActionPerformed(evt);
+                btnAdministrarDatosActionPerformed(evt);
             }
         });
-        getContentPane().add(botonAdmin);
-        botonAdmin.setBounds(10, 10, 280, 40);
+        getContentPane().add(btnAdministrarDatos);
+        btnAdministrarDatos.setBounds(10, 70, 280, 40);
 
-        jButton1.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
-        jButton1.setText("Tomar orden");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnVistaCocinero.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnVistaCocinero.setText("Vista Cocinero");
+        btnVistaCocinero.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnVistaCocineroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(10, 60, 280, 40);
+        getContentPane().add(btnVistaCocinero);
+        btnVistaCocinero.setBounds(630, 120, 280, 40);
+
+        btnTomarOrden.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnTomarOrden.setText("Tomar orden");
+        btnTomarOrden.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTomarOrdenActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnTomarOrden);
+        btnTomarOrden.setBounds(10, 120, 280, 40);
+
+        btnVistaMesero.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnVistaMesero.setText("Vista Mesero");
+        btnVistaMesero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVistaMeseroActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnVistaMesero);
+        btnVistaMesero.setBounds(630, 70, 280, 40);
+
+        jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 1, 30)); // NOI18N
+        jLabel2.setText("Funciones del restaurant");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(10, 20, 320, 30);
+
+        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 1, 30)); // NOI18N
+        jLabel4.setText("Vistas de los empleados");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(610, 20, 300, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 920, 490);
+        jLabel1.setBounds(0, -10, 920, 490);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void botonAdminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonAdminActionPerformed
+    private void btnAdministrarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdministrarDatosActionPerformed
         AdministracionDatos  r = new AdministracionDatos();
         r.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_botonAdminActionPerformed
+    }//GEN-LAST:event_btnAdministrarDatosActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnVistaCocineroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVistaCocineroActionPerformed
+        VistaCocinero vistaC = new VistaCocinero();
+        vistaC.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnVistaCocineroActionPerformed
+
+    private void btnTomarOrdenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTomarOrdenActionPerformed
         VistaMesas  r = new VistaMesas();
         r.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnTomarOrdenActionPerformed
+
+    private void btnVistaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVistaMeseroActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVistaMeseroActionPerformed
 
     
     /**
@@ -119,8 +163,12 @@ public class Main extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton botonAdmin;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAdministrarDatos;
+    private javax.swing.JButton btnTomarOrden;
+    private javax.swing.JButton btnVistaCocinero;
+    private javax.swing.JButton btnVistaMesero;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

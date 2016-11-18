@@ -73,9 +73,9 @@ public class BorrarEmpleado extends javax.swing.JFrame {
         jLabel1.setBounds(180, 50, 90, 35);
 
         txtDireccion.setEditable(false);
-        txtDireccion.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        txtDireccion.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         getContentPane().add(txtDireccion);
-        txtDireccion.setBounds(400, 250, 160, 35);
+        txtDireccion.setBounds(400, 250, 250, 35);
 
         btnBuscar.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         btnBuscar.setText("Buscar");
@@ -93,49 +93,49 @@ public class BorrarEmpleado extends javax.swing.JFrame {
         getContentPane().add(lblAviso);
         lblAviso.setBounds(450, 60, 20, 30);
 
-        jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
-        jLabel3.setText("Direccion");
+        jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        jLabel3.setText("Dirección");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(260, 250, 110, 28);
+        jLabel3.setBounds(240, 250, 130, 32);
 
-        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         jLabel4.setText("Correo");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(260, 210, 120, 28);
+        jLabel4.setBounds(240, 210, 140, 32);
 
-        jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
-        jLabel5.setText("Telefono");
+        jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        jLabel5.setText("Teléfono");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(260, 170, 120, 28);
+        jLabel5.setBounds(240, 170, 140, 32);
 
-        jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         jLabel6.setText("Nombre");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(260, 130, 120, 28);
+        jLabel6.setBounds(240, 130, 140, 32);
 
         txtId.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         getContentPane().add(txtId);
         txtId.setBounds(280, 50, 160, 35);
 
         txtName.setEditable(false);
-        txtName.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        txtName.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         getContentPane().add(txtName);
-        txtName.setBounds(400, 130, 160, 35);
+        txtName.setBounds(400, 130, 250, 35);
 
         txtTelefono.setEditable(false);
-        txtTelefono.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        txtTelefono.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         getContentPane().add(txtTelefono);
-        txtTelefono.setBounds(400, 170, 160, 35);
+        txtTelefono.setBounds(400, 170, 250, 35);
 
         txtCorreo.setEditable(false);
-        txtCorreo.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        txtCorreo.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtCorreo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCorreoActionPerformed(evt);
             }
         });
         getContentPane().add(txtCorreo);
-        txtCorreo.setBounds(400, 210, 160, 35);
+        txtCorreo.setBounds(400, 210, 250, 35);
 
         lblNoEnc.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
         lblNoEnc.setForeground(new java.awt.Color(204, 0, 0));
@@ -160,14 +160,14 @@ public class BorrarEmpleado extends javax.swing.JFrame {
         btnEliminar.setBounds(380, 390, 150, 40);
 
         txtOpcion.setEditable(false);
-        txtOpcion.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        txtOpcion.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         getContentPane().add(txtOpcion);
-        txtOpcion.setBounds(400, 290, 160, 35);
+        txtOpcion.setBounds(400, 290, 250, 35);
 
-        lblOpcion.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        lblOpcion.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         lblOpcion.setText("nombre");
         getContentPane().add(lblOpcion);
-        lblOpcion.setBounds(260, 290, 110, 28);
+        lblOpcion.setBounds(240, 290, 130, 32);
 
         btnAtras.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         btnAtras.setText("Atrás");
@@ -190,14 +190,34 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         Cocinero cocinero = null;
         Mesero mesero = null;
+        
         if(txtId.getText().isEmpty()){
             lblAviso.setVisible(true);
         }
         else{
             lblAviso.setVisible(false);
+            
+            if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){ // si lo que encuentra es un mesero
+                mesero = (Mesero) Restaurant.getInstance().getEmpleado(cedula);
+            }
+            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Cocinero){ // si lo que encuentra es un cocinero
+                cocinero = (Cocinero) Restaurant.getInstance().getEmpleado(cedula);
+            }
+            else if (Restaurant.getInstance().getEmpleado(cedula) == null){ // sino lo encuentra
+                lblNoEnc.setVisible(true);                
+                
+                txtCorreo.setText("");
+                txtDireccion.setText("");
+                txtName.setText("");
+                txtTelefono.setText("");  
+                
+                txtOpcion.setVisible(false);
+                lblOpcion.setVisible(false);
+                btnEliminar.setEnabled(true);
+            }
             cedula = txtId.getText();
             if (mesero == null & cocinero == null){
-                lblNoEnc.setVisible(true); 
+                
                 txtCorreo.setText("");
                 txtDireccion.setText("");
                 txtName.setText("");
@@ -206,37 +226,36 @@ public class BorrarEmpleado extends javax.swing.JFrame {
                 txtOpcion.setVisible(false);
                 lblOpcion.setVisible(false);
                 btnEliminar.setEnabled(true);
-
             }
-            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){
-                mesero = (Mesero) Restaurant.getInstance().getEmpleado(cedula);
-                txtCorreo.setText(mesero.getCorreo());
-                txtDireccion.setText(mesero.getDireccion());
-                txtName.setText(mesero.getNombreCompleto());
-                txtTelefono.setText(mesero.getTelefono());
+            else {
+                if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){
+                    mesero = (Mesero) Restaurant.getInstance().getEmpleado(cedula);
+                    txtCorreo.setText(mesero.getCorreo());
+                    txtDireccion.setText(mesero.getDireccion());
+                    txtName.setText(mesero.getNombreCompleto());
+                    txtTelefono.setText(mesero.getTelefono());
 
-                txtOpcion.setText(mesero.getIdiomasDomina());
-                txtOpcion.setVisible(true);
-                lblOpcion.setText("Idiomas");
-                lblOpcion.setVisible(true);
+                    txtOpcion.setText(mesero.getIdiomasDomina());
+                    txtOpcion.setVisible(true);
+                    lblOpcion.setText("Idiomas");
+                    lblOpcion.setVisible(true);
 
-                btnEliminar.setEnabled(true);
+                    btnEliminar.setEnabled(true);
+                }
+                else if (Restaurant.getInstance().getEmpleado(cedula)instanceof Cocinero){
+                    cocinero = (Cocinero) Restaurant.getInstance().getEmpleado(cedula);
+                    txtCorreo.setText(cocinero.getCorreo());
+                    txtDireccion.setText(cocinero.getDireccion());
+                    txtName.setText(cocinero.getNombreCompleto());
+                    txtTelefono.setText(cocinero.getTelefono());    
+                    txtOpcion.setText(cocinero.getEspecialidad());
+                    lblOpcion.setText("Especialidad");
+                    btnEliminar.setEnabled(true);
+                    lblOpcion.setVisible(true);
+                    txtOpcion.setVisible(true);
+                }
             }
-            else if (Restaurant.getInstance().getEmpleado(cedula)instanceof Cocinero){
-                cocinero = (Cocinero) Restaurant.getInstance().getEmpleado(cedula);
-                txtCorreo.setText(cocinero.getCorreo());
-                txtDireccion.setText(cocinero.getDireccion());
-                txtName.setText(cocinero.getNombreCompleto());
-                txtTelefono.setText(cocinero.getTelefono());    
-                txtOpcion.setText(cocinero.getEspecialidad());
-                lblOpcion.setText("Especialidad");
-                btnEliminar.setEnabled(true);
-                lblOpcion.setVisible(true);
-                txtOpcion.setVisible(true);
-            }
-        }
-            
-        
+        }               
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

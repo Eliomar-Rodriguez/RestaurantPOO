@@ -8,43 +8,31 @@ package Vistas;
 import Controlador.MainRestaurante;
 import Empleados.Cocinero;
 import Empleados.CrearFabrica;
-import Empleados.Empleado;
-import Empleados.Factory;
 import Empleados.Mesero;
 import ServicioRestaurante.Restaurant;
 
 /**
  *
- * @author Extreme pc
+ * @author Antonio Rodriguez
  */
-public class RegistroEmpleado extends javax.swing.JFrame {
+public class EdicionEmpleados extends javax.swing.JFrame {
 
     /**
-     * Creates new form RegistroEmpleado
+     * Creates new form EdicionEmpleados
      */
-    
-    
-    
-    public RegistroEmpleado() {
+    public EdicionEmpleados() {
         initComponents();
-        
-        lblIdioma.setVisible(false);        
-        txtIdiomas.setVisible(false);
-        
-        lblEspecialidad.setVisible(false);
-        txtEspecialidad.setVisible(false);
-        
         lblACed.setVisible(false);
         lblACor.setVisible(false);
         lblADir.setVisible(false);
-        lblANom.setVisible(false);
         lblATel.setVisible(false);
         lblTipoEmp.setVisible(false);
-        lblOpcion.setVisible(false);
+        lblANom.setVisible(false);
         
-        setTitle("Registro de empleados.");
-        setSize(897, 520);
-        setLocationRelativeTo(null);
+        txtIdiomas.setVisible(false);
+        lblIdioma.setVisible(false);
+        lblOpcion.setVisible(false);
+        lblEspecialidad.setVisible(false);
     }
 
     /**
@@ -82,40 +70,44 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblACor = new javax.swing.JLabel();
         lblTipoEmp = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        txtNombre1 = new javax.swing.JTextField();
+        lblId = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(888, 497));
         getContentPane().setLayout(null);
 
-        lblTitulo.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
-        lblTitulo.setText("Registro de Empleados");
+        lblTitulo.setFont(new java.awt.Font("Monotype Corsiva", 1, 34)); // NOI18N
+        lblTitulo.setText("Edición de información");
         getContentPane().add(lblTitulo);
-        lblTitulo.setBounds(280, 30, 350, 50);
+        lblTitulo.setBounds(270, 30, 350, 50);
 
         jLabel2.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel2.setText("Nombre completo");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(200, 100, 220, 28);
+        jLabel2.setBounds(200, 134, 220, 28);
 
         jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel3.setText("Cedula");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(200, 140, 220, 28);
+        jLabel3.setBounds(200, 174, 220, 28);
 
         jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel4.setText("Telefono");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(200, 180, 220, 28);
+        jLabel4.setBounds(200, 216, 220, 28);
 
         jLabel5.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel5.setText("Direccion");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(200, 220, 220, 28);
+        jLabel5.setBounds(200, 256, 220, 28);
 
         jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel6.setText("Correo");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(200, 260, 220, 28);
+        jLabel6.setBounds(200, 296, 220, 28);
 
         comboEmpleado.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         comboEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cocinero", "Mesero" }));
@@ -126,17 +118,17 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(comboEmpleado);
-        comboEmpleado.setBounds(420, 291, 230, 35);
+        comboEmpleado.setBounds(420, 330, 230, 35);
 
         jLabel7.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         jLabel7.setText("Tipo de empleado");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(200, 297, 230, 28);
+        jLabel7.setBounds(200, 333, 230, 30);
 
         lblIdioma.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         lblIdioma.setText("Idiomas que domina");
         getContentPane().add(lblIdioma);
-        lblIdioma.setBounds(200, 335, 220, 28);
+        lblIdioma.setBounds(200, 370, 220, 28);
 
         txtNombre.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtNombre.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -145,7 +137,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtNombre);
-        txtNombre.setBounds(420, 96, 230, 35);
+        txtNombre.setBounds(420, 130, 230, 35);
 
         txtCedula.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtCedula.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -154,7 +146,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtCedula);
-        txtCedula.setBounds(420, 135, 230, 35);
+        txtCedula.setBounds(420, 170, 230, 35);
 
         txtTelefono.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtTelefono.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -163,7 +155,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtTelefono);
-        txtTelefono.setBounds(420, 174, 230, 35);
+        txtTelefono.setBounds(420, 210, 230, 35);
 
         txtDireccion.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtDireccion.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -172,7 +164,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtDireccion);
-        txtDireccion.setBounds(420, 213, 230, 35);
+        txtDireccion.setBounds(420, 250, 230, 35);
 
         txtCorreo.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtCorreo.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -181,7 +173,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtCorreo);
-        txtCorreo.setBounds(420, 252, 230, 35);
+        txtCorreo.setBounds(420, 290, 230, 35);
 
         txtIdiomas.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtIdiomas.setToolTipText("Ejemplo: Español, Inglés, Mandarín");
@@ -196,12 +188,12 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtIdiomas);
-        txtIdiomas.setBounds(420, 330, 230, 35);
+        txtIdiomas.setBounds(420, 370, 230, 35);
 
         lblEspecialidad.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         lblEspecialidad.setText("Especialidad");
         getContentPane().add(lblEspecialidad);
-        lblEspecialidad.setBounds(200, 335, 120, 28);
+        lblEspecialidad.setBounds(200, 370, 120, 28);
 
         txtEspecialidad.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         txtEspecialidad.addActionListener(new java.awt.event.ActionListener() {
@@ -217,57 +209,57 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         getContentPane().add(txtEspecialidad);
         txtEspecialidad.setBounds(420, 330, 230, 35);
 
-        btnRegistrar.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
-        btnRegistrar.setText("Registrar");
+        btnRegistrar.setFont(new java.awt.Font("Monotype Corsiva", 1, 26)); // NOI18N
+        btnRegistrar.setText("Guardar");
         btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarActionPerformed(evt);
             }
         });
         getContentPane().add(btnRegistrar);
-        btnRegistrar.setBounds(380, 400, 140, 40);
+        btnRegistrar.setBounds(360, 420, 150, 40);
 
         lblOpcion.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblOpcion.setForeground(new java.awt.Color(204, 0, 0));
         lblOpcion.setText("*");
         getContentPane().add(lblOpcion);
-        lblOpcion.setBounds(660, 340, 20, 20);
+        lblOpcion.setBounds(660, 380, 20, 20);
 
         lblANom.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblANom.setForeground(new java.awt.Color(204, 0, 0));
         lblANom.setText("*");
         getContentPane().add(lblANom);
-        lblANom.setBounds(660, 100, 51, 40);
+        lblANom.setBounds(660, 140, 51, 40);
 
         lblADir.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblADir.setForeground(new java.awt.Color(204, 0, 0));
         lblADir.setText("*");
         getContentPane().add(lblADir);
-        lblADir.setBounds(660, 220, 51, 30);
+        lblADir.setBounds(660, 260, 51, 30);
 
         lblATel.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblATel.setForeground(new java.awt.Color(204, 0, 0));
         lblATel.setText("*");
         getContentPane().add(lblATel);
-        lblATel.setBounds(660, 178, 51, 40);
+        lblATel.setBounds(660, 220, 51, 40);
 
         lblACed.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblACed.setForeground(new java.awt.Color(204, 0, 0));
         lblACed.setText("*");
         getContentPane().add(lblACed);
-        lblACed.setBounds(660, 140, 51, 40);
+        lblACed.setBounds(660, 180, 51, 40);
 
         lblACor.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblACor.setForeground(new java.awt.Color(204, 0, 0));
         lblACor.setText("*");
         getContentPane().add(lblACor);
-        lblACor.setBounds(660, 260, 20, 30);
+        lblACor.setBounds(660, 300, 20, 30);
 
         lblTipoEmp.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblTipoEmp.setForeground(new java.awt.Color(204, 0, 0));
         lblTipoEmp.setText("*");
         getContentPane().add(lblTipoEmp);
-        lblTipoEmp.setBounds(660, 300, 20, 20);
+        lblTipoEmp.setBounds(660, 340, 20, 20);
 
         btnAtras.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         btnAtras.setText("Atrás");
@@ -279,91 +271,45 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         getContentPane().add(btnAtras);
         btnAtras.setBounds(10, 10, 100, 40);
 
+        jLabel9.setFont(new java.awt.Font("Monotype Corsiva", 1, 24)); // NOI18N
+        jLabel9.setText("Id Empleado");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(200, 80, 220, 28);
+
+        txtNombre1.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        txtNombre1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNombre1KeyPressed(evt);
+            }
+        });
+        getContentPane().add(txtNombre1);
+        txtNombre1.setBounds(420, 80, 230, 35);
+
+        lblId.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
+        lblId.setForeground(new java.awt.Color(204, 0, 0));
+        lblId.setText("*");
+        getContentPane().add(lblId);
+        lblId.setBounds(660, 80, 51, 40);
+
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(-10, 0, 900, 498);
+        jLabel8.setBounds(-10, 0, 890, 498);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtIdiomasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdiomasActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtIdiomasActionPerformed
-
-    private void txtEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecialidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtEspecialidadActionPerformed
-
-    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
-        Restaurant rest = Restaurant.getInstance();
-        if (txtNombre.getText().isEmpty() | txtCedula.getText().isEmpty() | txtTelefono.getText().isEmpty() | txtCorreo.getText().isEmpty() | txtDireccion.getText().isEmpty() | comboEmpleado.getSelectedIndex()==-1){ // so algo esta vacio
-            if (txtNombre.getText().isEmpty())
-                lblANom.setVisible(true);
-            if (txtCedula.getText().isEmpty())
-                lblACed.setVisible(true);
-            
-            if (txtTelefono.getText().isEmpty())
-                lblATel.setVisible(true);
-            if (txtCorreo.getText().isEmpty())
-                lblACor.setVisible(true);
-            if (txtDireccion.getText().isEmpty())
-                lblADir.setVisible(true);
-            if (comboEmpleado.getSelectedIndex()==-1)
-                lblTipoEmp.setVisible(true);                        
-        }
-        if (comboEmpleado.getSelectedIndex()==0){
-            if (txtEspecialidad.getText().isEmpty()){
-                lblOpcion.setVisible(true);
-            }
-            else{
-                txtEspecialidad.setVisible(true);
-                lblEspecialidad.setVisible(true);
-
-                txtIdiomas.setVisible(false);
-                lblIdioma.setVisible(false);
-            }                
-        }
-        else if (comboEmpleado.getSelectedIndex()==1){
-            if (txtIdiomas.getText().isEmpty()){
-                lblOpcion.setVisible(true);
-            }
-            else{
-                txtEspecialidad.setVisible(false);
-                lblEspecialidad.setVisible(false);
-
-                txtIdiomas.setVisible(true);
-                lblIdioma.setVisible(true);
-            } 
-        }
-        if (!txtNombre.getText().isEmpty() & !txtCedula.getText().isEmpty() & !txtTelefono.getText().isEmpty() & !txtCorreo.getText().isEmpty() & !txtDireccion.getText().isEmpty() & comboEmpleado.getSelectedIndex()!=-1){ // so algo esta vacio       
-            System.out.println("ELSE");
-            CrearFabrica factory = new CrearFabrica();
-            if (comboEmpleado.getSelectedIndex()==0){ // cocinero
-                System.out.println("COCINERO");
-                Cocinero cocinero = factory.creaCocinero(0, 0, txtEspecialidad.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                rest.agregarEmpleado(cocinero);
-            }
-            else if (comboEmpleado.getSelectedIndex()==1){ // mesero
-                System.out.println("MESERO");
-                Mesero mesero = factory.crearMesero(txtIdiomas.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                MainRestaurante.rest.agregarEmpleado(mesero);
-            }
-        }
-        System.out.println(rest.getCantidadEmpleados());
-    }//GEN-LAST:event_btnRegistrarActionPerformed
-
     private void comboEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEmpleadoActionPerformed
-         if (comboEmpleado.getSelectedIndex()==0){ // cocinero
+        if (comboEmpleado.getSelectedIndex()==0){ // cocinero
             txtEspecialidad.setVisible(true);
             lblEspecialidad.setVisible(true);
-            
+
             lblIdioma.setVisible(false);
             txtIdiomas.setVisible(false);
         }
         else if(comboEmpleado.getSelectedIndex()==1){ // mesero
             txtEspecialidad.setVisible(false);
             lblEspecialidad.setVisible(false);
-            
+
             lblIdioma.setVisible(true);
             txtIdiomas.setVisible(true);
         }
@@ -389,13 +335,79 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblACor.setVisible(false);
     }//GEN-LAST:event_txtCorreoKeyPressed
 
+    private void txtIdiomasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtIdiomasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtIdiomasActionPerformed
+
     private void txtIdiomasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIdiomasKeyPressed
         lblOpcion.setVisible(false);
     }//GEN-LAST:event_txtIdiomasKeyPressed
 
+    private void txtEspecialidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEspecialidadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEspecialidadActionPerformed
+
     private void txtEspecialidadKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtEspecialidadKeyPressed
         lblOpcion.setVisible(false);
     }//GEN-LAST:event_txtEspecialidadKeyPressed
+
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        Restaurant rest = Restaurant.getInstance();
+        if (txtNombre.getText().isEmpty() | txtCedula.getText().isEmpty() | txtTelefono.getText().isEmpty() | txtCorreo.getText().isEmpty() | txtDireccion.getText().isEmpty() | comboEmpleado.getSelectedIndex()==-1){ // so algo esta vacio
+            if (txtNombre.getText().isEmpty())
+            lblANom.setVisible(true);
+            if (txtCedula.getText().isEmpty())
+            lblACed.setVisible(true);
+
+            if (txtTelefono.getText().isEmpty())
+            lblATel.setVisible(true);
+            if (txtCorreo.getText().isEmpty())
+            lblACor.setVisible(true);
+            if (txtDireccion.getText().isEmpty())
+            lblADir.setVisible(true);
+            if (comboEmpleado.getSelectedIndex()==-1)
+            lblTipoEmp.setVisible(true);
+        }
+        if (comboEmpleado.getSelectedIndex()==0){
+            if (txtEspecialidad.getText().isEmpty()){
+                lblOpcion.setVisible(true);
+            }
+            else{
+                txtEspecialidad.setVisible(true);
+                lblEspecialidad.setVisible(true);
+
+                txtIdiomas.setVisible(false);
+                lblIdioma.setVisible(false);
+            }
+        }
+        else if (comboEmpleado.getSelectedIndex()==1){
+            if (txtIdiomas.getText().isEmpty()){
+                lblOpcion.setVisible(true);
+            }
+            else{
+                txtEspecialidad.setVisible(false);
+                lblEspecialidad.setVisible(false);
+
+                txtIdiomas.setVisible(true);
+                lblIdioma.setVisible(true);
+            }
+        }
+        if (!txtNombre.getText().isEmpty() & !txtCedula.getText().isEmpty() & !txtTelefono.getText().isEmpty() & !txtCorreo.getText().isEmpty() & !txtDireccion.getText().isEmpty() & comboEmpleado.getSelectedIndex()!=-1){ // so algo esta vacio
+            System.out.println("ELSE");
+            CrearFabrica factory = new CrearFabrica();
+            if (comboEmpleado.getSelectedIndex()==0){ // cocinero
+                System.out.println("COCINERO");
+                Cocinero cocinero = factory.creaCocinero(0, 0, txtEspecialidad.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
+                rest.agregarEmpleado(cocinero);
+            }
+            else if (comboEmpleado.getSelectedIndex()==1){ // mesero
+                System.out.println("MESERO");
+                Mesero mesero = factory.crearMesero(txtIdiomas.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
+                MainRestaurante.rest.agregarEmpleado(mesero);
+            }
+        }
+        System.out.println(rest.getCantidadEmpleados());
+    }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
         AdministracionDatos atras = new AdministracionDatos();
@@ -403,25 +415,41 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnAtrasActionPerformed
 
+    private void txtNombre1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNombre1KeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombre1KeyPressed
+
     /**
      * @param args the command line arguments
      */
-    
-    
-    private void limpiar(){
-        txtNombre.setText("");
-        txtCedula.setText("");
-        txtTelefono.setText("");
-        txtDireccion.setText("");
-        txtCorreo.setText("");
-        txtIdiomas.setText("");
-        comboEmpleado.setSelectedIndex(-1);
-    }
     public static void main(String args[]) {
-        
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(EdicionEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(EdicionEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(EdicionEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(EdicionEmpleados.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroEmpleado().setVisible(true);
+                new EdicionEmpleados().setVisible(true);
             }
         });
     }
@@ -437,12 +465,14 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblACed;
     private javax.swing.JLabel lblACor;
     private javax.swing.JLabel lblADir;
     private javax.swing.JLabel lblANom;
     private javax.swing.JLabel lblATel;
     private javax.swing.JLabel lblEspecialidad;
+    private javax.swing.JLabel lblId;
     private javax.swing.JLabel lblIdioma;
     private javax.swing.JLabel lblOpcion;
     private javax.swing.JLabel lblTipoEmp;
@@ -453,6 +483,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JTextField txtEspecialidad;
     private javax.swing.JTextField txtIdiomas;
     private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtNombre1;
     private javax.swing.JTextField txtTelefono;
     // End of variables declaration//GEN-END:variables
 }

@@ -30,6 +30,8 @@ public class VistaMesas extends javax.swing.JFrame {
      */
     private static Mesa mesaSeleccionada = null;
     
+    private static Mesero mesero = null;
+    
     public VistaMesas() {
         initComponents();
         lblAviso.setVisible(false);
@@ -85,10 +87,10 @@ public class VistaMesas extends javax.swing.JFrame {
         );
 
         getContentPane().add(panelMesas);
-        panelMesas.setBounds(440, 30, 500, 500);
+        panelMesas.setBounds(450, 30, 500, 500);
 
         numPersonas.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
-        numPersonas.setModel(new javax.swing.SpinnerNumberModel(1, 1, null, 1));
+        numPersonas.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
         numPersonas.setAlignmentX(1.0F);
         numPersonas.setAlignmentY(1.0F);
         numPersonas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -98,12 +100,12 @@ public class VistaMesas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(numPersonas);
-        numPersonas.setBounds(290, 150, 70, 40);
+        numPersonas.setBounds(320, 80, 70, 40);
 
         jLabel1.setFont(new java.awt.Font("Monotype Corsiva", 0, 30)); // NOI18N
-        jLabel1.setText("Mesero");
+        jLabel1.setText("Id Mesero");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(50, 90, 100, 35);
+        jLabel1.setBounds(80, 150, 120, 35);
 
         btnReservar.setFont(new java.awt.Font("Monotype Corsiva", 0, 30)); // NOI18N
         btnReservar.setText("Reservar mesa");
@@ -113,7 +115,7 @@ public class VistaMesas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnReservar);
-        btnReservar.setBounds(110, 230, 190, 40);
+        btnReservar.setBounds(160, 240, 190, 40);
 
         jButton2.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         jButton2.setText("Atrás");
@@ -123,27 +125,27 @@ public class VistaMesas extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(40, 20, 100, 30);
+        jButton2.setBounds(40, 20, 100, 40);
 
         jLabel3.setFont(new java.awt.Font("Monotype Corsiva", 0, 30)); // NOI18N
         jLabel3.setText("Número de personas");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 150, 240, 35);
+        jLabel3.setBounds(80, 80, 240, 35);
 
         txtMesero.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
         getContentPane().add(txtMesero);
-        txtMesero.setBounds(180, 90, 220, 40);
+        txtMesero.setBounds(210, 150, 180, 40);
 
         lblAviso.setFont(new java.awt.Font("Monotype Corsiva", 1, 36)); // NOI18N
         lblAviso.setForeground(new java.awt.Color(204, 0, 0));
         lblAviso.setText("*");
         getContentPane().add(lblAviso);
-        lblAviso.setBounds(400, 90, 110, 60);
+        lblAviso.setBounds(400, 150, 110, 60);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo.jpg")); // NOI18N
         jLabel2.setPreferredSize(new java.awt.Dimension(1000, 670));
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(0, -40, 1000, 640);
+        jLabel2.setBounds(0, 0, 1000, 560);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -168,29 +170,37 @@ public class VistaMesas extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         panelMesas.setLayout(new GridLayout(3, 4,0,0));
+        mesaSeleccionada = null;
     }//GEN-LAST:event_formWindowOpened
 
     private void btnReservarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReservarActionPerformed
         String idEmpleado = txtMesero.getText();
+        int x =0;
         if (txtMesero.getText().isEmpty() | mesaSeleccionada == null) // si mesa seleccionada es diferente de null quiere decir que se dio click en una mesa disponile
             lblAviso.setVisible(true);
         else{ 
             if (!mesaSeleccionada.getEstado() | txtMesero.getText().isEmpty())
                 lblAviso.setVisible(true);
-            else{
-                Mesero mesero = null;
+            else{                
             
-                if (Restaurant.getInstance().getEmpleado(idEmpleado)!=null)
+                if (Restaurant.getInstance().getEmpleado(idEmpleado)!=null){
                     mesero = (Mesero) Restaurant.getInstance().getEmpleado(idEmpleado);
-
-                for (int i = 0; i < Restaurant.getInstance().getMesas().size(); i++) {
-                    if (Restaurant.getInstance().getMesas().get(i).getNumMesa() == mesaSeleccionada.getNumMesa()){ // si la mesa seleccionada para reservar es igual a la mesa que esta en la lista de mesas pongo ocupada la que esta e la lista del restaurant
-                        Restaurant.getInstance().getMesas().get(i).setEstado(false);
-                        break;
+                    
+                    for (int i = 0; i < Restaurant.getInstance().getMesas().size(); i++) {
+                        if (Restaurant.getInstance().getMesas().get(i).getNumMesa() == mesaSeleccionada.getNumMesa()){ // si la mesa seleccionada para reservar es igual a la mesa que esta en la lista de mesas pongo ocupada la que esta e la lista del restaurant
+                            
+                            Restaurant.getInstance().getMesas().get(i).setEstado(false);
+                            x=i;
+                            break;
+                        }
                     }
+                    Menu m = new Menu();
+                    m.setVisible(true);
                 }
-                Menu m = new Menu();
-                m.setVisible(true);
+                else{
+                    lblAviso.setVisible(true);
+                }
+                //System.out.println(Restaurant.getInstance().getMesas().get(x).getEstado());
             }
         }
     }//GEN-LAST:event_btnReservarActionPerformed
@@ -199,7 +209,8 @@ public class VistaMesas extends javax.swing.JFrame {
         //System.out.println("Entre al mesasDisponibles"); 
         Font fuente = new Font("Monotype Corsiva", 3, 24);
         
-        ArrayList<Mesa> listaMesas = Restaurant.getInstance().getMesas();;
+        ArrayList<Mesa> listaMesas = Restaurant.getInstance().getMesas();
+        //System.out.println(listaMesas.size());
         for (int i = 0; i < listaMesas.size(); i++) {
             Mesa mesa = listaMesas.get(i);
             
