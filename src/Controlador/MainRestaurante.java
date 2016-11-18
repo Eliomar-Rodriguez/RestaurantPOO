@@ -14,6 +14,7 @@ import Empleados.CrearFabrica;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Direccion;
+import ServicioRestaurante.ItemPedido;
 import ServicioRestaurante.Menu;
 import ServicioRestaurante.Mesa;
 import ServicioRestaurante.Orden;
@@ -37,7 +38,7 @@ public class MainRestaurante {
           
         
         
-        //CREAR MESAS
+        
         VistaCocinero co = new VistaCocinero();
         
         Direccion dir = new Direccion("Alajuela", "San Carlos", "Florencia", "TEC Santa Clara");
@@ -88,10 +89,16 @@ public class MainRestaurante {
         Mesero m2 = f.crearMesero("Ingles, Frances, Español", "Los Chiles", "asd@hotmail.com", "Tulio Lopez", "205670945", "98764567");
         
         Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "203451678", "836383455");
-        
+        Cocinero co2 = f.creaCocinero(0, 0, "Arroces", "Aguas Zarcas", "jperez24@gmail.com", "Pancho Perez", "203451678", "836383455");
+        Cocinero co3 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Jose Perez", "203451678", "836383455");
+        Cocinero co4 = f.creaCocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Eliomar Perez", "203451678", "836383455");
         Detalle detalle = new Detalle();
         Detalle detalle2 = new Detalle();
         rest.agregarEmpleado(co1);
+        rest.agregarEmpleado(co2);
+        rest.agregarEmpleado(co3);
+        rest.agregarEmpleado(co4);
+        
 
         //System.out.println("Impresión de datos ingresados a \"pata\".\n"+c1.mostrar()+"\n"+c2.mostrar()+"\n"+co1.mostrar());
         
@@ -116,6 +123,13 @@ public class MainRestaurante {
         o1.agregarProducto(plato1);
         o1.agregarProducto(be1);
         System.out.println(Orden.listaProductos.toString());
+        
+        ItemPedido item = new ItemPedido(co1,"Listo",plato1);
+        ItemPedido item1 = new ItemPedido(co1,"Listo",be1);
+        co.setItemPedido(item);
+        co.setItemPedido(item1);
+        
+        
         
         
         

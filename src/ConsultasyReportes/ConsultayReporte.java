@@ -50,27 +50,28 @@ public class ConsultayReporte {
             vecesActual=0;
         }
     return Restaurant.listaOrdenes.get(mayor);
+    
         
     }
     
-    public void cocineroDelmes(){
-        String resultado,cocinero;
-        int veces=0,mayor=0;
+    public Orden cocineroDelmes(){
+        
+        int vecesActual=0,vecesMayor=0, mayor=0;
         
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
-            cocinero = Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto();
             
             for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(cocinero)){
-                    veces++;
-                } 
+                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
+                    vecesActual++;
+                }                                
             }
-            if (veces>mayor){
-                resultado = Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto();
+            if (vecesActual>vecesMayor){
+                mayor=i;
             }
-            mayor = veces;
-            veces=0;
+            vecesMayor=vecesActual; 
+            vecesActual=0;
         }
+    return Restaurant.listaOrdenes.get(mayor);
        
     }
     
@@ -78,7 +79,7 @@ public class ConsultayReporte {
     public void dosPlatosMasConsumidos() {
         for(int i= 0; i < Orden.listaProductos.size(); i++){
             Orden.listaProductos.get(i).getIdProducto();
-            System.out.println("ayyy" + i);
+            System.out.println("ayyy" + i); //falta este metodo
         }
           
     }
