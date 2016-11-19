@@ -76,12 +76,14 @@ public class ConsultayReporte {
     }
     
      //Metodo que va a dar los dos platos mas consumidos
-    public void dosPlatosMasConsumidos() {
-        for(int i= 0; i < Orden.listaDetalles.size(); i++){
-            Orden.listaDetalles.get(i).getProducto().toString();
-            System.out.println("ayyy" + i); //falta este metodo
+    public int dosPlatosMasConsumidos() {
+        int contador =0;
+        for(int i= 0; i < facturas.size(); i++){
+            if(facturas.get(i).getListaDetalle(i).getProducto().getNombre().equals(i)){
+                contador++;
+            }    
         }
-          
+        return contador;
     }
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO

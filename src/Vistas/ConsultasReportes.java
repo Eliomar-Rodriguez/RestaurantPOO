@@ -6,6 +6,15 @@
 package Vistas;
 
 import ConsultasyReportes.ConsultayReporte;
+import Empleados.Cliente;
+import ServicioRestaurante.Bebida;
+import ServicioRestaurante.Factura;
+import ServicioRestaurante.Orden;
+import ServicioRestaurante.Plato;
+import ServicioRestaurante.Restaurant;
+import static ServicioRestaurante.Restaurant.facturas;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  *
@@ -18,6 +27,9 @@ public class ConsultasReportes extends javax.swing.JFrame {
      */
     
     public static ConsultayReporte cr = new ConsultayReporte();
+    protected ArrayList<Cliente> listaClientes;
+    
+
     public ConsultasReportes() {
         initComponents();
     }
@@ -41,7 +53,7 @@ public class ConsultasReportes extends javax.swing.JFrame {
 
         jLabel1.setText("Consultas y Reportes");
 
-        comboConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. El empleado del mes, mesero y cocinero.", "2. Los dos platos más consumidos por los clientes.", "3. En qué hora del día el restaurante está más lleno.", "4. ¿Cuál es el cliente más frecuente?", "5. Total, por cada plato servido en un mes en específico.", "6. Total, por tipo de bebidas servidas en un día en específico.", "7. Total, vendido por mes y año", "8. Total, de clientes atendidos por mes y por año.", " " }));
+        comboConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. El empleado del mes, mesero y cocinero.", "2. Los dos platos más consumidos por los clientes.", "3. En qué hora del día el restaurante está más lleno.", "4. ¿Cuál es el cliente más frecuente?", "5. Total, por cada plato servido en un mes en específico.", "6. Total, por tipo de bebidas servidas en un día en específico.", "7. Total, vendido por mes.", "8. Total vendido por año.", "9. Total, de clientes atendidos por mes.", "10. Total de clientes atendidos por año", " " }));
         comboConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboConsultaActionPerformed(evt);
@@ -109,29 +121,187 @@ public class ConsultasReportes extends javax.swing.JFrame {
                
                 break;
             case 1:
-                cr.dosPlatosMasConsumidos();
+                int contador =0;
+                for(int i= 0; i < facturas.size(); i++){
+                    if(facturas.get(i).getListaDetalle(i).getProducto().getNombre().equals(i)){
+                        contador++;
+                    }    
+                }
+                System.out.println(contador);
                  
                 break;
             case 2:
-                cr.horaPicoRest();
+                //hora pico
+                String hora;
+                String horaPico = "";
+                
+                int veces=0,mayor=0;
+        
+                for (int i = 0; i < facturas.size(); i++) {
+                    hora = facturas.get(i).getHora();
+            
+                    for (int j = 0; j < facturas.size(); j++) {
+                        if (facturas.get(i).getHora().equals(hora)){
+                            veces++;
+                        } 
+                    }
+                    if (veces>mayor){
+                        horaPico = facturas.get(i).getHora();
+                    }
+                    mayor = veces;
+                    veces=0;
+                }
+                
+                
+                areaConsulta.setText(horaPico);
                 break;
             case 3:
-                cr.clienteFrecuente();
+                //cliente frecuente
+                
+                String cadena6 = "";
+                int vecesActual=0,vecesMayor=0, mayor1=0;
+        
+                for (int i = 0; i < listaClientes.size(); i++) {
+            
+                    for (int j = 0; j < facturas.size(); j++) {
+                        if (listaClientes.get(i).getCedula().equals(facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
+                            vecesActual++;
+                        }                                
+                    }
+                    if (vecesActual>vecesMayor){
+                        mayor=i;
+                    }
+                    vecesMayor=vecesActual; 
+                    vecesActual=0;
+                }
+     
+                cadena6 = String.valueOf(listaClientes.get(mayor1));
+ 
+                cadena6= Integer.toString(mayor1);
+                areaConsulta.setText(cadena6);
+
                 
                 break;
             case 4:
-                //cr.totalPlatosxMes(plato, WIDTH);
+                //total de platos por mes
+                String cadena5 = "";
+                Plato plato = new Plato();
+                int mes2 = 0;
+                int total5 = 0;
+                for (int i = 0; i < facturas.size(); i++) {
+            
+                    String formato="MM";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+
+                    if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total5 += plato.getIdProducto(); 
+                    }
+                }
+                
+                cadena5 = String.valueOf(total5);
+ 
+                cadena5= Integer.toString(total5);
+                areaConsulta.setText(cadena5);
                 break;
             case 5:
-                //cr.totalBebidasXDia(bebida, WIDTH);
-                break;
+                //total de bebidas por dia
+                String cadena4 = "";
+                Bebida bebida = new Bebida();
+                int dia = 0;
+                int total4=0;
+            
+                for (int i = 0; i < facturas.size(); i++) {
+                    String formato="d";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+                    if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
+                        total4 += bebida.getIdProducto(); 
+                    }
+                }
+                cadena4 = String.valueOf(total4);
+ 
+                cadena4= Integer.toString(total4);
+                areaConsulta.setText(cadena4);
+        
             case 6:
-                cr.totalVendidoXMes(WIDTH);
-                cr.totalVendidoXAno(ABORT);
+                // total vendido por mes
+                String cadena3 = "";
+                int mes1 = 0;
+                int total3 = 0;
+                for (int i = 0; i < facturas.size(); i++) {
+            
+                    String formato="MM";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+
+                    if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes1){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total3 += facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+                    }
+                }
+                cadena3 = String.valueOf(total3);
+ 
+                cadena3= Integer.toString(total3);
+                areaConsulta.setText(cadena3);
+        
                 break;
             case 7:
-                cr.totalClientesXMes(WIDTH);
-                cr.totalClientesXAno(ABORT);
+                //total vendido por ano
+                String cadena2 = "";
+                int ano = 0;
+                int total2 = 0;
+                for (int i = 0; i < facturas.size(); i++) {
+            
+                    String formato="yyyy";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+
+                    if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==ano){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total2 += facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+                    }
+                }
+                cadena2 = String.valueOf(total2);
+ 
+                cadena2= Integer.toString(total2);
+                areaConsulta.setText(cadena2);
+        
+                
+                break;
+            case 8 :
+                // total de clientes por mes
+                String cadena = "";
+                int mes = 0;
+                int total = 0;
+                for (int i = 0; i < facturas.size(); i++) {
+            
+                    String formato="MM";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+
+                    if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total += facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el mes
+                    }
+                }
+                cadena = String.valueOf(total);
+ 
+                cadena= Integer.toString(total);
+                areaConsulta.setText(cadena);
+                break;
+                
+            case 9 :
+                // total de clientes por ano
+                String cadena1 = "";
+                int total1 = 0;
+                int ano1 = 0;
+                for (int i = 0; i < facturas.size(); i++) {
+            
+                    String formato="yyyy";
+                    SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+            
+                    if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                    total1 += facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+                    }
+                }
+                cadena1 = String.valueOf(total1);
+ 
+                cadena1= Integer.toString(total1);
+                areaConsulta.setText(cadena1);
                 break;
             default:
                 break;
