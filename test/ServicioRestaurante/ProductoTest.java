@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
 public class ProductoTest {
     
     private Producto produ;
+    
     public ProductoTest() {
     }
     

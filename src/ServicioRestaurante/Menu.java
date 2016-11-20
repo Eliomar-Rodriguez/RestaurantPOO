@@ -25,7 +25,7 @@ public class Menu {
         return 0;
     }
 
-    public void borrarProducto(int idP) {
+    public void borrarProducto(String idP) {
         for (int i = 0; i < listaProductos.size(); i++) {
             if (listaProductos.get(i).getIdProducto()==idP){
                 listaProductos.remove(i);                        
@@ -33,15 +33,31 @@ public class Menu {
         }
     }
 
-    public Producto buscarProducto(int idP) {
-        int pos = 0;
+    public Producto buscarProducto(String idP) {
+        //System.out.println("cantidad de productos en menu "+listaProductos.size());
         for (int i = 0; i < listaProductos.size(); i++) {
-            pos = i;
-            if (listaProductos.get(i).getIdProducto()==idP) {
-                break;
+            if (listaProductos.get(i)==null){
+                System.out.println("No encontrado compa");
+            }
+            else if (listaProductos.get(i).getIdProducto().equals(idP)) {
+                return listaProductos.get(i);
             }           
-        }
-        return listaProductos.get(pos);
+        }        
+        return null;
+    }
+    
+    
+    public Producto buscarProductoXNombre(String nombre) {
+        //System.out.println("cantidad de productos en menu "+listaProductos.size());
+        for (int i = 0; i < listaProductos.size(); i++) {
+            if (listaProductos.get(i)==null){
+                System.out.println("No encontrado compa");
+            }
+            else if (listaProductos.get(i).getNombre().equals(nombre)) {
+                return listaProductos.get(i);
+            }           
+        }        
+        return null;
     }
 
     

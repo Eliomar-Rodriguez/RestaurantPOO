@@ -54,15 +54,20 @@ public class ConsultayReporte {
         
     }
     
-    public Orden cocineroDelmes(){
+    public Mesero cocineroDelmes(){
         
-        int vecesActual=0,vecesMayor=0, mayor=0;
+        int vecesActual=0,vecesMayor=0, mayor=0, productos=0;
         
-        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+        for (int i = 0; i < Restaurant.getInstance().getCantidadEmpleados(); i++) {
             
-            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
-                    vecesActual++;
+            for (int j = 0; j < Restaurant.getInstance().getCantidadEmpleados(); j++) {
+                if (Restaurant.getInstance().getEmpleado(j) instanceof Cocinero){ 
+                    Cocinero cocinero = (Cocinero) Restaurant.getInstance().getEmpleado(j);
+                    int platBeb = cocinero.getCantPlatosCocinados() + cocinero.getCantidadBebidasHechas();
+                    if (platBeb>productos){
+                        vecesActual += platBeb;
+                    }
+                    
                 }                                
             }
             if (vecesActual>vecesMayor){
@@ -71,8 +76,7 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
-    return Restaurant.listaOrdenes.get(mayor);
-       
+    return (Mesero) Restaurant.getInstance().getEmpleado(mayor);       
     }
     
      //Metodo que va a dar los dos platos mas consumidos
@@ -87,8 +91,8 @@ public class ConsultayReporte {
     }
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
-    public void horaPicoRest() {
-        String horaPico,hora;
+    public String horaPicoRest() {
+        String horaP=null,hora;
         int veces=0,mayor=0;
         
         for (int i = 0; i < facturas.size(); i++) {
@@ -100,11 +104,12 @@ public class ConsultayReporte {
                 } 
             }
             if (veces>mayor){
-                horaPico = facturas.get(i).getHora();
+                horaP = facturas.get(i).getHora();
             }
             mayor = veces;
             veces=0;
         }
+        return horaP;
     }
     
     //Metodo que va a dar el cliente mas frecuente de acuerdo al numero de visitas
@@ -128,7 +133,7 @@ public class ConsultayReporte {
     }
     
     //metodo que va a dar el total de platos creados en el mes
-    public int totalPlatosxMes(Plato plato,int mes) {
+    public int totalPlatosxMes(int mes) { // precio de toooooooooooooodos los platos vendidos en un mes
         int total = 0;
         for (int i = 0; i < facturas.size(); i++) {
             
@@ -136,7 +141,7 @@ public class ConsultayReporte {
             SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
             if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                total += plato.getIdProducto(); 
+                //total += plato.getIdProducto(); 
             }
         }
         return total;
@@ -144,7 +149,7 @@ public class ConsultayReporte {
     }
     
     //metodo que va a dar el total de las bebidas por dia
-      public int totalBebidasXDia(Bebida bebida, int dia) { 
+      public int totalBebidasXDia(Bebida bebida, int dia) {  // precio total en un dia especifico
         int total=0;
         for (int i = 0; i < facturas.size(); i++) {
            String formato="d";
@@ -175,7 +180,7 @@ public class ConsultayReporte {
         int total = 0;
         for (int i = 0; i < facturas.size(); i++) {
             
-            String formato="yyyy";
+            String formato="YYYY";
             SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
             if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==ano){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro

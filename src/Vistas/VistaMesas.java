@@ -32,6 +32,8 @@ public class VistaMesas extends javax.swing.JFrame {
     
     private static Mesero mesero = null;
     
+    Color color;
+    
     public VistaMesas() {
         initComponents();
         lblAviso.setVisible(false);
@@ -41,9 +43,10 @@ public class VistaMesas extends javax.swing.JFrame {
         setResizable(false);
         setLocationRelativeTo(null);
         mesasDisponibles();
+        setResizable(false);
         
         panelMesas.setLayout(new GridLayout(3, 4,0,0));
-        btnReservar.setEnabled(false);
+        //btnReservar.setEnabled(false);
     }
 
     /**
@@ -151,15 +154,7 @@ public class VistaMesas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void numPersonasStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_numPersonasStateChanged
-        if ((Integer)numPersonas.getValue()==0 | mesaSeleccionada!=null){
-            btnReservar.setEnabled(false);
-        }
-        else{
-            btnReservar.setEnabled(true);
-            mesasDisponibles();
-            //System.out.println("num mesa"+mesaSeleccionada.getNumMesa());
-        }
-        
+            mesasDisponibles();        
     }//GEN-LAST:event_numPersonasStateChanged
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -194,7 +189,7 @@ public class VistaMesas extends javax.swing.JFrame {
                             break;
                         }
                     }
-                    Menu m = new Menu();
+                    Menu m = new Menu(mesaSeleccionada, mesero, color);
                     m.setVisible(true);
                 }
                 else{
@@ -217,6 +212,7 @@ public class VistaMesas extends javax.swing.JFrame {
             mesa.addActionListener((ActionEvent e)->{
                 if(mesaSeleccionada == null){
                     mesaSeleccionada = mesa;
+                    color = mesa.getBackground();
                     mesaSeleccionada.setBackground(Color.getHSBColor(210, 210, 210));
                 }
                 else{

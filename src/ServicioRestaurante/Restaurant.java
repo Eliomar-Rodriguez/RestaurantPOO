@@ -37,6 +37,7 @@ public class Restaurant {
     public static ArrayList<Mesa> listaMesas;
 
     public static ArrayList<Factura> facturas;
+    
     protected ArrayList<Cliente> listaClientes;
     
     
@@ -59,6 +60,15 @@ public class Restaurant {
         
     }
 
+    public ArrayList<Factura> getFacturas() {
+        return facturas;
+    }
+    
+
+    public ArrayList<Orden> getListaOrdenes() {
+        return listaOrdenes;
+    }
+    
     public ArrayList<Mesa> getMesas() {
         return listaMesas;
     }
@@ -122,8 +132,9 @@ public class Restaurant {
                 return 0;
             }            
         }
+        
         this.listaEmpleados.add(e); // ingresa el usuario en caso de que no exista otro igual ya que las cedulas son unicas para cada persona
-        return 0;
+        return 1;
     }
 
     public boolean hayMesa(int cantPersonas) {
@@ -154,7 +165,7 @@ public class Restaurant {
             }            
         }
     }
-    public static Restaurant getInstance(){
+    public static Restaurant getInstance(){                                        ////////////////////
         
         return MainRestaurante.rest;
     }
@@ -209,7 +220,7 @@ public class Restaurant {
         }
         return 0; // no encontro al empleado
     }
-    public Persona getEmpleado(String cedula){
+    public Empleado getEmpleado(String cedula){
         for (int i = 0; i < listaEmpleados.size(); i++) {
             if (listaEmpleados.get(i).getCedula().equals(cedula)){
                 return listaEmpleados.get(i);
@@ -218,6 +229,20 @@ public class Restaurant {
         }
         return null;
     }
+
+    public void setOrden(Orden orden) {
+        Restaurant.listaOrdenes.add(orden);
+    }
+        
+    public Empleado getEmpleado(int i){
+        return listaEmpleados.get(i);
+    }
+
+    public ArrayList<Empleado> getListaEmpleados() {
+        return listaEmpleados;
+    }
+    
+    
 
     public void setVistaCocinero(VistaCocinero vC) {
         this.vistaCocinero = vC;

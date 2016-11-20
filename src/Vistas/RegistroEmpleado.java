@@ -28,6 +28,8 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     public RegistroEmpleado() {
         initComponents();
         
+        setResizable(false);
+        
         lblIdioma.setVisible(false);        
         txtIdiomas.setVisible(false);
         
@@ -41,7 +43,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblATel.setVisible(false);
         lblTipoEmp.setVisible(false);
         lblOpcion.setVisible(false);
-        
+        lblAviso.setVisible(false);
         setTitle("Registro de empleados.");
         setSize(897, 520);
         setLocationRelativeTo(null);
@@ -82,6 +84,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblACor = new javax.swing.JLabel();
         lblTipoEmp = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        lblAviso = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -231,7 +234,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         lblOpcion.setForeground(new java.awt.Color(204, 0, 0));
         lblOpcion.setText("*");
         getContentPane().add(lblOpcion);
-        lblOpcion.setBounds(660, 340, 20, 20);
+        lblOpcion.setBounds(660, 340, 50, 20);
 
         lblANom.setFont(new java.awt.Font("Monotype Corsiva", 1, 28)); // NOI18N
         lblANom.setForeground(new java.awt.Color(204, 0, 0));
@@ -279,9 +282,15 @@ public class RegistroEmpleado extends javax.swing.JFrame {
         getContentPane().add(btnAtras);
         btnAtras.setBounds(10, 10, 100, 40);
 
+        lblAviso.setFont(new java.awt.Font("Monotype Corsiva", 1, 22)); // NOI18N
+        lblAviso.setForeground(new java.awt.Color(204, 0, 0));
+        lblAviso.setText("Ya existe un empleado con esa cedula");
+        getContentPane().add(lblAviso);
+        lblAviso.setBounds(290, 370, 340, 25);
+
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(-10, 0, 900, 498);
+        jLabel8.setBounds(-30, 0, 900, 498);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -336,20 +345,35 @@ public class RegistroEmpleado extends javax.swing.JFrame {
             } 
         }
         if (!txtNombre.getText().isEmpty() & !txtCedula.getText().isEmpty() & !txtTelefono.getText().isEmpty() & !txtCorreo.getText().isEmpty() & !txtDireccion.getText().isEmpty() & comboEmpleado.getSelectedIndex()!=-1){ // so algo esta vacio       
-            System.out.println("ELSE");
+            //System.out.println("ELSE");
             CrearFabrica factory = new CrearFabrica();
             if (comboEmpleado.getSelectedIndex()==0){ // cocinero
-                System.out.println("COCINERO");
+                //System.out.println("COCINERO");
                 Cocinero cocinero = factory.creaCocinero(0, 0, txtEspecialidad.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                rest.agregarEmpleado(cocinero);
+                int op =rest.agregarEmpleado(cocinero);
+                if (op==0)
+                    lblAviso.setVisible(true);
+                else{
+                    Main main = new Main();
+                    main.setVisible(true);
+                    this.dispose();
+                }
             }
             else if (comboEmpleado.getSelectedIndex()==1){ // mesero
-                System.out.println("MESERO");
+                //System.out.println("MESERO");
                 Mesero mesero = factory.crearMesero(txtIdiomas.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                MainRestaurante.rest.agregarEmpleado(mesero);
+                int op = MainRestaurante.rest.agregarEmpleado(mesero);
+                if (op==0)
+                    lblAviso.setVisible(true);
+                else{
+                    Main main = new Main();
+                    main.setVisible(true);
+                    this.dispose();
+                }
             }
+            
         }
-        System.out.println(rest.getCantidadEmpleados());
+        //System.out.println(rest.getCantidadEmpleados());
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void comboEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboEmpleadoActionPerformed
@@ -442,6 +466,7 @@ public class RegistroEmpleado extends javax.swing.JFrame {
     private javax.swing.JLabel lblADir;
     private javax.swing.JLabel lblANom;
     private javax.swing.JLabel lblATel;
+    private javax.swing.JLabel lblAviso;
     private javax.swing.JLabel lblEspecialidad;
     private javax.swing.JLabel lblIdioma;
     private javax.swing.JLabel lblOpcion;

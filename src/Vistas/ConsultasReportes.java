@@ -7,6 +7,8 @@ package Vistas;
 
 import ConsultasyReportes.ConsultayReporte;
 import Empleados.Cliente;
+import Empleados.Cocinero;
+import Empleados.Mesero;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Factura;
 import ServicioRestaurante.Orden;
@@ -30,8 +32,12 @@ public class ConsultasReportes extends javax.swing.JFrame {
     protected ArrayList<Cliente> listaClientes;
     
 
+        
     public ConsultasReportes() {
         initComponents();
+        setResizable(false);
+        setSize(782, 531);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -50,15 +56,20 @@ public class ConsultasReportes extends javax.swing.JFrame {
         areaConsulta = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLabel1.setText("Consultas y Reportes");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(144, 16, 148, 20);
 
-        comboConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. El empleado del mes, mesero y cocinero.", "2. Los dos platos más consumidos por los clientes.", "3. En qué hora del día el restaurante está más lleno.", "4. ¿Cuál es el cliente más frecuente?", "5. Total, por cada plato servido en un mes en específico.", "6. Total, por tipo de bebidas servidas en un día en específico.", "7. Total, vendido por mes.", "8. Total vendido por año.", "9. Total, de clientes atendidos por mes.", "10. Total de clientes atendidos por año", " " }));
+        comboConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. El empleado del mes (mesero y cocinero).", "2. Los dos platos más consumidos por los clientes.", "3. En qué hora del día el restaurante está más lleno.", "4. ¿Cuál es el cliente más frecuente?", "5. Precio total, por cada plato servido en un mes en específico.", "6. Precio total, por tipo de bebidas servidas en un día en específico.", "7. Total vendido por mes.", "8. Total vendido por año.", "9. Total de clientes atendidos por mes.", "10. Total de clientes atendidos por año", " " }));
         comboConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboConsultaActionPerformed(evt);
             }
         });
+        getContentPane().add(comboConsulta);
+        comboConsulta.setBounds(15, 78, 490, 30);
 
         jButton1.setText("Consultar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -66,43 +77,14 @@ public class ConsultasReportes extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+        getContentPane().add(jButton1);
+        jButton1.setBounds(153, 428, 99, 29);
 
         areaConsulta.setEditable(false);
         jScrollPane1.setViewportView(areaConsulta);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(309, 309, 309)
-                                .addComponent(jLabel1))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(318, 318, 318)
-                                .addComponent(jButton1)))
-                        .addGap(79, 79, 79))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(comboConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(246, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addGap(42, 42, 42)
-                .addComponent(comboConsulta, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(68, 68, 68))
-        );
+        getContentPane().add(jScrollPane1);
+        jScrollPane1.setBounds(102, 145, 269, 229);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -114,10 +96,12 @@ public class ConsultasReportes extends javax.swing.JFrame {
     }//GEN-LAST:event_comboConsultaActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Cocinero cocinero = null;
+        Mesero mesero = null;
         switch (comboConsulta.getSelectedIndex()) {
             case 0:
-                cr.cocineroDelmes();
-                cr.meseroDelmes();
+                mesero = cr.cocineroDelmes(); // 0 significa mesero
+                //cocinero = cr.meseroDelmes(); // 1 significa cocinero
                
                 break;
             case 1:
@@ -187,20 +171,20 @@ public class ConsultasReportes extends javax.swing.JFrame {
                 String cadena5 = "";
                 Plato plato = new Plato();
                 int mes2 = 0;
-                int total5 = 0;
+                String total5 = "";
                 for (int i = 0; i < facturas.size(); i++) {
             
                     String formato="MM";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
                     if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        total5 += plato.getIdProducto(); 
+                        total5 = total5 + plato.getIdProducto(); 
                     }
                 }
                 
                 cadena5 = String.valueOf(total5);
  
-                cadena5= Integer.toString(total5);
+                cadena5= total5;
                 areaConsulta.setText(cadena5);
                 break;
             case 5:
@@ -215,7 +199,7 @@ public class ConsultasReportes extends javax.swing.JFrame {
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
                     if (Integer.parseInt(dateFormat.format(facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
-                        total4 += bebida.getIdProducto(); 
+                        //total4 += bebida.getIdProducto(); 
                     }
                 }
                 cadena4 = String.valueOf(total4);

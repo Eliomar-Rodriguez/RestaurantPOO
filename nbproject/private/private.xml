@@ -10,14 +10,11 @@
             <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Controlador/MainRestaurante.java</file>
         </group>
         <group name="Proyectos">
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Controlador/MainRestaurante.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ConsultasyReportes/ConsultayReporte.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/EdicionEmpleados.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/Main.java</file>
             <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Restaurant.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Detalle.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Bebida.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Empleados/Cocinero.java</file>
-            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/BorrarEmpleado.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/Menu.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Factura.java</file>
+            <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/Vistas/VistaMesas.java</file>
             <file>file:/C:/Users/USUARIO/Desktop/Sistema%20de%20restaurant/SistemaRestaurant/src/ServicioRestaurante/Orden.java</file>
         </group>
     </open-files>
