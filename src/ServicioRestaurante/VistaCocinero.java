@@ -7,7 +7,7 @@ public class VistaCocinero {
     
     protected Producto producto;
     protected ArrayList<Producto> listaProductos;
-    protected ArrayList<ItemPedido> listaItemPedido;
+    public static ArrayList<ItemPedido> listaItemPedido;
 
     public VistaCocinero() {
         this.listaProductos = new ArrayList();

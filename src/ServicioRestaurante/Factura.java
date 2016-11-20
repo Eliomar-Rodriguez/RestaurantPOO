@@ -18,7 +18,7 @@ public class Factura {
     private int cobroServicio;
     
     private int precioTotal;
-    private ArrayList<Detalle> listaDetalles;
+    public static ArrayList<Detalle> listaDetalles;
 
     public Factura() {
     }
