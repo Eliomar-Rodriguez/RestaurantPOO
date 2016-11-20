@@ -105,7 +105,7 @@ public class ConsultasReportes extends javax.swing.JFrame {
             case 0:
                 // cocinero y mesero del mes
                 cr.meseroDelmes();
-                //cr.cocineroDelmes();               
+                cr.cocineroDelmes();               
                 break;
             case 1:
                 //dos platos mas consumidos
@@ -118,35 +118,35 @@ public class ConsultasReportes extends javax.swing.JFrame {
                 break;
             case 3:
                 //hora pico
-                //cr.clienteFrecuente();
+                cr.clienteFrecuente();
                 break;
             case 4:
                 //total de platos por mes
-                //cr.totalPlatosxMes();
+                cr.totalPlatosxMes();
                 break;
             case 5:
                 //total de bebidas por dia
-                //cr.totalBebidasXDia();
+                cr.totalBebidasXDia();
         
             case 6:
                 // total vendido por mes
-                //cr.totalVendidoXMes();
+                cr.totalVendidoXMes();
         
                 break;
             case 7:
                 //total vendido por ano
-                //cr.totalVendidoXAno();
+                cr.totalVendidoXAno();
         
                 
                 break;
             case 8 :
                 // total de clientes por mes
-                //cr.totalClientesXMes();
+                cr.totalClientesXMes();
                 break;
                 
             case 9 :
                 // total de clientes por ano
-                //cr.totalClientesXAno();
+                cr.totalClientesXAno();
                 break;
             default:
                 break;

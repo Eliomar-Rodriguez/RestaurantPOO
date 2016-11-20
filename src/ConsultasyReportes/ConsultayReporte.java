@@ -145,8 +145,8 @@ public class ConsultayReporte {
         
         for (int i = 0; i < Restaurant.listaClientes.size(); i++) {
             
-            for (int j = 0; j < rest.facturas.size(); j++) {
-                if (Restaurant.listaClientes.get(i).getCedula().equals(rest.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
+            for (int j = 0; j < Restaurant.facturas.size(); j++) {
+                if (Restaurant.listaClientes.get(i).getCedula().equals(Restaurant.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
                     vecesActual++;
                 }                                
             }
