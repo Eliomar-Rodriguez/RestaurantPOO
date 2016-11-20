@@ -23,6 +23,7 @@ public class ConsultasReportes extends javax.swing.JFrame {
     
 
     public ConsultasReportes() {
+        
         initComponents();
     }
 

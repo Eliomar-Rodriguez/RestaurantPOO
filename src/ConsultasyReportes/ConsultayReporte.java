@@ -5,6 +5,8 @@
  */
 package ConsultasyReportes;
 
+import static Controlador.MainRestaurante.fac1;
+import static Controlador.MainRestaurante.rest;
 import Empleados.Cliente;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
@@ -41,7 +43,7 @@ public class ConsultayReporte {
     
    public Orden meseroDelmes(){
        
-        String cadena7 = "";
+        
         int vecesActual=0,vecesMayor=0, mayor=0;
         
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
@@ -57,12 +59,6 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
-        
-        cadena7 = String.valueOf(Restaurant.listaOrdenes.get(mayor));
-        
-        cadena7= Integer.toString(mayor);
-        
-        areaConsulta.setText(cadena7);
         return Restaurant.listaOrdenes.get(mayor);
     
         
@@ -120,7 +116,7 @@ public class ConsultayReporte {
         
                 for (int i = 0; i < Restaurant.facturas.size(); i++) {
                     hora = Restaurant.facturas.get(i).getHora();
-            
+                    
                     for (int j = 0; j < Restaurant.facturas.size(); j++) {
                         if (Restaurant.facturas.get(i).getHora().equals(hora)){
                             veces++;
@@ -133,7 +129,6 @@ public class ConsultayReporte {
                     veces=0;
                 }
                 
-                
                 areaConsulta.setText(horaPico);
     }
     
@@ -144,8 +139,8 @@ public class ConsultayReporte {
         
         for (int i = 0; i < Restaurant.listaClientes.size(); i++) {
             
-            for (int j = 0; j < Restaurant.facturas.size(); j++) {
-                if (Restaurant.listaClientes.get(i).getCedula().equals(Restaurant.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
+            for (int j = 0; j < rest.facturas.size(); j++) {
+                if (Restaurant.listaClientes.get(i).getCedula().equals(rest.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
                     vecesActual++;
                 }                                
             }
@@ -172,12 +167,12 @@ public class ConsultayReporte {
                 Plato plato = new Plato();
                 int mes2 = 0;
                 int total5 = 0;
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
+                for (int i = 0; i < rest.facturas.size(); i++) {
             
                     String formato="MM";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
                         total5 += plato.getIdProducto(); 
                     }
                 }
@@ -196,11 +191,11 @@ public class ConsultayReporte {
                 int dia = 0;
                 int total4=0;
             
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
+                for (int i = 0; i < rest.facturas.size(); i++) {
                     String formato="d";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
                         total4 += bebida.getIdProducto(); 
                     }
                 }
@@ -214,13 +209,13 @@ public class ConsultayReporte {
                 String cadena3 = "";
                 int mes1 = 0;
                 int total3 = 0;
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
+                for (int i = 0; i < rest.facturas.size(); i++) {
             
                     String formato="MM";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes1){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        total3 += Restaurant.facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==mes1){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total3 += rest.facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
                     }
                 }
                 
@@ -237,13 +232,13 @@ public class ConsultayReporte {
         String cadena2 = "";
                 int ano = 0;
                 int total2 = 0;
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
+                for (int i = 0; i < rest.facturas.size(); i++) {
             
                     String formato="yyyy";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==ano){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        total2 += Restaurant.facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==ano){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total2 += rest.facturas.get(i).getPrecioTotal(); // el precio total contiene el precio de las comidas mas lo impuestos, ademas del coste del servicio
                     }
                 }
                 cadena2 = String.valueOf(total2);
@@ -256,13 +251,13 @@ public class ConsultayReporte {
         String cadena = "";
                 int mes = 0;
                 int total = 0;
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
+                for (int i = 0; i < rest.facturas.size(); i++) {
             
                     String formato="MM";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        total += Restaurant.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el mes
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==mes){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total += rest.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el mes
                     }
                 }
                 cadena = String.valueOf(total);
@@ -275,13 +270,13 @@ public class ConsultayReporte {
          String cadena1 = "";
                 int total1 = 0;
                 int ano1 = 0;
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
-            
+                for (int i = 0; i < rest.facturas.size(); i++) {
+                    
                     String formato="yyyy";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                    total1 += Restaurant.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+                    if (Integer.parseInt(dateFormat.format(Restaurant.getInstance().facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                    total1 += Restaurant.getInstance().facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
                     }
                 }
                 cadena1 = String.valueOf(total1);

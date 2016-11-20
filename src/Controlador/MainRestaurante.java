@@ -28,6 +28,7 @@ import java.util.Date;
 public class MainRestaurante {
     
     public static Restaurant rest = null;
+    public static Factura fac1 = null;
 
     
     public static void main(String[] args) {
@@ -129,8 +130,10 @@ public class MainRestaurante {
         
         Date fecha = new Date(02/12/1994);
         
-        Factura fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
-        Restaurant.facturas.add(fac1);
+        fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
+        rest.agregarFactura(fac1);
+        Controlador controlador = new Controlador(fac1);
+        controlador.setFactura(fac1);
 
         Main main = new Main();
         main.setVisible(true);
