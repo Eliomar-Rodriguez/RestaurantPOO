@@ -17,8 +17,9 @@ import ServicioRestaurante.Orden;
 import ServicioRestaurante.Plato;
 import ServicioRestaurante.Restaurant;
 import ServicioRestaurante.VistaCocinero;
+import static Vistas.ReporteConsulta.areaConsulta;
 import java.text.SimpleDateFormat;
-import static Vistas.ConsultasReportes.areaConsulta;
+
 import java.util.ArrayList;
 
 /**
