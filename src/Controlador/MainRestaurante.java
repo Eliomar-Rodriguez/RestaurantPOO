@@ -12,12 +12,14 @@ import Empleados.CrearFabrica;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Direccion;
+import ServicioRestaurante.Factura;
 import ServicioRestaurante.Menu;
 import ServicioRestaurante.Mesa;
 import ServicioRestaurante.Plato;
 import ServicioRestaurante.Restaurant;
 import ServicioRestaurante.VistaCocinero;
 import Vistas.Main;
+import java.util.Date;
 
 /**
  *
@@ -90,7 +92,10 @@ public class MainRestaurante {
         Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Ciudad Quesada", "rodriguez.elio.97@gmail.com", "Jose Mauricio Rojas", "205500965", "86551217");
         rest.agregarEmpleado(m1);
         rest.agregarEmpleado(co1);
-        rest.agregarEmpleado(m2);        
+        rest.agregarEmpleado(m2);   
+        
+        Restaurant.listaClientes.add(c1);
+        Restaurant.listaClientes.add(c2);
         /*
         ================================================================
         =========       Creación de platos y bebidas        ============
@@ -121,6 +126,11 @@ public class MainRestaurante {
         //Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle1);
         
         //Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
+        
+        Date fecha = new Date(02/12/1994);
+        
+        Factura fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
+        Restaurant.facturas.add(fac1);
 
         Main main = new Main();
         main.setVisible(true);
