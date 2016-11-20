@@ -147,16 +147,16 @@ public class MainRestaurante {
 
         Date fecha = new Date(20/11/2016);
         
-<<<<<<< HEAD
+
         fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
         rest.agregarFactura(fac1);
         Controlador controlador = new Controlador(fac1);
         controlador.setFactura(fac1);
-=======
+
         Factura fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
         Restaurant.facturas.add(fac1);
         
->>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
+
 
         Main main = new Main();
         main.setVisible(true);
