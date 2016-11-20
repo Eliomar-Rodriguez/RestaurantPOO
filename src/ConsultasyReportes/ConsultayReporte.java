@@ -5,7 +5,7 @@
  */
 package ConsultasyReportes;
 
-import Empleados.Cliente;
+import static Controlador.MainRestaurante.rest;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Factura;
@@ -114,31 +114,31 @@ public class ConsultayReporte {
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
     public void horaPicoRest() {
         String hora;
-                String horaPico = "";
+        String horaPico = "";
                 
-                int veces=0,mayor=0;
+        int veces=0,mayor=0;
         
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
-                    hora = Restaurant.facturas.get(i).getHora();
+        for (int i = 0; i < Restaurant.facturas.size(); i++) {
+            hora = Restaurant.facturas.get(i).getHora();
             
-                    for (int j = 0; j < Restaurant.facturas.size(); j++) {
-                        if (Restaurant.facturas.get(i).getHora().equals(hora)){
-                            veces++;
-                        } 
-                    }
-                    if (veces>mayor){
-                        horaPico = Restaurant.facturas.get(i).getHora();
-                    }
-                    mayor = veces;
-                    veces=0;
-                }
+            for (int j = 0; j < Restaurant.facturas.size(); j++) {
+                if (Restaurant.facturas.get(i).getHora().equals(hora)){
+                    veces++;
+                } 
+            }
+            if (veces>mayor){
+                horaPico = Restaurant.facturas.get(i).getHora();
+            }
+            mayor = veces;
+            veces=0;
+            }
                 
                 
-                areaConsulta.setText(horaPico);
+            areaConsulta.setText(horaPico);
     }
     
     //Metodo que va a dar el cliente mas frecuente de acuerdo al numero de visitas
-    public Cliente clienteFrecuente() {
+    public int clienteFrecuente() {
         //String cadena6 = "";
         int vecesActual=0,vecesMayor=0, mayor=0;
         
@@ -161,7 +161,7 @@ public class ConsultayReporte {
         //cadena6= Integer.toString(mayor);
         
         //areaConsulta.setText(cadena6);
-        return Restaurant.listaClientes.get(mayor);
+        return mayor;
         
                 
     }
@@ -275,13 +275,13 @@ public class ConsultayReporte {
          String cadena1 = "";
                 int total1 = 0;
                 int ano1 = 0;
-                for (int i = 0; i < Restaurant.facturas.size(); i++) {
-            
+                for (int i = 0; i < rest.facturas.size(); i++) {
+                    
                     String formato="yyyy";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
-                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                    total1 += Restaurant.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                    total1 += rest.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
                     }
                 }
                 cadena1 = String.valueOf(total1);

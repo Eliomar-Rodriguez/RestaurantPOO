@@ -127,10 +127,11 @@ public class MainRestaurante {
         
         //Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
         
-        Date fecha = new Date(02/12/1994);
+        Date fecha = new Date(20/11/2016);
         
         Factura fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
         Restaurant.facturas.add(fac1);
+        
 
         Main main = new Main();
         main.setVisible(true);
