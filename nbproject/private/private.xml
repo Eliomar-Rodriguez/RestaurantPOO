@@ -12,10 +12,20 @@
         </group>
 <<<<<<< HEAD
         <group>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ServicioRestaurante/Restaurant.java</file>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Vistas/ConsultasReportes.java</file>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Controlador/Controlador.java</file>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/ConsultasyReportes/ConsultayReporte.java</file>
+            <file>file:/C:/Users/Extreme%20pc/Documents/GitHub/RestaurantPOO/src/Controlador/MainRestaurante.java</file>
+        </group>
+=======
+<<<<<<< HEAD
+        <group>
             <file>file:/C:/Users/Peniche/Documents/GitHub/RestaurantPOO/src/ConsultasyReportes/ConsultayReporte.java</file>
         </group>
 =======
         <group/>
 >>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
+>>>>>>> 136214ddc31de42f8f8a7ade92305fe93f8eab77
     </open-files>
 </project-private>

@@ -65,7 +65,11 @@ public class ConsultasReportes extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(144, 16, 148, 20);
 
+<<<<<<< HEAD
+        comboConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. El empleado del mes, mesero y cocinero.", "2. Los dos platos más consumidos por los clientes.", "3. En qué hora del día el restaurante está más lleno.", "4. ¿Cuál es el cliente más frecuente?", "5. Total, por cada plato servido en un mes en específico.", "6. Total, por tipo de bebidas servidas en un día en específico.", "7. Total, vendido por mes.", "8. Total vendido por año.", "9. Total, de clientes atendidos por mes.", "10. Total de clientes atendidos por año." }));
+=======
         comboConsulta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1. El empleado del mes (mesero y cocinero).", "2. Los dos platos más consumidos por los clientes.", "3. En qué hora del día el restaurante está más lleno.", "4. ¿Cuál es el cliente más frecuente?", "5. Precio total, por cada plato servido en un mes en específico.", "6. Precio total, por tipo de bebidas servidas en un día en específico.", "7. Total vendido por mes.", "8. Total vendido por año.", "9. Total de clientes atendidos por mes.", "10. Total de clientes atendidos por año", " " }));
+>>>>>>> 136214ddc31de42f8f8a7ade92305fe93f8eab77
         comboConsulta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboConsultaActionPerformed(evt);
