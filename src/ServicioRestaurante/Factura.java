@@ -18,7 +18,7 @@ public class Factura {
     private int cobroServicio;
     
     private int precioTotal;
-    private ArrayList<Detalle> listaDetalles;
+    public static ArrayList<Detalle> listaDetalles;
 
     public Factura() {
     }
@@ -30,7 +30,7 @@ public class Factura {
         this.impuestoVenta = impuestoVenta;
         this.cobroServicio = cobroServicio;
         this.precioTotal = precioTotal;
-        this.listaDetalles = new ArrayList();
+        Factura.listaDetalles = new ArrayList();
     }
 
     public Detalle getListaDetalle(int i) {

@@ -1,17 +1,16 @@
 package ServicioRestaurante;
 
-import Empleados.Cliente;
 import java.util.ArrayList;
 
 public class VistaCocinero {
     
     protected Producto producto;
     protected ArrayList<Producto> listaProductos;
-    protected ArrayList<ItemPedido> listaItemPedido;
+    public static ArrayList<ItemPedido> listaItemPedido;
 
     public VistaCocinero() {
         this.listaProductos = new ArrayList();
-        this.listaItemPedido = new ArrayList();
+        VistaCocinero.listaItemPedido = new ArrayList();
         this.producto = producto;
     }
     

@@ -331,7 +331,7 @@ public class Menu extends javax.swing.JFrame {
         else{
             if (!txtIdPlato.getText().isEmpty() & txtNomPlato.getText().isEmpty()){
                 int idProducto = Integer.parseInt(txtIdPlato.getText());
-                producto = Restaurant.getInstance().getMenu().buscarProducto(idProducto);
+                producto = Restaurant.getInstance().getMenu().buscarProducto(String.valueOf(idProducto));
 
                 if (producto == null){ // no encontro el producto
                         lblNoEncontrado.setText("El producto no se encuentró, AGREGALO");
@@ -438,7 +438,7 @@ public class Menu extends javax.swing.JFrame {
         }
         else{
             for(int x=0;x<productosOrden.size();x++){
-                if(productosOrden.get(x).getIdProducto()==id){
+                if(productosOrden.get(x).getIdProducto()==String.valueOf(id)){
                     return true;
                 }
             }

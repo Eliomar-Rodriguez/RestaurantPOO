@@ -155,9 +155,7 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
-        Producto produ1 = new Producto(2,12000, "Papas");      
-        
+       
         CrearFabrica f = new CrearFabrica();
                       
         Cliente c1 = f.crearCliente(0, "Jose Carlos Rodriguez Arrieta", "2-0724-0382", "8528-2245");

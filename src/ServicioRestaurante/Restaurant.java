@@ -37,8 +37,12 @@ public class Restaurant {
     public static ArrayList<Mesa> listaMesas;
 
     public static ArrayList<Factura> facturas;
+
     
-    protected ArrayList<Cliente> listaClientes;
+    //protected ArrayList<Cliente> listaClientes;
+
+    public static  ArrayList<Cliente> listaClientes;
+
     
     
     public Restaurant() {
@@ -52,11 +56,11 @@ public class Restaurant {
         this.direccion = direccion;
         this.menu = menu;
         this.vistaCocinero = vistaCocinero;
-        this.listaEmpleados = new ArrayList();
-        this.listaClientes = new ArrayList();
-        this.listaMesas = new ArrayList();
-        this.facturas = new ArrayList();
-        this.listaOrdenes = new ArrayList();
+        Restaurant.listaEmpleados = new ArrayList();
+        Restaurant.listaClientes = new ArrayList();
+        Restaurant.listaMesas = new ArrayList();
+        Restaurant.facturas = new ArrayList();
+        Restaurant.listaOrdenes = new ArrayList();
         
     }
 
@@ -125,6 +129,19 @@ public class Restaurant {
         this.menu = menu;
     }
 
+    public Cliente getCliente(String cedula) {
+        for (int i = 0; i < listaClientes.size(); i++) {
+            if (listaClientes.get(i).getCedula().equals(cedula)){
+                return listaClientes.get(i);
+            }            
+        }
+        return null;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.listaClientes.add(cliente);
+    }
+    
     public int agregarEmpleado(Empleado e){ // agregar empleados a la lista de empleados que hay
         for (int i = 0; i < listaEmpleados.size(); i++) {
             if (listaEmpleados.get(i).getCedula().equals(e.getCedula())){
