@@ -37,7 +37,7 @@ public class Restaurant {
     public static ArrayList<Mesa> listaMesas;
 
     public static ArrayList<Factura> facturas;
-    protected ArrayList<Cliente> listaClientes;
+    public static  ArrayList<Cliente> listaClientes;
     
     
     public Restaurant() {
@@ -51,11 +51,11 @@ public class Restaurant {
         this.direccion = direccion;
         this.menu = menu;
         this.vistaCocinero = vistaCocinero;
-        this.listaEmpleados = new ArrayList();
-        this.listaClientes = new ArrayList();
-        this.listaMesas = new ArrayList();
-        this.facturas = new ArrayList();
-        this.listaOrdenes = new ArrayList();
+        Restaurant.listaEmpleados = new ArrayList();
+        Restaurant.listaClientes = new ArrayList();
+        Restaurant.listaMesas = new ArrayList();
+        Restaurant.facturas = new ArrayList();
+        Restaurant.listaOrdenes = new ArrayList();
         
     }
 

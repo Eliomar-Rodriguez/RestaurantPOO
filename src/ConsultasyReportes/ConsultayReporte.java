@@ -6,9 +6,6 @@
 package ConsultasyReportes;
 
 import Empleados.Cliente;
-import Empleados.Cocinero;
-import Empleados.Empleado;
-import Empleados.Mesero;
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Factura;
@@ -16,30 +13,34 @@ import ServicioRestaurante.ItemPedido;
 import ServicioRestaurante.Orden;
 import ServicioRestaurante.Plato;
 import ServicioRestaurante.Restaurant;
-import static ServicioRestaurante.Restaurant.facturas;
 import ServicioRestaurante.VistaCocinero;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import Vistas.ConsultasReportes;
 import static Vistas.ConsultasReportes.areaConsulta;
+import java.util.ArrayList;
 
 /**
  *
  * @author Extreme pc
  */
+
+
 public class ConsultayReporte {
     
-    protected ArrayList<Cliente> listaClientes;
     
-
+    
+    
     public ConsultayReporte() {
+        Restaurant.listaClientes = new ArrayList();
+        Restaurant.facturas = new ArrayList();
+        Restaurant.listaOrdenes = new ArrayList();
+        VistaCocinero.listaItemPedido = new ArrayList();
+        Factura.listaDetalles = new ArrayList();
         
-        this.listaClientes = new ArrayList();
 
     }
     
    public Orden meseroDelmes(){
+       
         String cadena7 = "";
         int vecesActual=0,vecesMayor=0, mayor=0;
         
@@ -138,13 +139,13 @@ public class ConsultayReporte {
     
     //Metodo que va a dar el cliente mas frecuente de acuerdo al numero de visitas
     public Cliente clienteFrecuente() {
-        String cadena6 = "";
+        //String cadena6 = "";
         int vecesActual=0,vecesMayor=0, mayor=0;
         
-        for (int i = 0; i < listaClientes.size(); i++) {
+        for (int i = 0; i < Restaurant.listaClientes.size(); i++) {
             
             for (int j = 0; j < Restaurant.facturas.size(); j++) {
-                if (listaClientes.get(i).getCedula().equals(Restaurant.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
+                if (Restaurant.listaClientes.get(i).getCedula().equals(Restaurant.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
                     vecesActual++;
                 }                                
             }
@@ -155,12 +156,12 @@ public class ConsultayReporte {
             vecesActual=0;
         }
         
-        cadena6 = String.valueOf(listaClientes.get(mayor));
+        //cadena6 = String.valueOf(Restaurant.listaClientes.get(mayor));
         
-        cadena6= Integer.toString(mayor);
+        //cadena6= Integer.toString(mayor);
         
-        areaConsulta.setText(cadena6);
-        return listaClientes.get(mayor);
+        //areaConsulta.setText(cadena6);
+        return Restaurant.listaClientes.get(mayor);
         
                 
     }
@@ -289,10 +290,6 @@ public class ConsultayReporte {
                 areaConsulta.setText(cadena1);
     }
 
-    @Override
-    public String toString() {
-        return "ConsultayReporte{" + "facturas=" + facturas + ", listaClientes=" + listaClientes + '}';
-    }
     
     
 }

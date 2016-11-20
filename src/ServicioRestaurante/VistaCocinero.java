@@ -1,6 +1,5 @@
 package ServicioRestaurante;
 
-import Empleados.Cliente;
 import java.util.ArrayList;
 
 public class VistaCocinero {
@@ -11,7 +10,7 @@ public class VistaCocinero {
 
     public VistaCocinero() {
         this.listaProductos = new ArrayList();
-        this.listaItemPedido = new ArrayList();
+        VistaCocinero.listaItemPedido = new ArrayList();
         this.producto = producto;
     }
     

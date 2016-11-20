@@ -6,15 +6,6 @@
 package Vistas;
 
 import ConsultasyReportes.ConsultayReporte;
-import Empleados.Cliente;
-import ServicioRestaurante.Bebida;
-import ServicioRestaurante.Factura;
-import ServicioRestaurante.Orden;
-import ServicioRestaurante.Plato;
-import ServicioRestaurante.Restaurant;
-import static ServicioRestaurante.Restaurant.facturas;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 
 /**
  *
@@ -27,7 +18,8 @@ public class ConsultasReportes extends javax.swing.JFrame {
      */
     
     public static ConsultayReporte cr = new ConsultayReporte();
-    protected ArrayList<Cliente> listaClientes;
+    
+  
     
 
     public ConsultasReportes() {
@@ -117,8 +109,9 @@ public class ConsultasReportes extends javax.swing.JFrame {
         switch (comboConsulta.getSelectedIndex()) {
             case 0:
                 // cocinero y mesero del mes
-                cr.cocineroDelmes();
                 cr.meseroDelmes();
+                cr.cocineroDelmes();
+              
                
                 break;
             case 1:

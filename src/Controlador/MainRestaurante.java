@@ -26,7 +26,7 @@ import Vistas.Main;
 public class MainRestaurante {
     
     public static Restaurant rest = null;
-      
+
     
     public static void main(String[] args) {
           
@@ -73,7 +73,8 @@ public class MainRestaurante {
         rest.setMesas(mesa11);
         rest.setMesas(mesa12);
         System.out.println(Restaurant.getInstance().getMesas().size());
-       
+        
+        
         /*
         ================================================================
         ======     Creación de clientes, meseros y cocineros     =======
