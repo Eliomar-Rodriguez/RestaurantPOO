@@ -21,12 +21,11 @@ public class VistaCocinero extends javax.swing.JFrame {
      */
     public VistaCocinero() {
         initComponents();
+        setResizable(false);
         
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
 
             for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-
-
                 //tablaOrden.setValueAt(Restaurant.listaOrdenes.get(i).listaProductos.get(0), 0, 0);;
 
                 tablaOrden.setValueAt(Restaurant.listaOrdenes.get(i).getDetalle(j).toString(), 0, 0);;

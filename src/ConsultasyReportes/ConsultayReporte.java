@@ -5,9 +5,13 @@
  */
 package ConsultasyReportes;
 
+<<<<<<< HEAD
 import static Controlador.MainRestaurante.fac1;
 import static Controlador.MainRestaurante.rest;
 import Empleados.Cliente;
+=======
+import static Controlador.MainRestaurante.rest;
+>>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Factura;
@@ -64,9 +68,10 @@ public class ConsultayReporte {
         
     }
     
+
     public ItemPedido cocineroDelmes(){// metodo del cocinero del mes
         
-        int vecesActual=0,vecesMayor=0, mayor=0;
+        int vecesActual=0,vecesMayor=0, mayor=0, productos=0;
         
         for (int i = 0; i < VistaCocinero.listaItemPedido.size(); i++) {
             
@@ -81,8 +86,10 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
+
     return VistaCocinero.listaItemPedido.get(mayor);
        
+
     }
     
      //Metodo que va a dar los dos platos mas consumidos
@@ -108,12 +115,13 @@ public class ConsultayReporte {
     }
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
+
     public void horaPicoRest() {
         String hora;
-                String horaPico = "";
-                
-                int veces=0,mayor=0;
+        String horaPico = "";
+        int veces=0,mayor=0;
         
+<<<<<<< HEAD
                 for (int i = 0; i < Restaurant.facturas.size(); i++) {
                     hora = Restaurant.facturas.get(i).getHora();
                     
@@ -130,10 +138,29 @@ public class ConsultayReporte {
                 }
                 
                 areaConsulta.setText(horaPico);
+=======
+        for (int i = 0; i < Restaurant.facturas.size(); i++) {
+            hora = Restaurant.facturas.get(i).getHora();
+            
+            for (int j = 0; j < Restaurant.facturas.size(); j++) {
+                if (Restaurant.facturas.get(i).getHora().equals(hora)){
+                    veces++;
+                } 
+            }
+            if (veces>mayor){
+                horaPico = Restaurant.facturas.get(i).getHora();
+            }
+            mayor = veces;
+            veces=0;
+            }
+                
+                
+            areaConsulta.setText(horaPico);
+>>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
     }
     
     //Metodo que va a dar el cliente mas frecuente de acuerdo al numero de visitas
-    public Cliente clienteFrecuente() {
+    public int clienteFrecuente() {
         //String cadena6 = "";
         int vecesActual=0,vecesMayor=0, mayor=0;
         
@@ -156,12 +183,13 @@ public class ConsultayReporte {
         //cadena6= Integer.toString(mayor);
         
         //areaConsulta.setText(cadena6);
-        return Restaurant.listaClientes.get(mayor);
+        return mayor;
         
                 
     }
     
     //metodo que va a dar el total de platos creados en el mes
+
     public void totalPlatosxMes() {
         String cadena5 = "";
                 Plato plato = new Plato();
@@ -172,8 +200,13 @@ public class ConsultayReporte {
                     String formato="MM";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
+<<<<<<< HEAD
                     if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
                         total5 += plato.getIdProducto(); 
+=======
+                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        //total5 += plato.getIdProducto(); 
+>>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
                     }
                 }
                 
@@ -185,6 +218,7 @@ public class ConsultayReporte {
     }
     
     //metodo que va a dar el total de las bebidas por dia
+
       public void totalBebidasXDia() { 
         String cadena4 = "";
                 Bebida bebida = new Bebida();
@@ -195,8 +229,13 @@ public class ConsultayReporte {
                     String formato="d";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
+<<<<<<< HEAD
                     if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
                         total4 += bebida.getIdProducto(); 
+=======
+                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
+                        //total4 += bebida.getIdProducto(); 
+>>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
                     }
                 }
                 cadena4 = String.valueOf(total4);
@@ -228,6 +267,7 @@ public class ConsultayReporte {
                 
     }
     
+
     public void totalVendidoXAno() {// vendido por ano pensar bien como hacerlo
         String cadena2 = "";
                 int ano = 0;
@@ -275,8 +315,13 @@ public class ConsultayReporte {
                     String formato="yyyy";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
+<<<<<<< HEAD
                     if (Integer.parseInt(dateFormat.format(Restaurant.getInstance().facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
                     total1 += Restaurant.getInstance().facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+=======
+                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                    total1 += rest.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+>>>>>>> 0861951c31cc36d4f50063648b45137ee2aa4672
                     }
                 }
                 cadena1 = String.valueOf(total1);

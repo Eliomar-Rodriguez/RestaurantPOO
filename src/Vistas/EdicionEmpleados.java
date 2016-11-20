@@ -22,6 +22,7 @@ public class EdicionEmpleados extends javax.swing.JFrame {
      */
     public EdicionEmpleados() {
         initComponents();
+        setResizable(false);
         lblACed.setVisible(false);
         lblACor.setVisible(false);
         lblADir.setVisible(false);

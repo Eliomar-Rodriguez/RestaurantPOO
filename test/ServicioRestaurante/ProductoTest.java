@@ -19,6 +19,7 @@ import static org.junit.Assert.*;
 public class ProductoTest {
     
     private Producto produ;
+    
     public ProductoTest() {
     }
     
@@ -47,9 +48,9 @@ public class ProductoTest {
     public void testGetIdProducto() {
         
         Producto instancia = new Producto();
-        instancia.setIdProducto(2);
-        int expResult = 2;
-        int result = instancia.getIdProducto();
+        instancia.setIdProducto("2");
+        String expResult = "2";
+        String result = instancia.getIdProducto();
         assertEquals("Error en el producto",expResult, result);
     }
 
@@ -60,9 +61,9 @@ public class ProductoTest {
     public void testSetIdProducto() {
      
         Producto instancia = new Producto();
-        instancia.setIdProducto(2);
-        int resultado = instancia.getIdProducto();
-        assertEquals("Error",resultado, 2);
+        instancia.setIdProducto("2");
+        String resultado = instancia.getIdProducto();
+        assertEquals("Error",resultado, "2");
         
               
     }
