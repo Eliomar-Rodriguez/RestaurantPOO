@@ -72,7 +72,7 @@
     <Component class="javax.swing.JComboBox" name="comboConsulta">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="11">
+          <StringArray count="10">
             <StringItem index="0" value="1. El empleado del mes, mesero y cocinero."/>
             <StringItem index="1" value="2. Los dos platos m&#xe1;s consumidos por los clientes."/>
             <StringItem index="2" value="3. En qu&#xe9; hora del d&#xed;a el restaurante est&#xe1; m&#xe1;s lleno."/>
@@ -82,8 +82,7 @@
             <StringItem index="6" value="7. Total, vendido por mes."/>
             <StringItem index="7" value="8. Total vendido por a&#xf1;o."/>
             <StringItem index="8" value="9. Total, de clientes atendidos por mes."/>
-            <StringItem index="9" value="10. Total de clientes atendidos por a&#xf1;o"/>
-            <StringItem index="10" value=" "/>
+            <StringItem index="9" value="10. Total de clientes atendidos por a&#xf1;o."/>
           </StringArray>
         </Property>
       </Properties>
