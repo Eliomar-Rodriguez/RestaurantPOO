@@ -6,7 +6,7 @@ public class Bebida extends Producto {
 
     private int tamano;
     
-    public Bebida(int idProducto, int precio, String nombre, String tipo, int tamano) {
+    public Bebida(String idProducto, int precio, String nombre, String tipo, int tamano) {
         super(idProducto, precio, nombre);
         this.tipo = tipo;
         this.tamano = tamano;

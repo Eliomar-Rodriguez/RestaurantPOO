@@ -18,6 +18,7 @@ public class AdministracionDatos extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Administración de datos.");
+        setResizable(false);
     }
 
     /**
@@ -36,6 +37,7 @@ public class AdministracionDatos extends javax.swing.JFrame {
         botonVolver = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         agregarProducto = new javax.swing.JButton();
+        agregarProducto1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,7 +58,7 @@ public class AdministracionDatos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonRegistroEmpleado);
-        botonRegistroEmpleado.setBounds(10, 160, 260, 40);
+        botonRegistroEmpleado.setBounds(10, 160, 270, 40);
 
         botonBorrarEmpleado.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         botonBorrarEmpleado.setText("Borrar Empleado");
@@ -66,7 +68,7 @@ public class AdministracionDatos extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonBorrarEmpleado);
-        botonBorrarEmpleado.setBounds(10, 110, 260, 40);
+        botonBorrarEmpleado.setBounds(10, 110, 270, 40);
 
         botonModificar.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         botonModificar.setText("Modificar Información");
@@ -94,14 +96,24 @@ public class AdministracionDatos extends javax.swing.JFrame {
         jLabel3.setBounds(10, 40, 330, 70);
 
         agregarProducto.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
-        agregarProducto.setText("Agregar bebida/plato");
+        agregarProducto.setText("Agregar bebida / plato");
         agregarProducto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 agregarProductoActionPerformed(evt);
             }
         });
         getContentPane().add(agregarProducto);
-        agregarProducto.setBounds(660, 110, 250, 40);
+        agregarProducto.setBounds(630, 110, 280, 40);
+
+        agregarProducto1.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        agregarProducto1.setText("Eliminar bebida / plato");
+        agregarProducto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarProducto1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(agregarProducto1);
+        agregarProducto1.setBounds(630, 160, 280, 40);
 
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         getContentPane().add(jLabel2);
@@ -133,8 +145,14 @@ public class AdministracionDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void agregarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProductoActionPerformed
-        // TODO add your handling code here:
+        AgregarProducto addProductos = new AgregarProducto();
+        addProductos.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_agregarProductoActionPerformed
+
+    private void agregarProducto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarProducto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_agregarProducto1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,6 +170,7 @@ public class AdministracionDatos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton agregarProducto;
+    private javax.swing.JButton agregarProducto1;
     private javax.swing.JButton botonBorrarEmpleado;
     private javax.swing.JButton botonModificar;
     private javax.swing.JButton botonRegistroEmpleado;

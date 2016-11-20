@@ -2,7 +2,7 @@ package ServicioRestaurante;
 
 public class Producto {
 
-    private int idProducto;
+    private String idProducto;
 
     private int precio;
 
@@ -11,17 +11,18 @@ public class Producto {
     public Producto() {
     }
 
-    public Producto(int idProducto, int precio, String nombre) {
+    public Producto(String idProducto, int precio, String nombre) {
         this.idProducto = idProducto;
         this.precio = precio;
         this.nombre = nombre;
+        
     }
 
-    public int getIdProducto() {
+    public String getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(int idProducto) {
+    public void setIdProducto(String idProducto) {
         this.idProducto = idProducto;
     }
 

@@ -15,7 +15,7 @@ public class Plato extends Producto{
 
     //public Plato() {
     //}
-    public Plato(int idProducto, int precio, String nombre, int cantCalorias, String ingredientes) {
+    public Plato(String idProducto, int precio, String nombre, int cantCalorias, String ingredientes) {
         super(idProducto, precio, nombre);
         this.cantCalorias = cantCalorias;
         this.ingredientes = ingredientes;

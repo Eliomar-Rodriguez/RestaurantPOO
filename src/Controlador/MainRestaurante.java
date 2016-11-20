@@ -15,6 +15,7 @@ import ServicioRestaurante.Direccion;
 import ServicioRestaurante.Factura;
 import ServicioRestaurante.Menu;
 import ServicioRestaurante.Mesa;
+import ServicioRestaurante.Orden;
 import ServicioRestaurante.Plato;
 import ServicioRestaurante.Restaurant;
 import ServicioRestaurante.VistaCocinero;
@@ -28,6 +29,7 @@ import java.util.Date;
 public class MainRestaurante {
     
     public static Restaurant rest = null;
+    public static Factura fac1 = null;
 
     
     public static void main(String[] args) {
@@ -41,8 +43,45 @@ public class MainRestaurante {
         
         Direccion dir = new Direccion("Alajuela", "San Carlos", "Florencia", "TEC Santa Clara");
         
+        /*
+        ================================================================
+        =========       Creación de platos y bebidas        ============
+        ================================================================
+        */
+        
+        Plato plato1 = new Plato("11", 1450, "arroz con pollo", 299, "pollo, zanahoria, bainica, arroz, maiz");
+        Plato plato2 = new Plato("12", 1700, "arroz con carne", 600, "arroz, carne de cerdo, olores");
+        Plato plato3 = new Plato("13", 500, "arroz", 250, "arroz");
+        Plato plato4 = new Plato("14", 500, "frijoles negros", 500, "frijoles");
+        Plato plato5 = new Plato("15", 1500, "arroz cantones",750, "arroz, pollo, olores, carne de cerdo");
+        Plato plato6 = new Plato("16", 1500, "sopa maggy", 800, "arroz, papas,huevo duro, fideos");
+        
+        Bebida bebida1 = new Bebida("332", 1000, "Coca Cola", "Gaseosa", 600);
+        Bebida bebida2 = new Bebida("334", 1200, "Batido de fresa","Fresco natural en leche", 550);
+        Bebida bebida3 = new Bebida("335", 800, "Fresco de cas", "Fresco natural en agua", 400);
+        Bebida bebida4 = new Bebida("336", 800, "Fresco de limon", "Fresco natural en agua", 400);
+        Bebida bebida5 = new Bebida("337", 1000, "Fanta", "Gaseosa", 600);
+        Bebida bebida6 = new Bebida("338", 700, "Cafe", "Cafe", 300);
+        Bebida bebida7 = new Bebida("339", 1200, "Batido de mora", "Fresco natural en leche", 550);
+        
+        
         Menu menu = new Menu(0, 0); 
-
+        
+        //menu.agregarProducto(plato1);
+        menu.agregarProducto(plato2);
+        menu.agregarProducto(plato3);
+        menu.agregarProducto(plato4);
+        menu.agregarProducto(plato5);
+        menu.agregarProducto(plato6);
+        
+        menu.agregarProducto(bebida1);
+        menu.agregarProducto(bebida2);
+        menu.agregarProducto(bebida3);
+        menu.agregarProducto(bebida4);
+        menu.agregarProducto(bebida5);
+        menu.agregarProducto(bebida6);
+        menu.agregarProducto(bebida7);
+        
         rest = new Restaurant("Dos Cielos TEC", "logo", "24741386", "algo@gmail.com", menu, co,dir);
         /*
         ====================================================================================
@@ -74,9 +113,6 @@ public class MainRestaurante {
         rest.setMesas(mesa10);
         rest.setMesas(mesa11);
         rest.setMesas(mesa12);
-        System.out.println(Restaurant.getInstance().getMesas().size());
-        
-        
         /*
         ================================================================
         ======     Creación de clientes, meseros y cocineros     =======
@@ -92,29 +128,11 @@ public class MainRestaurante {
         Cocinero co1 = f.creaCocinero(0, 0, "Postres", "Ciudad Quesada", "rodriguez.elio.97@gmail.com", "Jose Mauricio Rojas", "205500965", "86551217");
         rest.agregarEmpleado(m1);
         rest.agregarEmpleado(co1);
+
         rest.agregarEmpleado(m2);   
         
-        Restaurant.listaClientes.add(c1);
+        Restaurant.getInstance().listaClientes.add(c1);
         Restaurant.listaClientes.add(c2);
-        /*
-        ================================================================
-        =========       Creación de platos y bebidas        ============
-        ================================================================
-        */
-        Plato plato1 = new Plato(001, 1450, "arroz con pollo", 299, "pollo, zanahoria, bainica, arroz, maiz");
-        Plato plato2 = new Plato(002, 1700, "arroz con carne", 600, "arroz, carne de cerdo, olores");
-        Plato plato3 = new Plato(003, 500, "arroz", 250, "arroz");
-        Plato plato4 = new Plato(004, 500, "frijoles negros", 500, "frijoles");
-        Plato plato5 = new Plato(005, 1500, "arroz cantones",750, "arroz, pollo, olores, carne de cerdo");
-        Plato plato6 = new Plato(006, 1500, "sopa maggy", 800, "arroz, papas,huevo duro, fideos");
-        
-        Bebida bebida1 = new Bebida(1, 1000, "Coca Cola", "Gaseosa", 600);
-        Bebida bebida2 = new Bebida(2, 1000, "Batido de fresa","Fresco natural", 450);
-        Bebida bebida3 = new Bebida(3, 800, "Fresco de cas", "Fresco natural", 400);
-        Bebida bebida4 = new Bebida(4, 800, "Fresco de limon", "Fresco natural", 400);
-        Bebida bebida5 = new Bebida(5, 1000, "Fanta", "Gaseosa", 600);
-        Bebida bebida6 = new Bebida(6, 700, "Cafe", "Cafe", 300);
-        
         /*
         ================================================================
         =========           Creación de detalle             ============
@@ -123,15 +141,22 @@ public class MainRestaurante {
         */
         Detalle detalle1 = new Detalle(4, plato6);
         
-        //Orden o1 = new Orden(m1,mesa1,25,"Efectivo", "12", 6, 5,detalle1);
+        Orden o1 = new Orden(m2, mesa2, 5000, "Efectivo","1 PM", 2, 2);
         
         //Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
-        
+
         Date fecha = new Date(20/11/2016);
         
+
+        fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
+        rest.agregarFactura(fac1);
+        Controlador controlador = new Controlador(fac1);
+        controlador.setFactura(fac1);
+
         Factura fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
         Restaurant.facturas.add(fac1);
         
+
 
         Main main = new Main();
         main.setVisible(true);
@@ -144,7 +169,7 @@ public class MainRestaurante {
                 
         //Restaurant.listaOrdenes.add(o1);
         //Restaurant.listaOrdenes.add(o2);
-        System.out.println(Restaurant.listaOrdenes.toString());       
+        //System.out.println(Restaurant.listaOrdenes.toString());       
 
       }
     

@@ -1,5 +1,6 @@
 package ServicioRestaurante;
 
+import Controlador.MainRestaurante;
 import Empleados.Cliente;
 import java.util.ArrayList;
 import java.util.Date;
@@ -38,8 +39,9 @@ public class Factura {
     }
 
     public void setDetalle(Detalle detalle) {
-        this.listaDetalles.add(detalle);
+        Factura.listaDetalles.add(detalle);
     }
+    
     
     public int getPrecioTotal() {
         return precioTotal;

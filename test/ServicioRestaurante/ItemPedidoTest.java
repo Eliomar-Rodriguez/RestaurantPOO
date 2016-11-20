@@ -72,7 +72,7 @@ public class ItemPedidoTest {
      */
     @Test
     public void testGetEstado() {
-        Producto produ = new Producto(2,12000, "Papas");
+        Producto produ = new Producto("2",12000, "Papas");
         Cocinero cocina = new Cocinero(0, 0, "Postres", "Aguas Zarcas", "jperez24@gmail.com", "Juan Perez", "2345-5678", "83638-3455");
         ItemPedido instancia = new ItemPedido(cocina,"Listo",produ);
         String result = instancia.getEstado();
@@ -85,7 +85,7 @@ public class ItemPedidoTest {
      */
     @Test
     public void testSetEstado() {
-        Producto produ = new Producto(2,12000, "Papas");
+        Producto produ = new Producto("2",12000, "Papas");
         ItemPedido instancia = new ItemPedido();
         instancia.setProducto(produ);
         Producto resultado = instancia.getProducto();
@@ -97,11 +97,11 @@ public class ItemPedidoTest {
      */
     @Test
     public void testGetProducto() {
-        Producto produ = new Producto(2,12000, "Papas");
+        Producto produ = new Producto("2",12000, "Papas");
         ItemPedido instancia = new ItemPedido();
         instancia.setProducto(produ);
-        int expResult = 2;
-        int result = instancia.getProducto().getIdProducto();
+        String expResult = "2";
+        String result = instancia.getProducto().getIdProducto();
         assertEquals("Error en el producto.",expResult, result);
     }
 
@@ -110,7 +110,7 @@ public class ItemPedidoTest {
      */
     @Test
     public void testSetProducto() {
-        Producto produ = new Producto(2,12000, "Papas");
+        Producto produ = new Producto("2",12000, "Papas");
         ItemPedido instancia = new ItemPedido();
         instancia.setProducto(produ);
         Producto resultado = instancia.getProducto();

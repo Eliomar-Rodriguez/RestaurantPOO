@@ -5,7 +5,10 @@
  */
 package ConsultasyReportes;
 
+
+
 import static Controlador.MainRestaurante.rest;
+
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Factura;
@@ -41,7 +44,7 @@ public class ConsultayReporte {
     
    public Orden meseroDelmes(){
        
-        String cadena7 = "";
+        
         int vecesActual=0,vecesMayor=0, mayor=0;
         
         for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
@@ -57,20 +60,15 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
-        
-        cadena7 = String.valueOf(Restaurant.listaOrdenes.get(mayor));
-        
-        cadena7= Integer.toString(mayor);
-        
-        areaConsulta.setText(cadena7);
         return Restaurant.listaOrdenes.get(mayor);
     
         
     }
     
+
     public ItemPedido cocineroDelmes(){// metodo del cocinero del mes
         
-        int vecesActual=0,vecesMayor=0, mayor=0;
+        int vecesActual=0,vecesMayor=0, mayor=0, productos=0;
         
         for (int i = 0; i < VistaCocinero.listaItemPedido.size(); i++) {
             
@@ -85,8 +83,10 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
+
     return VistaCocinero.listaItemPedido.get(mayor);
        
+
     }
     
      //Metodo que va a dar los dos platos mas consumidos
@@ -112,12 +112,12 @@ public class ConsultayReporte {
     }
     
     //METODO QUE VA A DAR LA HORA DONDE EL RESTAURANTE ESTA MAS LLENO
+
     public void horaPicoRest() {
         String hora;
         String horaPico = "";
-                
         int veces=0,mayor=0;
-        
+
         for (int i = 0; i < Restaurant.facturas.size(); i++) {
             hora = Restaurant.facturas.get(i).getHora();
             
@@ -135,6 +135,7 @@ public class ConsultayReporte {
                 
                 
             areaConsulta.setText(horaPico);
+
     }
     
     //Metodo que va a dar el cliente mas frecuente de acuerdo al numero de visitas
@@ -144,8 +145,8 @@ public class ConsultayReporte {
         
         for (int i = 0; i < Restaurant.listaClientes.size(); i++) {
             
-            for (int j = 0; j < Restaurant.facturas.size(); j++) {
-                if (Restaurant.listaClientes.get(i).getCedula().equals(Restaurant.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
+            for (int j = 0; j < rest.facturas.size(); j++) {
+                if (Restaurant.listaClientes.get(i).getCedula().equals(rest.facturas.get(j).getCliente().getCedula())){ // si el cliente que esta en la lista
                     vecesActual++;
                 }                                
             }
@@ -167,6 +168,7 @@ public class ConsultayReporte {
     }
     
     //metodo que va a dar el total de platos creados en el mes
+
     public void totalPlatosxMes() {
         String cadena5 = "";
                 Plato plato = new Plato();
@@ -178,7 +180,8 @@ public class ConsultayReporte {
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
                     if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        total5 += plato.getIdProducto(); 
+                        total5 += plato.getIdProducto();
+
                     }
                 }
                 
@@ -190,6 +193,7 @@ public class ConsultayReporte {
     }
     
     //metodo que va a dar el total de las bebidas por dia
+
       public void totalBebidasXDia() { 
         String cadena4 = "";
                 Bebida bebida = new Bebida();
@@ -197,11 +201,12 @@ public class ConsultayReporte {
                 int total4=0;
             
                 for (int i = 0; i < Restaurant.facturas.size(); i++) {
-                    String formato="d";
+                    String formato="dd";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
-            
+
                     if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
-                        total4 += bebida.getIdProducto(); 
+                       total4 += bebida.getIdProducto();
+
                     }
                 }
                 cadena4 = String.valueOf(total4);
@@ -233,6 +238,7 @@ public class ConsultayReporte {
                 
     }
     
+
     public void totalVendidoXAno() {// vendido por ano pensar bien como hacerlo
         String cadena2 = "";
                 int ano = 0;
@@ -275,21 +281,22 @@ public class ConsultayReporte {
          String cadena1 = "";
                 int total1 = 0;
                 int ano1 = 0;
-                for (int i = 0; i < rest.facturas.size(); i++) {
+                for (int i = 0; i < Restaurant.facturas.size(); i++) {
                     
                     String formato="yyyy";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
-                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                    total1 += rest.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
-                    }
+
+                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total1 += Restaurant.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+
                 }
                 cadena1 = String.valueOf(total1);
  
                 cadena1= Integer.toString(total1);
                 areaConsulta.setText(cadena1);
+            }
     }
 
-    
-    
+       
 }
