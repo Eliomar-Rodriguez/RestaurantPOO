@@ -180,7 +180,7 @@ public class ConsultayReporte {
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
                     if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        total5 += plato.getIdProducto();
+                        total5 += Integer.parseInt(plato.getIdProducto());
 
                     }
                 }
@@ -205,7 +205,7 @@ public class ConsultayReporte {
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
                     if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
-                       total4 += bebida.getIdProducto();
+                       total4 += Integer.parseInt(bebida.getIdProducto());
 
                     }
                 }
