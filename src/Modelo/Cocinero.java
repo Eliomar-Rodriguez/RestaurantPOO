@@ -1,7 +1,5 @@
-package Empleados;
-import ServicioRestaurante.Plato;
-import ServicioRestaurante.Restaurant;
-import ServicioRestaurante.Restaurant;
+package Modelo;
+import Modelo.Restaurant;
 public class Cocinero extends Empleado {
 
     private int cantPlatosCocinados;
@@ -22,19 +20,20 @@ public class Cocinero extends Empleado {
     
     
     public void crearPlato() {// como lo hago? lleno datos aqui o recibo por parametros un plato?
-        //Los platos van por parametro, ya que van a estar en un menu fijo, el menu de un restaurante no cambia seguido.
     }
-    
-    //metodo en el cual se van a ver las ordenes pendientes
+
     public void verOrdenesPendientes() {
         System.out.println("Bebidas");
-        for (int i = 0; i < Restaurant.getInstance().listaOrdenes.size(); i++) {
-            for (int j = 0; j < Restaurant.getInstance().listaOrdenes.size(); j++) {
-                System.out.println(Restaurant.getInstance().listaOrdenes.get(i).getListaDetalle().get(i).toString());
-            }            
-        }        
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            System.out.println(Restaurant.listaOrdenes.get(i).getBebida(i));
+        }
+        System.out.println("Platos");
+        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+            System.out.println(Restaurant.listaOrdenes.get(i).getPlato(i));
+        }
+        
     }
-    //metodo para ver el estado del plato
+
     public void cocinarPlatillo(Plato plato) {
     }
 

@@ -6,7 +6,10 @@
 package Vistas;
 
 
+import static Controlador.MainRestaurante.rest;
+import static Modelo.Restaurant.listaOrdenes;
 import ServicioRestaurante.Restaurant;
+import java.util.ArrayList;
 
 
 
@@ -20,18 +23,15 @@ public class VistaCocinero extends javax.swing.JFrame {
      * Creates new form VistaCocinero
      */
     public VistaCocinero() {
+        
         initComponents();
         setResizable(false);
-        
-        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
-
-            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                //tablaOrden.setValueAt(Restaurant.listaOrdenes.get(i).listaProductos.get(0), 0, 0);;
-
-                tablaOrden.setValueAt(Restaurant.listaOrdenes.get(i).getDetalle(j).toString(), 0, 0);;
-
-            }
-
+      
+       
+       
+        for (int i = 0; i < rest.listaOrdenes.size(); i++) {
+            String value = rest.listaOrdenes.get(i).getHora();
+            tablaOrden.setValueAt(value, i, i);
         }
         
     }
@@ -65,21 +65,28 @@ public class VistaCocinero extends javax.swing.JFrame {
 
         tablaOrden.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Orden", "Platos", "Listo"
+                "Orden", "Listo"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
+                java.lang.Object.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, true
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jScrollPane4.setViewportView(tablaOrden);

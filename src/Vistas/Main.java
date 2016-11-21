@@ -114,8 +114,6 @@ public class Main extends javax.swing.JFrame {
         });
         getContentPane().add(btnTomarOrden);
         btnTomarOrden.setBounds(10, 120, 280, 40);
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo1.jpg")); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 920, 490);
 
@@ -135,7 +133,7 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_btnVistaCocineroActionPerformed
 
     private void btnConsultasReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasReportesActionPerformed
-        ConsultasReportes conRep = new ConsultasReportes();
+        ReporteConsulta conRep = new ReporteConsulta();
         conRep.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnConsultasReportesActionPerformed

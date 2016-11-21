@@ -30,7 +30,7 @@ public class Restaurant {
     
     private VistaCocinero vistaCocinero;
            
-    public static ArrayList<Orden> listaOrdenes;
+    public  ArrayList<Orden> listaOrdenes;
     
     public static ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
 
@@ -60,7 +60,7 @@ public class Restaurant {
         Restaurant.listaClientes = new ArrayList();
         Restaurant.listaMesas = new ArrayList();
         Restaurant.facturas = new ArrayList();
-        Restaurant.listaOrdenes = new ArrayList();
+        this.listaOrdenes = new ArrayList();
         
     }
 
@@ -248,7 +248,7 @@ public class Restaurant {
     }
 
     public void setOrden(Orden orden) {
-        Restaurant.listaOrdenes.add(orden);
+        this.listaOrdenes.add(orden);
     }
         
     public Empleado getEmpleado(int i){

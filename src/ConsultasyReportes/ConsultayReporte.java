@@ -5,7 +5,10 @@
  */
 package ConsultasyReportes;
 
+
+
 import static Controlador.MainRestaurante.rest;
+
 import ServicioRestaurante.Bebida;
 import ServicioRestaurante.Detalle;
 import ServicioRestaurante.Factura;
@@ -14,8 +17,9 @@ import ServicioRestaurante.Orden;
 import ServicioRestaurante.Plato;
 import ServicioRestaurante.Restaurant;
 import ServicioRestaurante.VistaCocinero;
+import static Vistas.ReporteConsulta.areaConsulta;
 import java.text.SimpleDateFormat;
-import static Vistas.ConsultasReportes.areaConsulta;
+
 import java.util.ArrayList;
 
 /**
@@ -32,7 +36,7 @@ public class ConsultayReporte {
     public ConsultayReporte() {
         Restaurant.listaClientes = new ArrayList();
         Restaurant.facturas = new ArrayList();
-        Restaurant.listaOrdenes = new ArrayList();
+        Restaurant.getInstance().listaOrdenes = new ArrayList();
         VistaCocinero.listaItemPedido = new ArrayList();
         Factura.listaDetalles = new ArrayList();
         
@@ -41,13 +45,13 @@ public class ConsultayReporte {
     
    public Orden meseroDelmes(){
        
-        String cadena7 = "";
+        
         int vecesActual=0,vecesMayor=0, mayor=0;
         
-        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+        for (int i = 0; i < Restaurant.getInstance().listaOrdenes.size(); i++) {
             
-            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
+            for (int j = 0; j < Restaurant.getInstance().listaOrdenes.size(); j++) {
+                if (Restaurant.getInstance().listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.getInstance().listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
                     vecesActual++;
                 }                                
             }
@@ -57,13 +61,7 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
-        
-        cadena7 = String.valueOf(Restaurant.listaOrdenes.get(mayor));
-        
-        cadena7= Integer.toString(mayor);
-        
-        areaConsulta.setText(cadena7);
-        return Restaurant.listaOrdenes.get(mayor);
+        return Restaurant.getInstance().listaOrdenes.get(mayor);
     
         
     }
@@ -120,7 +118,7 @@ public class ConsultayReporte {
         String hora;
         String horaPico = "";
         int veces=0,mayor=0;
-        
+
         for (int i = 0; i < Restaurant.facturas.size(); i++) {
             hora = Restaurant.facturas.get(i).getHora();
             
@@ -138,6 +136,7 @@ public class ConsultayReporte {
                 
                 
             areaConsulta.setText(horaPico);
+
     }
     
     //Metodo que va a dar el cliente mas frecuente de acuerdo al numero de visitas
@@ -182,7 +181,8 @@ public class ConsultayReporte {
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 
                     if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==mes2){ // obtengo el mes exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                        //total5 += plato.getIdProducto(); 
+                        total5 += Integer.parseInt(plato.getIdProducto());
+
                     }
                 }
                 
@@ -202,11 +202,12 @@ public class ConsultayReporte {
                 int total4=0;
             
                 for (int i = 0; i < Restaurant.facturas.size(); i++) {
-                    String formato="d";
+                    String formato="dd";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
-            
+
                     if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==dia){ // obtengo el dia exacto de la fecha que tiene la factura y la comparo con el dia que recibo de parametro
-                        //total4 += bebida.getIdProducto(); 
+                       total4 += Integer.parseInt(bebida.getIdProducto());
+
                     }
                 }
                 cadena4 = String.valueOf(total4);
@@ -281,21 +282,22 @@ public class ConsultayReporte {
          String cadena1 = "";
                 int total1 = 0;
                 int ano1 = 0;
-                for (int i = 0; i < rest.facturas.size(); i++) {
+                for (int i = 0; i < Restaurant.facturas.size(); i++) {
                     
                     String formato="yyyy";
                     SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
             
-                    if (Integer.parseInt(dateFormat.format(rest.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
-                    total1 += rest.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
-                    }
+
+                    if (Integer.parseInt(dateFormat.format(Restaurant.facturas.get(i).getFecha()))==ano1){ // obtengo el año exacto de la fecha que tiene la factura y la comparo con el mes que recibo de parametro
+                        total1 += Restaurant.facturas.get(i).getCliente().getVisitasRealizadas(); // esto me va a dar la cantidad de visitas de clientes en el año
+
                 }
                 cadena1 = String.valueOf(total1);
  
                 cadena1= Integer.toString(total1);
                 areaConsulta.setText(cadena1);
+            }
     }
 
-    
-    
+       
 }

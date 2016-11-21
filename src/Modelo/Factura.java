@@ -1,17 +1,14 @@
-package ServicioRestaurante;
+package Modelo;
 
-import Controlador.MainRestaurante;
-import Empleados.Cliente;
 import java.util.ArrayList;
 import java.util.Date;
 
-//clase factura para cobrarle al cliente
 public class Factura {
 
     private Cliente cliente;
 
     private Date fecha;
-    
+
     private String hora;
 
     private int impuestoVenta;
@@ -19,11 +16,11 @@ public class Factura {
     private int cobroServicio;
     
     private int precioTotal;
-    public static ArrayList<Detalle> listaDetalles;
+    private ArrayList<Detalle> listaDetalles;
 
     public Factura() {
     }
-        
+
     public Factura(Cliente cliente, Date fecha, String hora, Detalle detalle, int impuestoVenta, int cobroServicio,int precioTotal) {
         this.cliente = cliente;
         this.fecha = fecha;
@@ -31,7 +28,7 @@ public class Factura {
         this.impuestoVenta = impuestoVenta;
         this.cobroServicio = cobroServicio;
         this.precioTotal = precioTotal;
-        Factura.listaDetalles = new ArrayList();
+        this.listaDetalles = new ArrayList();
     }
 
     public Detalle getListaDetalle(int i) {
@@ -39,9 +36,8 @@ public class Factura {
     }
 
     public void setDetalle(Detalle detalle) {
-        Factura.listaDetalles.add(detalle);
+        this.listaDetalles.add(detalle);
     }
-    
     
     public int getPrecioTotal() {
         return precioTotal;
@@ -93,9 +89,7 @@ public class Factura {
 
     @Override
     public String toString() {
-        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + ", precioTotal=" + precioTotal + ", listaDetalles=" + listaDetalles + '}';
+        return "Factura{" + "cliente=" + cliente + ", fecha=" + fecha + ", hora=" + hora + ", impuestoVenta=" + impuestoVenta + ", cobroServicio=" + cobroServicio + '}';
     }
-
-    
     
 }
