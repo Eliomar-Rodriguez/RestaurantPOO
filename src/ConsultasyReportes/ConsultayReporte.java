@@ -36,7 +36,7 @@ public class ConsultayReporte {
     public ConsultayReporte() {
         Restaurant.listaClientes = new ArrayList();
         Restaurant.facturas = new ArrayList();
-        Restaurant.listaOrdenes = new ArrayList();
+        Restaurant.getInstance().listaOrdenes = new ArrayList();
         VistaCocinero.listaItemPedido = new ArrayList();
         Factura.listaDetalles = new ArrayList();
         
@@ -48,10 +48,10 @@ public class ConsultayReporte {
         
         int vecesActual=0,vecesMayor=0, mayor=0;
         
-        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
+        for (int i = 0; i < Restaurant.getInstance().listaOrdenes.size(); i++) {
             
-            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                if (Restaurant.listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
+            for (int j = 0; j < Restaurant.getInstance().listaOrdenes.size(); j++) {
+                if (Restaurant.getInstance().listaOrdenes.get(i).getMesero().getNombreCompleto().equals(Restaurant.getInstance().listaOrdenes.get(j).getMesero().getNombreCompleto())){ 
                     vecesActual++;
                 }                                
             }
@@ -61,7 +61,7 @@ public class ConsultayReporte {
             vecesMayor=vecesActual; 
             vecesActual=0;
         }
-        return Restaurant.listaOrdenes.get(mayor);
+        return Restaurant.getInstance().listaOrdenes.get(mayor);
     
         
     }

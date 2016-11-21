@@ -28,9 +28,9 @@ public class Cocinero extends Empleado {
     //metodo en el cual se van a ver las ordenes pendientes
     public void verOrdenesPendientes() {
         System.out.println("Bebidas");
-        for (int i = 0; i < Restaurant.listaOrdenes.size(); i++) {
-            for (int j = 0; j < Restaurant.listaOrdenes.size(); j++) {
-                System.out.println(Restaurant.listaOrdenes.get(i).getListaDetalle().get(i).toString());
+        for (int i = 0; i < Restaurant.getInstance().listaOrdenes.size(); i++) {
+            for (int j = 0; j < Restaurant.getInstance().listaOrdenes.size(); j++) {
+                System.out.println(Restaurant.getInstance().listaOrdenes.get(i).getListaDetalle().get(i).toString());
             }            
         }        
     }

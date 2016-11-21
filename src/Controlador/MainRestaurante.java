@@ -20,6 +20,7 @@ import ServicioRestaurante.Plato;
 import ServicioRestaurante.Restaurant;
 import ServicioRestaurante.VistaCocinero;
 import Vistas.Main;
+import java.util.ArrayList;
 import java.util.Date;
 
 /**
@@ -30,10 +31,10 @@ public class MainRestaurante {
     
     public static Restaurant rest = null;
     public static Factura fac1 = null;
-
+    
+    
     
     public static void main(String[] args) {
-          
         
         
         
@@ -131,7 +132,7 @@ public class MainRestaurante {
 
         rest.agregarEmpleado(m2);   
         
-        Restaurant.getInstance().listaClientes.add(c1);
+        Restaurant.listaClientes.add(c1);
         Restaurant.listaClientes.add(c2);
         /*
         ================================================================
@@ -143,7 +144,13 @@ public class MainRestaurante {
         
         Orden o1 = new Orden(m2, mesa2, 5000, "Efectivo","1 PM", 2, 2);
         
-        //Orden o2 = new Orden(m2,mesa2,25,"Efectivo", "11", 6, 5,detalle1);
+        Orden o2 = new Orden(m1,mesa2,25,"Efectivo", "11", 6, 5);
+        
+        rest.listaOrdenes.add(o1);
+        rest.listaOrdenes.add(o2);
+        System.out.print(rest.listaOrdenes);
+        
+        
 
         Date fecha = new Date(20/11/2016);
         
@@ -153,10 +160,10 @@ public class MainRestaurante {
         Controlador controlador = new Controlador(fac1);
         controlador.setFactura(fac1);
 
-        Factura fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
-        Restaurant.facturas.add(fac1);
+        Factura fa1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
+        Restaurant.facturas.add(fa1);
         
-
+        
 
         Main main = new Main();
         main.setVisible(true);

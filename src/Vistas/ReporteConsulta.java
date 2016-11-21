@@ -134,7 +134,7 @@ public class ReporteConsulta extends javax.swing.JFrame {
                 break;
             default:
                 break;
-        }        // TODO add your handling code        // TODO add your handling code here:
+        }        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
