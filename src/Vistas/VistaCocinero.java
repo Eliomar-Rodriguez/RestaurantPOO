@@ -7,7 +7,6 @@ package Vistas;
 
 
 import static Controlador.MainRestaurante.rest;
-import static Modelo.Restaurant.listaOrdenes;
 import ServicioRestaurante.Restaurant;
 import java.util.ArrayList;
 

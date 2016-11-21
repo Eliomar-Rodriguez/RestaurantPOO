@@ -32,7 +32,7 @@ public class Restaurant {
            
     public  ArrayList<Orden> listaOrdenes;
     
-    public static ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
+    public  ArrayList<Empleado> listaEmpleados;   // lista que contiene los empleados del restaurante
 
     public static ArrayList<Mesa> listaMesas;
 
@@ -55,7 +55,7 @@ public class Restaurant {
         this.direccion = direccion;
         this.menu = menu;
         this.vistaCocinero = vistaCocinero;
-        Restaurant.listaEmpleados = new ArrayList();
+        this.listaEmpleados = new ArrayList();
         Restaurant.listaClientes = new ArrayList();
         Restaurant.listaMesas = new ArrayList();
         Restaurant.facturas = new ArrayList();

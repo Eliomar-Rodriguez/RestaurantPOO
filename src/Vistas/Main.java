@@ -41,12 +41,13 @@ public class Main extends javax.swing.JFrame {
 
         btnAdministrarDatos = new javax.swing.JButton();
         btnVistaCocinero = new javax.swing.JButton();
-        btnConsultasReportes = new javax.swing.JButton();
+        btnFactura = new javax.swing.JButton();
         btnVistaMesero = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnTomarOrden = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnConsultasReportes1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(922, 520));
@@ -75,15 +76,15 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(btnVistaCocinero);
         btnVistaCocinero.setBounds(630, 120, 280, 40);
 
-        btnConsultasReportes.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
-        btnConsultasReportes.setText("Consultas y Reportes");
-        btnConsultasReportes.addActionListener(new java.awt.event.ActionListener() {
+        btnFactura.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnFactura.setText("Cerrar Orden");
+        btnFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnConsultasReportesActionPerformed(evt);
+                btnFacturaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnConsultasReportes);
-        btnConsultasReportes.setBounds(10, 170, 280, 40);
+        getContentPane().add(btnFactura);
+        btnFactura.setBounds(10, 230, 280, 40);
 
         btnVistaMesero.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
         btnVistaMesero.setText("Vista Mesero");
@@ -117,6 +118,16 @@ public class Main extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 920, 490);
 
+        btnConsultasReportes1.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
+        btnConsultasReportes1.setText("Consultas y Reportes");
+        btnConsultasReportes1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnConsultasReportes1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnConsultasReportes1);
+        btnConsultasReportes1.setBounds(10, 170, 280, 40);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -132,11 +143,11 @@ public class Main extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btnVistaCocineroActionPerformed
 
-    private void btnConsultasReportesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasReportesActionPerformed
-        ReporteConsulta conRep = new ReporteConsulta();
-        conRep.setVisible(true);
+    private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
+        CerrarOrden co = new CerrarOrden();
+        co.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_btnConsultasReportesActionPerformed
+    }//GEN-LAST:event_btnFacturaActionPerformed
 
     private void btnVistaMeseroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVistaMeseroActionPerformed
         // TODO add your handling code here:
@@ -147,6 +158,10 @@ public class Main extends javax.swing.JFrame {
         r.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnTomarOrdenActionPerformed
+
+    private void btnConsultasReportes1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnConsultasReportes1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnConsultasReportes1ActionPerformed
 
     
     /**
@@ -176,7 +191,8 @@ public class Main extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdministrarDatos;
-    private javax.swing.JButton btnConsultasReportes;
+    private javax.swing.JButton btnConsultasReportes1;
+    private javax.swing.JButton btnFactura;
     private javax.swing.JButton btnTomarOrden;
     private javax.swing.JButton btnVistaCocinero;
     private javax.swing.JButton btnVistaMesero;

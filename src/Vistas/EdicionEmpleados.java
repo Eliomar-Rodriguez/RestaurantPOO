@@ -10,6 +10,7 @@ import Empleados.Cocinero;
 import Empleados.CrearFabrica;
 import Empleados.Mesero;
 import ServicioRestaurante.Restaurant;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -20,6 +21,8 @@ public class EdicionEmpleados extends javax.swing.JFrame {
     /**
      * Creates new form EdicionEmpleados
      */
+    Cocinero cocinero = null;
+    Mesero mesero = null;
     String cedula;
     public EdicionEmpleados() {
         initComponents();
@@ -28,11 +31,11 @@ public class EdicionEmpleados extends javax.swing.JFrame {
         lblACor.setVisible(false);
         lblADir.setVisible(false);
         lblATel.setVisible(false);
-        lblTipoEmp.setVisible(false);
+        
         lblANom.setVisible(false);
         
         txtOp.setVisible(false);
-        lblIdioma.setVisible(false);
+        
         lblAOp.setVisible(false);
         lblOp.setVisible(false);
     }
@@ -246,9 +249,6 @@ public class EdicionEmpleados extends javax.swing.JFrame {
         lblId.setForeground(new java.awt.Color(204, 0, 0));
         lblId.setText("*");
         getContentPane().add(lblId);
-<<<<<<< HEAD
-        lblId.setBounds(660, 80, 51, 40);
-=======
         lblId.setBounds(541, 80, 40, 40);
 
         btnBuscar.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
@@ -260,9 +260,6 @@ public class EdicionEmpleados extends javax.swing.JFrame {
         });
         getContentPane().add(btnBuscar);
         btnBuscar.setBounds(580, 80, 110, 40);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
->>>>>>> 218b36cc524806af0106ef2af6c5c87efe8ffc20
         getContentPane().add(jLabel8);
         jLabel8.setBounds(-10, 0, 890, 0);
 
@@ -299,60 +296,42 @@ public class EdicionEmpleados extends javax.swing.JFrame {
 
     private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
         Restaurant rest = Restaurant.getInstance();
-        if (txtNombre.getText().isEmpty() | txtCedula.getText().isEmpty() | txtTelefono.getText().isEmpty() | txtCorreo.getText().isEmpty() | txtDireccion.getText().isEmpty() | cmbTipEmpleado.getSelectedIndex()==-1){ // so algo esta vacio
+        
+        
+        if (txtNombre.getText().isEmpty() | txtCedula.getText().isEmpty() | txtTelefono.getText().isEmpty() | txtCorreo.getText().isEmpty() | txtDireccion.getText().isEmpty()){ // so algo esta vacio
             if (txtNombre.getText().isEmpty())
-            lblANom.setVisible(true);
+                lblANom.setVisible(true);
             if (txtCedula.getText().isEmpty())
-            lblACed.setVisible(true);
-
+                lblACed.setVisible(true);
+            
             if (txtTelefono.getText().isEmpty())
-            lblATel.setVisible(true);
+                lblATel.setVisible(true);
             if (txtCorreo.getText().isEmpty())
-            lblACor.setVisible(true);
+                lblACor.setVisible(true);
             if (txtDireccion.getText().isEmpty())
-            lblADir.setVisible(true);
-            if (cmbTipEmpleado.getSelectedIndex()==-1)
-            lblTipoEmp.setVisible(true);
+                lblADir.setVisible(true);
         }
-        if (cmbTipEmpleado.getSelectedIndex()==0){
-            if (txtEspecialidad.getText().isEmpty()){
-                lblAOp.setVisible(true);
-            }
-            else{
-                txtEspecialidad.setVisible(true);
-                lblOp.setVisible(true);
-
-                txtOp.setVisible(false);
-                lblIdioma.setVisible(false);
-            }
+        
+        
+        else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){
+               
+                mesero.setCorreo(txtCorreo.getText());
+                mesero.setDireccion(txtDireccion.getText());
+                mesero.setNombreCompleto(txtNombre.getText());
+                mesero.setTelefono(txtTelefono.getText());
+                Restaurant.getInstance().listaEmpleados.add(mesero);
+               
         }
-        else if (cmbTipEmpleado.getSelectedIndex()==1){
-            if (txtOp.getText().isEmpty()){
-                lblAOp.setVisible(true);
+        else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Cocinero){
+                
+                cocinero.setCorreo(txtCorreo.getText());
+                cocinero.setDireccion(txtDireccion.getText());
+                cocinero.setNombreCompleto(txtNombre.getText());
+                cocinero.setTelefono(txtTelefono.getText());
+                cocinero.setEspecialidad(txtOp.getText());
+                Restaurant.getInstance().listaEmpleados.add(cocinero);
             }
-            else{
-                txtEspecialidad.setVisible(false);
-                lblOp.setVisible(false);
-
-                txtOp.setVisible(true);
-                lblIdioma.setVisible(true);
-            }
-        }
-        if (!txtNombre.getText().isEmpty() & !txtCedula.getText().isEmpty() & !txtTelefono.getText().isEmpty() & !txtCorreo.getText().isEmpty() & !txtDireccion.getText().isEmpty() & cmbTipEmpleado.getSelectedIndex()!=-1){ // so algo esta vacio
-            System.out.println("ELSE");
-            CrearFabrica factory = new CrearFabrica();
-            if (cmbTipEmpleado.getSelectedIndex()==0){ // cocinero
-                System.out.println("COCINERO");
-                Cocinero cocinero = factory.creaCocinero(0, 0, txtEspecialidad.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                rest.agregarEmpleado(cocinero);
-            }
-            else if (cmbTipEmpleado.getSelectedIndex()==1){ // mesero
-                System.out.println("MESERO");
-                Mesero mesero = factory.crearMesero(txtOp.getText(), txtDireccion.getText(), txtCorreo.getText(), txtNombre.getText(), txtCedula.getText(), txtTelefono.getText());
-                MainRestaurante.rest.agregarEmpleado(mesero);
-            }
-        }
-        System.out.println(rest.getCantidadEmpleados());
+        
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
     private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
@@ -366,7 +345,7 @@ public class EdicionEmpleados extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdKeyPressed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-              
+        
         if(txtId.getText().isEmpty()){
             lblId.setVisible(true);
         }
@@ -380,38 +359,30 @@ public class EdicionEmpleados extends javax.swing.JFrame {
                 txtNombre.setText("");
                 txtTelefono.setText("");  
                 
-                ///txtOpcion.setVisible(false);
+                
                 lblAOp.setVisible(false);
-                //btnEliminar.setEnabled(true);
+                
             }
-            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){ // si lo que encuentra es un mesero
-                lblNoEnc.setVisible(false);
+            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Mesero){
+                
                 mesero = (Mesero) Restaurant.getInstance().getEmpleado(cedula);
                 txtCorreo.setText(mesero.getCorreo());
                 txtDireccion.setText(mesero.getDireccion());
                 txtNombre.setText(mesero.getNombreCompleto());
                 txtTelefono.setText(mesero.getTelefono());
-
-                txtOpcion.setText(mesero.getIdiomasDomina());
-                txtOpcion.setVisible(true);
-                lblAOp.setText("Idiomas");
-                lblAOp.setVisible(true);
-
-                btnEliminar.setEnabled(true);
+                
             }
-            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Cocinero){ // si lo que encuentra es un cocinero
-                lblNoEnc.setVisible(false);
+            else if (Restaurant.getInstance().getEmpleado(cedula) instanceof Cocinero){
                 cocinero = (Cocinero) Restaurant.getInstance().getEmpleado(cedula);
                 txtCorreo.setText(cocinero.getCorreo());
                 txtDireccion.setText(cocinero.getDireccion());
-                txtName.setText(cocinero.getNombreCompleto());
-                txtTelefono.setText(cocinero.getTelefono());    
-                txtOpcion.setText(cocinero.getEspecialidad());
-                lblAOp.setText("Especialidad");
-                btnEliminar.setEnabled(true);
-                lblAOp.setVisible(true);
-                txtOpcion.setVisible(true);
-            }            
+                txtNombre.setText(cocinero.getNombreCompleto());
+                txtTelefono.setText(cocinero.getTelefono());
+                txtOp.setText(cocinero.getEspecialidad());
+            }
+            
+            
+            
         }               
     }//GEN-LAST:event_btnBuscarActionPerformed
 

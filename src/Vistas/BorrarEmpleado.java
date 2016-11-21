@@ -211,7 +211,7 @@ public class BorrarEmpleado extends javax.swing.JFrame {
                 txtDireccion.setText(mesero.getDireccion());
                 txtName.setText(mesero.getNombreCompleto());
                 txtTelefono.setText(mesero.getTelefono());
-
+                
                 txtOpcion.setText(mesero.getIdiomasDomina());
                 txtOpcion.setVisible(true);
                 lblOpcion.setText("Idiomas");

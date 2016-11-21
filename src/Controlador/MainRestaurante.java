@@ -156,13 +156,8 @@ public class MainRestaurante {
         Date fecha = new Date(20/11/2016);
         
 
-        fac1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
-        rest.agregarFactura(fac1);
-        Controlador controlador = new Controlador(fac1);
-        controlador.setFactura(fac1);
-
         Factura fa1 = new Factura(c1,fecha,"12:05",detalle1,100,2000,12500);
-        Restaurant.facturas.add(fa1);
+        Restaurant.getInstance().agregarFactura(fa1);
         
         
 
