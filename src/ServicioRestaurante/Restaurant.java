@@ -37,7 +37,6 @@ public class Restaurant {
     public static ArrayList<Mesa> listaMesas;
 
     public static ArrayList<Factura> facturas;
-
     
     //protected ArrayList<Cliente> listaClientes;
 

@@ -146,9 +146,10 @@ public class MainRestaurante {
         
         Orden o2 = new Orden(m1,mesa2,25,"Efectivo", "11", 6, 5);
         
-        rest.listaOrdenes.add(o1);
-        rest.listaOrdenes.add(o2);
-        System.out.print(rest.listaOrdenes);
+        Restaurant.getInstance().listaOrdenes.add(o2);
+        Restaurant.getInstance().listaOrdenes.add(o1);
+        
+        System.out.print(Restaurant.getInstance().listaOrdenes);
         
         
 

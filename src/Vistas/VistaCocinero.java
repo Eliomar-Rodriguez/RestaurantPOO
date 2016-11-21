@@ -28,9 +28,8 @@ public class VistaCocinero extends javax.swing.JFrame {
         setResizable(false);
       
        
-       
-        for (int i = 0; i < rest.listaOrdenes.size(); i++) {
-            String value = rest.listaOrdenes.get(i).getHora();
+        for (int i = 0; i < Restaurant.getInstance().listaOrdenes.size(); i++) {
+            String value = Restaurant.getInstance().listaOrdenes.get(i).getHora();
             tablaOrden.setValueAt(value, i, i);
         }
         

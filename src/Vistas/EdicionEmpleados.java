@@ -291,10 +291,8 @@ public class EdicionEmpleados extends javax.swing.JFrame {
         lblId.setText("*");
         getContentPane().add(lblId);
         lblId.setBounds(660, 80, 51, 40);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Sistema de restaurant\\SistemaRestaurant\\src\\Images\\fondo2.jpg")); // NOI18N
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(-10, 0, 890, 498);
+        jLabel8.setBounds(-10, 0, 890, 0);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
