@@ -17,6 +17,7 @@ import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableModel;
 
 /**
  *
@@ -31,8 +32,7 @@ public class Menu extends javax.swing.JFrame {
     Mesero meseroAtendio = null;
     Color color = null;
     ArrayList<Producto> productosOrden = new ArrayList();
-    int total = 0,contador=0;
-    ArrayList<String> noUsar;
+    int total = 0, fila =0, veces=1, totalImpresos =0;
     
     public Menu(Mesa mesa,Mesero mesero,Color color) {
         initComponents();
@@ -42,7 +42,6 @@ public class Menu extends javax.swing.JFrame {
         lblNomPlato.setVisible(false);
         setSize(1198, 723);
         setLocationRelativeTo(null);
-        
     }
     
 
@@ -238,6 +237,21 @@ public class Menu extends javax.swing.JFrame {
                 {null, null, null},
                 {null, null, null},
                 {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
                 {null, null, null}
             },
             new String [] {
@@ -403,48 +417,92 @@ public class Menu extends javax.swing.JFrame {
         }
         else{
             int idp=Integer.parseInt(lblIdProducto.getText());
-            if(existeProducto(idp)==false){
-                    productosOrden.add(producto);
-                    tablaProductos.setValueAt(productosOrden.get(indexTable).getNombre(),indexTable, 0);
-                    tablaProductos.setValueAt(indexTable, indexTable, 1);
-                    tablaProductos.setValueAt(montoTotal, indexTable, 2);
-                    montoTotal+=producto.getPrecio();
-                    indexTable++;
+            if(!existeProducto(idp)){
+                
+                TableModel modelo = tablaProductos.getModel();
+                
+                productosOrden.add(producto);
+                
+                int respuesta = ubicarEnTabla(producto.getNombre()); // devuelve lam ubicacion de donde esta repetido en tabla
 
+                if (respuesta!=0){
+                    
+                    tablaProductos.setValueAt(productosOrden.get(indexTable).getNombre(),respuesta, 0);
+                    veces = cantidadIgual(producto.getNombre());
+                    
+                    tablaProductos.setValueAt((int) tablaProductos.getValueAt(respuesta, 1)+1, respuesta, 1);
+                    veces=0;
+                    for (int i = 0; i < productosOrden.size(); i++) {
+                        if (productosOrden.get(i).getIdProducto().equals(producto.getIdProducto())){
+                            montoTotal += productosOrden.get(i).getPrecio();
+                        }
+                    }
+                    tablaProductos.setValueAt(montoTotal, respuesta, 2);
+                    
+                    
+                }
+                else{
+                    
+                    tablaProductos.setValueAt(productosOrden.get(indexTable).getNombre(),fila, 0);
+                    veces = cantidadIgual(producto.getNombre());
+                    tablaProductos.setValueAt(veces, fila, 1);                    
+                    veces=0;
+                    for (int i = 0; i < productosOrden.size(); i++) {
+                        if (productosOrden.get(i).getIdProducto().equals(producto.getIdProducto())){
+                            montoTotal += productosOrden.get(i).getPrecio();
+                        }
+                    }
+                    tablaProductos.setValueAt(montoTotal, fila, 2);
+                    fila ++;
+                    //totalImpresos++;
+                    veces= 0;
+                }
+                indexTable++;
             }
             else{
-                tablaProductos.setValueAt(productosOrden.get(indexTable).getNombre(),indexTable, 0);
-                tablaProductos.setValueAt(indexTable, indexTable, 1);
-                tablaProductos.setValueAt(montoTotal, indexTable, 2);
+                tablaProductos.setValueAt(productosOrden.get(indexTable).getNombre(),fila, 0);
+                veces = cantidadIgual(producto.getNombre());
+                tablaProductos.setValueAt(veces, fila, 1);
+                veces=0;
+                tablaProductos.setValueAt(montoTotal, 0, 2);
                 montoTotal+=producto.getPrecio();
                 indexTable++;
-              }
-            
-            /*for (int i = 0; i <productosOrden.size(); i++) {
-                for (int j = 0; j < productosOrden.size(); j++) {
-                    if (productosOrden.get(i).getNombre().equals(producto.getNombre())){
-                        total++;
-                        montoTotal += productosOrden.get(i).getPrecio();
-                        
-                    }                    
-                }*/
-                
-            
+                veces =0;
+            }                    
         }           
     }//GEN-LAST:event_btnAgregarActionPerformed
+    
+    public int ubicarEnTabla(String nomPlato){
+        for (int i = 0; i < productosOrden.size(); i++) {
+            if (tablaProductos.getValueAt(i, 0)!=null)
+                if (tablaProductos.getValueAt(i, 0).equals(nomPlato))
+                    return i;
+        }
+        return 0; // no lo encontro
+    }
+    public int cantidadIgual(String nomPlato){
+        int mas = 0;
+        for (int i = 0; i < productosOrden.size(); i++) {
+            if (tablaProductos.getValueAt(i, 0)!=null)
+                if (tablaProductos.getValueAt(i, 0).equals(nomPlato))
+                    mas ++;
+        }
+        return mas; 
+    }
     public boolean existeProducto(int id){
         if(productosOrden.equals(null)){
             return false;
         }
         else{
-            for(int x=0;x<productosOrden.size();x++){
-                if(productosOrden.get(x).getIdProducto()==String.valueOf(id)){
-                    return true;
+            for(int x = 0; x < productosOrden.size(); x++){
+                for (int i = 0; i < productosOrden.size(); i++) {
+                    if(productosOrden.get(x).getIdProducto()==String.valueOf(id)){
+                        return true;
+                    }                 
                 }
             }
             return false;
-        
-            }
+        }
     }
 
     private void btnOrdenarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarActionPerformed
