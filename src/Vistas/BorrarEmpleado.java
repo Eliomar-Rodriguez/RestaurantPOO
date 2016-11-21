@@ -15,7 +15,8 @@ import ServicioRestaurante.Restaurant;
  * @author Antonio Rodriguez
  */
 public class BorrarEmpleado extends javax.swing.JFrame {
-
+    Cocinero cocinero = null;
+    Mesero mesero = null;
     /**
      * Creates new form BorrarEmpleado
      */
@@ -184,9 +185,7 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        Cocinero cocinero = null;
-        Mesero mesero = null;
-        
+                
         if(txtId.getText().isEmpty()){
             lblAviso.setVisible(true);
         }
@@ -237,19 +236,25 @@ public class BorrarEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        Restaurant.getInstance().eliminarEmpleado(cedula);
-        txtId.setText("");
-        lblListo.setVisible(true);
-        System.out.println("Eliminado con exito");
-        lblNoEnc.setVisible(false); 
-        txtCorreo.setText("");
-        txtDireccion.setText("");
-        txtName.setText("");
-        txtTelefono.setText("");
+        if (!txtId.getText().isEmpty()& (cocinero != null | mesero != null)){
+            Restaurant.getInstance().eliminarEmpleado(cedula);
+            txtId.setText("");
+            lblListo.setVisible(true);
+            System.out.println("Eliminado con exito");
+            lblNoEnc.setVisible(false); 
+            txtCorreo.setText("");
+            txtDireccion.setText("");
+            txtName.setText("");
+            txtTelefono.setText("");
 
-        txtOpcion.setVisible(false);
-        lblOpcion.setVisible(false);
-        btnEliminar.setEnabled(true);
+            txtOpcion.setVisible(false);
+            lblOpcion.setVisible(false);
+            btnEliminar.setEnabled(true);
+        }
+        else if (txtId.getText().isEmpty() & cocinero == null & mesero == null){
+            lblNoEnc.setVisible(true);
+            lblListo.setVisible(false);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed

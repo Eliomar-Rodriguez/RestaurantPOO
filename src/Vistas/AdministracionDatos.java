@@ -51,7 +51,8 @@ public class AdministracionDatos extends javax.swing.JFrame {
         jLabel1.setBounds(730, 50, 180, 50);
 
         botonRegistroEmpleado.setFont(new java.awt.Font("Monotype Corsiva", 0, 28)); // NOI18N
-        botonRegistroEmpleado.setText("Registrar Empleado");
+        botonRegistroEmpleado.setText("Registrar Persona");
+        botonRegistroEmpleado.setToolTipText("Registrar clientes, cocineros y meseros");
         botonRegistroEmpleado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonRegistroEmpleadoActionPerformed(evt);
